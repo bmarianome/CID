@@ -16,7 +16,7 @@ const DateButton = () => {
             <div className="relative w-6 h-6">
                 <Image layout="fill" src={'/icons/WHATSAPP_ORANGE.svg'} alt='WHATSAPP ICON' />
             </div>
-            <span className="hidden uppercase text-brandOrange font-main font-black text-xl whitespace-pre lg:hidden xl:inline">Pedí un turno</span>
+            <span className="hidden font-medium uppercase text-brandOrange font-main text-xl whitespace-pre lg:hidden xl:inline">Pedí un turno</span>
         </button>
     )
 }
