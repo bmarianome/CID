@@ -1,9 +1,8 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
-import { FC } from 'react'
 
-const MainSlider: FC = () => {
+const MainSlider = () => {
     return (
         <section className='w-screen h-[calc(100vh-80px)] flex flex-col'>
             <section className="h-full relative">
@@ -19,8 +18,8 @@ const MainSlider: FC = () => {
                 
                 <div className="w-full h-full z-10 absolute white-gradient"></div>
             </section>
-            <article className="bg-brandOrange px-6 py-5 flex flex-col items-center gap-5">
-                <h1 className='text-3xl text-center leading-10 font-main font-bold'>CID, primer servicio de imágenes médicas totalmente digital de las Sierras Chicas.</h1>
+            <article className="bg-brandOrange px-12 py-5 flex flex-col items-center gap-5">
+                <h1 className='text-2xl text-center leading-9 font-main font-bold'>CID, primer servicio de imágenes médicas totalmente digital de las Sierras Chicas.</h1>
                 <Link href='/nosotros' passHref>
                     <a className='bg-white flex justify-center items-center gap-3 w-max py-2 px-6 rounded'>
                         <div className="relative w-5 h-5">

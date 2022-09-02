@@ -17,3 +17,19 @@
 .white-gradient {
     background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 66.666667%, #FFFFFF 100%);
 }
+
+.orange-gradient {
+    background: linear-gradient(0deg, rgba(236, 90, 42, 0.8), rgba(236, 90, 42, 0.8));
+}
+
+.title {
+    @apply text-brandOrange text-center text-4xl font-secondary font-bold mb-10
+}
+
+.services-swiper-bullet{ 
+    @apply  w-2 h-2 rounded-full bg-gray-300
+}
+
+.services-swiper-bullet-active { 
+    @apply bg-brandOrange
+}
