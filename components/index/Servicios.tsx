@@ -50,9 +50,9 @@ const Servicios = () => {
                         ))
                     }
 
+                    <div className="pagination-container flex justify-center gap-2 mt-5 w-max m-auto" />
                 </Swiper>                
 
-                <div className="pagination-container flex justify-center gap-2 mt-5 w-max m-auto" />
             </div>                
 
             <Link href='/servicios' passHref>
