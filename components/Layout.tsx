@@ -26,13 +26,13 @@ const Layout = ({children}: {children: ReactNode}) => {
     return (
         <>
         {/* drop-shadow-[0_0px_15px_rgba(0,0,0)]  */}
-            <div className="relative bg-brandOrange shadow-xl w-screen flex items-center px-4 py-2 justify-between xl:px-16">
+            <div className="relative bg-brandOrange shadow-xl w-screen flex items-center px-4 h-20 justify-between xl:px-16">
                 
-                <div className="w-16 leading-none xl:w-24">
+                <picture className="w-16 leading-none">
                     <Image src={'/icons/CID_WHITE.svg'} width={280} height={231} alt='CID LOGO BLANCO' />
-                </div>
+                </picture>
                 
-                <nav className="hidden lg:flex gap-10">
+                {/* <nav className="hidden lg:flex gap-10">
                     <ItemLink link='/' text='Home' />
                     <ItemLink link='/' text='Nosotros' />
                     <ItemLink link='/' text='Servicios' />
@@ -40,15 +40,15 @@ const Layout = ({children}: {children: ReactNode}) => {
                     <ItemLink link='/' text='Contacto' />
                     <ItemLink link='/' text='Mis Estudios' />
 
-                    {/* <div className="flex justify-between p-8">
+                    <div className="flex justify-between p-8">
                         <DateButton />
                         <div className="flex gap-1">
                             <Image width={40} height={40} src={'/icons/INSTAGRAM_WHITE.svg'} />
                             <Image width={40} height={40} src={'/icons/FACEBOOK_WHITE.svg'} />
                         </div>
-                    </div> */}
+                    </div>
                     
-                </nav>
+                </nav> */}
 
                 <DateButton />
                 

@@ -13,6 +13,9 @@ module.exports = {
             fontFamily: {
                 'main': ['din', 'sans-serif'],
                 'secondary': ['d-din-pro', 'sans-serif'],
+            },
+            lineHeight: {
+                'none': '0',
             }
         },
     },

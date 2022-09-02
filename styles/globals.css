@@ -4,8 +4,16 @@
 
 @layer base {
 
+    html {
+        @apply font-main font-medium text-white
+    }
+
     /* @font-face {
         font-family: din, sans-serif;
         src: local("./styles/fonts/d-din-pro/");
     } */
+}
+
+.white-gradient {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 66.666667%, #FFFFFF 100%);
 }
