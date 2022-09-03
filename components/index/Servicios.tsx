@@ -3,23 +3,30 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 
-import { Autoplay, Pagination } from "swiper";
+import { Autoplay, Pagination, Navigation } from "swiper";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import "swiper/css/pagination";
+import "swiper/css/navigation";
 import 'swiper/css';
+import { useState } from 'react';
 
-const ServiceSlide = ({ text }: { text: string }) => {
+const ServiceSlide = ({ text, index }: { text: string, index: number }) => {
+
+    const [active, setActive] = useState(false)
+    
+    const toggleActive = () => setActive(() => active ? false : true)
+    
     return (    
-        <div className="bg-brandOrange py-4 flex flex-col items-center gap-1 w-2/3 m-auto rounded-md">
-            <span className='font-secondary font-bold text-2xl'>{text}</span>
-            <Link href={'/servicios'}>
-                <a className='font-main font-light text-lg'>Ver Mas</a>
-            </Link>
+        <div className={`bg-brandOrange py-4 flex flex-col items-center gap-1 w-2/3 m-auto rounded-md`} onClick={toggleActive}>
+            <h3 className='font-secondary font-bold text-2xl'>{text}</h3>
+            <p className={`font-secondary font-light text-center flex items-center justify-center transition-[height,_opacity] ${active ? 'h-32 opacity-1 delay-[0s,_.1s]' : 'h-0 opacity-0 delay-[.1s,_0s]'}`}>
+                { index%2 === 0 ? "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium in ipsa, qui quisquam aspernatur maiores." : "Lorem ipsum dolor sit amet consectetur adipisicing elit."}
+            </p>
+            <span className='font-main font-light text-lg'>Ver Mas</span>
         </div>
     )
 }
 
-// const ObrasSociales = ["ACA SALUD","APM","APROSS","ART PREVENCION SALUD","BOREAL","COMFYE","CPCE (CONSEJO PROF DE CS ECONOMICAS)","FEDERADA SALUD G1","FEDERADA SALUD G2-G3","GALENO","JERARQUICOS SALUD","MEDIFE","MET","NOBIS","OMINT","OSDE","OSITAC","OSMATA SANITAS","OSPECOR","OSPEDYC","OSPES (ESTAC SERVICIOS)","OSPIA","OSPOCE INTEGRAL","OSSEG(SEGUROS)","OSSOELSAC","PARQUE SALUD","POETA LUGONES","PREVENCION SALUD","PRIVERAL","SANCOR SALUD","SWISS MEDICAL","UNIMED",]
 const servicios: string[] = ["Ecografías", "Radiología", "Mamografía", "Cardiología", "Ortopantomografía", "Laboratorio",]
 
 const Servicios = () => {
@@ -27,30 +34,39 @@ const Servicios = () => {
         <section className='py-10'>
             <h2 className='title'>Nuestros Servicios</h2>
 
-            <div className="w-screen mb-10">
+            <div className="relative w-screen mb-10">
                 <Swiper
                     autoplay={{
-                        delay: 1000,
+                        delay: 2000,
                         disableOnInteraction: true
                     }}
                     pagination={{
                         el: '.pagination-container',
                         bulletClass: 'services-swiper-bullet',
                         bulletActiveClass: 'services-swiper-bullet-active'
-
+                    }}
+                    navigation={{
+                        prevEl: '.prev-arrow',
+                        nextEl: '.next-arrow',
                     }}
                     loop={true}
-                    modules={[ Autoplay, Pagination ]}
+                    modules={[ Autoplay, Pagination, Navigation ]}
                 >
                     {
                         servicios.map((text, index) => (
                             <SwiperSlide key={index}>
-                                <ServiceSlide text={text} />
+                                <ServiceSlide text={text} index={index} />
                             </SwiperSlide>
                         ))
                     }
-
                     <div className="pagination-container flex justify-center gap-2 mt-5 w-max m-auto" />
+
+                    <div className="prev-arrow w-8 h-8 absolute z-10 top-[calc(50%-36px)] left-4 rotate-180">
+                        <Image layout='fill' src='/icons/FLECHA_CARRUSEL.svg' alt='ICONO FLECHA CARRUSEL' />
+                    </div>
+                    <div className="next-arrow w-8 h-8 absolute z-10 top-[calc(50%-36px)] right-4">
+                        <Image layout='fill' src='/icons/FLECHA_CARRUSEL.svg' alt='ICONO FLECHA CARRUSEL' />
+                    </div>
                 </Swiper>                
 
             </div>                

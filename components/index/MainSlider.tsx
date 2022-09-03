@@ -8,15 +8,16 @@ const MainSlider = () => {
             <section className="h-full relative">
                 
                 <Image priority layout='fill' objectFit='cover' objectPosition='center' src={'/images/RADIOLOGIA.jpg'} alt='IMAGEN DE FONDO RADIOLOGIA' />
+                
+                <div className="w-full h-full absolute white-gradient"></div>
 
-                <div className="absolute z-20 bottom-16 px-6 flex">
+                <div className="absolute bottom-16 px-6 flex">
                     <Image width={248} height={102} src='/icons/LOGO_CID_DESC.svg' alt='LOGO CID DESCRIPCION' />
                     <picture className="w-52">
-                        <Image width={254} height={100} src='/icons/LOGO_FERNANDEZ_OULTON.svg' alt='LOGO CID DESCRIPCION' />
+                        <Image width={254} height={100} src='/icons/LOGO_FERNANDEZ_OULTON.svg' alt='LOGO FDEZ. OULTON DESCRIPCION' />
                     </picture>
                 </div>
                 
-                <div className="w-full h-full z-10 absolute white-gradient"></div>
             </section>
             <article className="bg-brandOrange px-12 py-5 flex flex-col items-center gap-5">
                 <h1 className='text-2xl text-center leading-9 font-main font-bold'>CID, primer servicio de imágenes médicas totalmente digital de las Sierras Chicas.</h1>
