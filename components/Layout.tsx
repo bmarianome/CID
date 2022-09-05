@@ -60,7 +60,7 @@ const Nav = ({mobileMenuActive, setMenuMobile}: { mobileMenuActive: boolean, set
                 <div className="relative w-6 h-6">
                     <Image layout="fill" src={'/icons/WHATSAPP_ORANGE.svg'} alt='WHATSAPP ICON' />
                 </div>
-                <span className="hidden font-medium uppercase text-brandOrange font-main text-lg whitespace-pre xl:inline">Pedí un turno</span>
+                <span className="hidden font-main font-medium uppercase text-brandOrange text-lg whitespace-pre xl:inline">Pedí un turno</span>
             </button>
             
             {/* MOBILE: BOTÓN MENÚ */}
@@ -77,10 +77,10 @@ const Nav = ({mobileMenuActive, setMenuMobile}: { mobileMenuActive: boolean, set
 const MediaIgFb = () => {
     return (
         <div className="flex gap-5 justify-center w-max">
-            <div className="relative w-8 aspect-square lg:w-10">
+            <div className="relative w-10 aspect-square">
                 <Image layout='fill' src='/icons/INSTAGRAM_ORANGE.svg' alt="ICONO INSTAGRAM" />
             </div>
-            <div className="relative w-8 aspect-square lg:w-10">
+            <div className="relative w-10 aspect-square">
                 <Image layout='fill' src='/icons/FACEBOOK_ORANGE.svg' alt="ICONO FACEBOOK" />
             </div>
         </div>
@@ -99,8 +99,8 @@ const Footer = () => {
                     </div>
                 </div>
                 <picture className="
-                    relative w-full aspect-square max-w-md flex justify-center mx-auto
-                    lg:max-w-none lg:w-2/5 lg:m-0
+                    relative w-full aspect-square max-w-md flex justify-center mx-auto mb-5
+                    lg:max-w-none lg:w-2/5 lg:m-0 
                 ">
 
                     <Image layout="fill" objectFit="cover" src='/icons/TELEFONOS_REDES.svg' alt='FOTO REDES SOCIALES' />
@@ -124,7 +124,7 @@ const Footer = () => {
                     </div>
                     <div className="flex gap-2 lg:flex-col items-end">
                         <h2 className="font-main font-bold whitespace-pre text-xl lg:text-5xl lg:text-right">25 de Mayo 245,</h2>
-                        <span className="font-secondary font-medium text-xl text-right lg:text-3xl lg:max-w-[200px] lg:leading-10">Villa Allende, Córdoba</span>
+                        <span className="font-secondary font-medium text-xl text-right lg:text-4xl lg:max-w-[260px] lg:leading-10">Villa Allende, Córdoba</span>
                     </div>
                 </div>
                 

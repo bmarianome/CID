@@ -34,7 +34,7 @@ const MainSlider = () => {
 
                 <h1 className='
                     text-2xl text-center leading-9 font-main font-bold
-                    lg:max-w-xl lg:text-left lg:text-3xl
+                    lg:max-w-2xl lg:text-left lg:text-3xl
                 '>CID, primer servicio de imágenes médicas totalmente digital de las Sierras Chicas.</h1>
                 
                 <Link href='/nosotros' passHref>

@@ -27,7 +27,7 @@ const ObrasSociales = () => {
 
             <p className='description'>Conocé las obras sociales con las que trabajamos actualmente</p>
 
-            <div className="w-4/5 mb-10 m-auto border-y-2 border-brandOrange flex items-center py-4">
+            <div className="w-4/5 mb-10 m-auto border-y-2 border-brandOrange flex items-center py-4 select-none">
                 <Swiper
                     autoplay={{ delay: 1250, disableOnInteraction: true }}
                     modules={[ Autoplay ]}

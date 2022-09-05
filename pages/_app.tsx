@@ -8,6 +8,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     return (
         <>
             <Head>
+                <title>Centro de Imágenes</title>
                 <link rel="shortcut icon" type="image/svg+xml" href="/favicon.svg" />
             </Head> 
             <Layout>
