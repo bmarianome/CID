@@ -4,13 +4,24 @@ import Link from 'next/link'
 
 const Estudios = () => {
     return (
-        <section className='relative w-screen aspect-video'>
-            <Image layout='fill' objectPosition='center' objectFit='cover' src='/images/ECOGRAFIA_NARANJA.png' alt='FONDO ECOGRAFIA' />
+        <section className='relative h-max'>
 
-            <div className="flex flex-col justify-center items-center absolute w-full h-full p-5 gap-5">
-                <h2 className='text-white text-4xl font-secondary font-bold text-center'>Lo más importante, sos vos.</h2>
+            <figure className="absolute w-full h-full -z-10">
+                <Image layout='fill' objectPosition='center' objectFit='cover' src='/images/ECOGRAFIA_NARANJA.png' alt='FONDO ECOGRAFIA' />
+            </figure>
+
+            <div className="
+                flex flex-col justify-evenly items-center w-full p-5 gap-5 aspect-[4/1] 
+                lg:aspect-auto lg:items-start lg:max-w-5xl lg:p-20 lg:gap-20
+            ">
+                
+                <h2 className='
+                    text-white text-4xl font-secondary font-bold text-center
+                    lg:max-w-sm lg:text-left lg:text-7xl drop-shadow-lg lg:leading-tight
+                '>Lo más importante, sos vos.</h2>
+
                 <Link href='/estudios'>
-                    <a className='bg-white text-brandOrange text-center text-base block w-7/12 py-1 rounded-md'>Ver mis estudios online</a>
+                    <a className='white-button'>Ver mis estudios online</a>
                 </Link>
             </div>
             

@@ -21,14 +21,22 @@ const HealthCareSlide = ({ texts }: { texts: string[] }) => {
 
 const ObrasSociales = () => {
     return (
-        <section className='py-10'>
-            <h2 className='title'>Obras Sociales</h2>
+        <section className='py-10 lg:py-20'>
+            
+            <h2 className='title-w-desc'>Obras Sociales</h2>
+
+            <p className='description'>Conocé las obras sociales con las que trabajamos actualmente</p>
 
             <div className="w-4/5 mb-10 m-auto border-y-2 border-brandOrange flex items-center py-4">
                 <Swiper
                     autoplay={{ delay: 1250, disableOnInteraction: true }}
                     modules={[ Autoplay ]}
                     slidesPerView={1}
+                    breakpoints={{
+                        1280: {
+                            slidesPerView: 2
+                        }
+                    }}
                 >
                     {
                         ObrasSocialesList.map((texts, index) => (
@@ -44,7 +52,7 @@ const ObrasSociales = () => {
             </div>             
 
             <Link href='/servicios' passHref>
-                <a className='bg-brandOrange text-white text-center text-base block w-7/12 py-1 m-auto rounded-md'>Ver Todas</a>
+                <a className='orange-button mx-auto'>Ver Todas</a>
             </Link>   
 
         </section>
