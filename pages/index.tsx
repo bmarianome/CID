@@ -5,6 +5,7 @@ import ObrasSociales from 'components/index/ObrasSociales'
 import Divisor from 'components/Divisor'
 import Image from 'next/image'
 import Estudios from 'components/index/Estudios'
+import { Footer } from 'components/Layout'
 
 const Home: NextPage = () => {
     return (
@@ -14,6 +15,7 @@ const Home: NextPage = () => {
             <Divisor />
             <ObrasSociales />
             <Estudios />
+            <Footer media map footer />
         </main>
     )
 }

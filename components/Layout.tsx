@@ -87,85 +87,98 @@ const MediaIgFb = () => {
     )
 }
 
-const Footer = () => {
+export const Footer = ({ media, map, footer }: { media?: boolean, map?: boolean, footer?: boolean }) => {
     return (
         <footer className="mt-10 lg:mt-20">
             
-            <div className="flex flex-col lg:flex-row-reverse lg:justify-center lg:items-center">
-                <div className="">
-                    <h2 className="title lg:max-w-sm lg:text-left lg:text-6xl lg:mb-5">Encontranos en las redes</h2>
-                    <div className="hidden lg:inline-block w-full pb-5 border-b-4 border-brandOrange">
+            {
+                media ?
+                <>
+                    <div className="flex flex-col lg:flex-row-reverse lg:justify-center lg:items-center">
+                        <div className="">
+                            <h2 className="title lg:max-w-sm lg:text-left lg:text-6xl lg:mb-5">Encontranos en las redes</h2>
+                            <div className="hidden lg:inline-block w-full pb-5 border-b-4 border-brandOrange">
+                                <MediaIgFb />
+                            </div>
+                        </div>
+                        <picture className="
+                            relative w-full aspect-square max-w-md flex justify-center mx-auto mb-5
+                            lg:max-w-none lg:w-2/5 lg:m-0 
+                        ">
+
+                            <Image layout="fill" objectFit="cover" src='/icons/TELEFONOS_REDES.svg' alt='FOTO REDES SOCIALES' />
+                        </picture>
+                    </div>
+                    
+                    <div className="flex justify-center lg:hidden">
                         <MediaIgFb />
                     </div>
-                </div>
-                <picture className="
-                    relative w-full aspect-square max-w-md flex justify-center mx-auto mb-5
-                    lg:max-w-none lg:w-2/5 lg:m-0 
-                ">
+                </>
+                : null
+            }
 
-                    <Image layout="fill" objectFit="cover" src='/icons/TELEFONOS_REDES.svg' alt='FOTO REDES SOCIALES' />
-                </picture>
-            </div>
-            
-            <div className="flex justify-center lg:hidden">
-                <MediaIgFb />
-            </div>
+            {
+                map ?
+                <div className="flex flex-col lg:flex-row-reverse lg:items-center lg:justify-center lg:gap-6 lg:p-6">
 
-            {/* MAPA Y DIRECCIÓN */}
-            <div className="flex flex-col lg:flex-row-reverse lg:items-center lg:justify-center lg:gap-6 lg:p-6">
-
-                <div className="py-10 px-5 w-full aspect-square max-w-xl mx-auto lg:aspect-video lg:max-w-4xl lg:p-0 lg:m-0">
-                    <iframe className="w-full h-full border-2 border-brandOrange p-4" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3409.394804730663!2d-64.2967309129843!3d-31.292831431852548!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94329d1c0a7d7123%3A0xe4e6f92e385c8c4b!2sCentro%20De%20Im%C3%A1genes%20Diagnosticas!5e0!3m2!1ses-419!2sar!4v1662144970990!5m2!1ses-419!2sar" loading="lazy" referrerPolicy="no-referrer-when-downgrade" />
-                </div>
-
-                <div className="text-brandOrange text-xl flex flex-col items-center gap-2 lg:gap-4 lg:items-end">
-                    <div className="relative w-10 h-10 lg:w-20 lg:h-20">
-                        <Image layout="fill" src='/icons/UBICACION_ORANGE.svg' alt='ICONO UBICACIÓN' />
+                    <div className="py-10 px-5 w-full aspect-square max-w-xl mx-auto lg:aspect-video lg:max-w-4xl lg:p-0 lg:m-0">
+                        <iframe className="w-full h-full border-2 border-brandOrange p-4" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3409.394804730663!2d-64.2967309129843!3d-31.292831431852548!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94329d1c0a7d7123%3A0xe4e6f92e385c8c4b!2sCentro%20De%20Im%C3%A1genes%20Diagnosticas!5e0!3m2!1ses-419!2sar!4v1662144970990!5m2!1ses-419!2sar" loading="lazy" referrerPolicy="no-referrer-when-downgrade" />
                     </div>
-                    <div className="flex gap-2 lg:flex-col items-end">
-                        <h2 className="font-main font-bold whitespace-pre text-xl lg:text-5xl lg:text-right">25 de Mayo 245,</h2>
-                        <span className="font-secondary font-medium text-xl text-right lg:text-4xl lg:max-w-[260px] lg:leading-10">Villa Allende, Córdoba</span>
-                    </div>
-                </div>
-                
-            </div>
 
-            {/* FOOTER BOTTOM BG NARANJA */}
-            <div className="bg-brandOrange mt-10 p-5 lg:mt-20 lg:p-12">
-                
-                <div className="flex flex-col gap-5 lg:flex-row lg:justify-between lg:items-center lg:m-auto">
-                    <div className="block w-1/3 m-auto max-w-[150px] lg:m-0">
-                        <Image src={'/icons/CID_WHITE.svg'} width={280} height={231} alt='CID LOGO BLANCO' />
-                    </div>
-                    <div className="flex flex-col w-full px-2 m-auto gap-5 max-w-md lg:m-0 lg:flex-row lg:gap-20">
-                        <div className="flex justify-center gap-10 lg:flex-col lg:gap-2">
-                            <Link href='/'><a className="w-1/3 text-center text-sm whitespace-pre font-secondary font-light lg:text-base">Home</a></Link>
-                            <Link href='/'><a className="w-1/3 text-center text-sm whitespace-pre font-secondary font-light lg:text-base">Nosotros</a></Link>
-                            <Link href='/'><a className="w-1/3 text-center text-sm whitespace-pre font-secondary font-light lg:text-base">Servicios</a></Link>
+                    <div className="text-brandOrange text-xl flex flex-col items-center gap-2 lg:gap-4 lg:items-end">
+                        <div className="relative w-10 h-10 lg:w-20 lg:h-20">
+                            <Image layout="fill" src='/icons/UBICACION_ORANGE.svg' alt='ICONO UBICACIÓN' />
                         </div>
-                        <div className="flex justify-center gap-10 lg:flex-col lg:gap-2">
-                            <Link href='/'><a className="w-1/3 text-center text-sm whitespace-pre font-secondary font-light lg:text-base">Mis Estudios</a></Link>
-                            <Link href='/'><a className="w-1/3 text-center text-sm whitespace-pre font-secondary font-light lg:text-base">Obras Sociales</a></Link>
-                            <Link href='/'><a className="w-1/3 text-center text-sm whitespace-pre font-secondary font-light lg:text-base">Contacto</a></Link>
+                        <div className="flex gap-2 lg:flex-col items-end">
+                            <h2 className="font-main font-bold whitespace-pre text-xl lg:text-5xl lg:text-right">25 de Mayo 245,</h2>
+                            <span className="font-secondary font-medium text-xl text-right lg:text-4xl lg:max-w-[260px] lg:leading-10">Villa Allende, Córdoba</span>
                         </div>
                     </div>
-                    <div className="flex gap-5 justify-center">
-                        <div className="relative w-8 aspect-square lg:w-10">
-                            <Image layout='fill' src='/icons/INSTAGRAM_WHITE.svg' alt="ICONO INSTAGRAM" />
-                        </div>
-                        <div className="relative w-8 aspect-square lg:w-10">
-                            <Image layout='fill' src='/icons/FACEBOOK_WHITE.svg' alt="ICONO FACEBOOK" />
-                        </div>
-                    </div>                    
+                    
                 </div>
+                : null
+            }
 
-                <span className="block h-[1px] bg-white mx-auto my-5" />
+            {
+                footer ?
+                <div className="bg-brandOrange mt-10 p-5 lg:mt-20 lg:p-12">
+                    
+                    <div className="flex flex-col gap-5 lg:flex-row lg:justify-between lg:items-center lg:m-auto">
+                        <div className="block w-1/3 m-auto max-w-[150px] lg:m-0">
+                            <Image src={'/icons/CID_WHITE.svg'} width={280} height={231} alt='CID LOGO BLANCO' />
+                        </div>
+                        <div className="flex flex-col w-full px-2 m-auto gap-5 max-w-md lg:m-0 lg:flex-row lg:gap-20">
+                            <div className="flex justify-center gap-10 lg:flex-col lg:gap-2">
+                                <Link href='/'><a className="w-1/3 text-center text-sm whitespace-pre font-secondary font-light lg:text-base">Home</a></Link>
+                                <Link href='/'><a className="w-1/3 text-center text-sm whitespace-pre font-secondary font-light lg:text-base">Nosotros</a></Link>
+                                <Link href='/'><a className="w-1/3 text-center text-sm whitespace-pre font-secondary font-light lg:text-base">Servicios</a></Link>
+                            </div>
+                            <div className="flex justify-center gap-10 lg:flex-col lg:gap-2">
+                                <Link href='/'><a className="w-1/3 text-center text-sm whitespace-pre font-secondary font-light lg:text-base">Mis Estudios</a></Link>
+                                <Link href='/'><a className="w-1/3 text-center text-sm whitespace-pre font-secondary font-light lg:text-base">Obras Sociales</a></Link>
+                                <Link href='/'><a className="w-1/3 text-center text-sm whitespace-pre font-secondary font-light lg:text-base">Contacto</a></Link>
+                            </div>
+                        </div>
+                        <div className="flex gap-5 justify-center">
+                            <div className="relative w-8 aspect-square lg:w-10">
+                                <Image layout='fill' src='/icons/INSTAGRAM_WHITE.svg' alt="ICONO INSTAGRAM" />
+                            </div>
+                            <div className="relative w-8 aspect-square lg:w-10">
+                                <Image layout='fill' src='/icons/FACEBOOK_WHITE.svg' alt="ICONO FACEBOOK" />
+                            </div>
+                        </div>                    
+                    </div>
 
-                <div className="flex flex-col justify-center items-center gap-2 lg:flex-row lg:justify-between">
-                    <span className="text-center text-sm font-secondary font-light">CID Villa Allende 2022 - Todos los derechos reservados</span>
-                    <span className="text-center text-sm font-secondary font-light">Realizado por 0092 Estudio Creativo</span>
+                    <span className="block h-[1px] bg-white mx-auto my-5" />
+
+                    <div className="flex flex-col justify-center items-center gap-2 lg:flex-row lg:justify-between">
+                        <span className="text-center text-sm font-secondary font-light">CID Villa Allende 2022 - Todos los derechos reservados</span>
+                        <span className="text-center text-sm font-secondary font-light">Realizado por 0092 Estudio Creativo</span>
+                    </div>
                 </div>
-            </div>
+                : null
+            }
+
             
         </footer>
     )
@@ -210,7 +223,6 @@ const Layout = ({children}: {children: ReactNode}) => {
             `} />
             
             {children}  
-            <Footer />
         </div>
     )
 }

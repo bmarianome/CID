@@ -2,7 +2,6 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
 
-
 import { Autoplay, Pagination, Navigation } from "swiper";
 import { Swiper, SwiperSlide, useSwiperSlide } from 'swiper/react';
 import "swiper/css/pagination";
@@ -39,7 +38,7 @@ const ServiceSlide = ({ text, index }: { text: string, index: number }) => {
     )
 }
 
-const servicios: string[] = ["Ecografías", "Radiología", "Mamografía", "Cardiología", "Ortopantomografía", "Laboratorio",]
+export const serviciosList: string[] = ["Ecografías", "Radiología", "Mamografía", "Cardiología", "Ortopantomografía", "Laboratorio",]
 
 const Servicios = () => {
     return (
@@ -74,7 +73,7 @@ const Servicios = () => {
                     modules={[ Autoplay, Pagination, Navigation ]}
                 >
                     {
-                        servicios.map((text, index) => (
+                        serviciosList.map((text, index) => (
                             <SwiperSlide key={index}>
                                 <ServiceSlide text={text} index={index} />
                             </SwiperSlide>
