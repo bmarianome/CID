@@ -10,14 +10,16 @@ const MainSlider = () => {
                 
                 <Image priority layout='fill' objectFit='cover' objectPosition='center' src={'/images/RADIOLOGIA.jpg'} alt='IMAGEN DE FONDO RADIOLOGIA' />
                 
-                <div className="w-full h-full absolute white-gradient" />
+                <div className="w-full h-full absolute 
+                bg-white-gradient lg:bg-white-gradient-desktop
+                " />
 
                 <div className="
                     absolute bottom-16 px-6 flex w-full max-w-screen-sm 
                     lg:flex-col lg:justify-center lg:gap-20 lg:w-max lg:max-w-none lg:h-full lg:bottom-0 lg:top-0 lg:left-10 lg:p-0
                 ">
                     
-                    <figure className='w-full min-w-[65%] h-max leading-none'>
+                    <figure className='w-full h-max leading-none min-w-[65%]'>
                         <Image layout='responsive' width={496} height={204} src='/icons/LOGO_CID_DESC.svg' alt='LOGO CID DESCRIPCION' />
                     </figure>
                     <figure className="w-full h-max leading-none lg:max-w-[50%]">

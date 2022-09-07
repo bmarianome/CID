@@ -12,10 +12,7 @@
         font-family: din, sans-serif;
         src: local("./styles/fonts/d-din-pro/");
     } */
-}
 
-.white-gradient {
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 66.666667%, #FFFFFF 100%);
 }
 
 .title {
@@ -45,12 +42,6 @@
     @apply 
         bg-white text-brandOrange text-center text-base block w-7/12 max-w-sm py-1 rounded-md shadow-[0px_10px_5px_-5px_rgb(0,0,0,0.1)]
         lg:text-2xl lg:py-4 lg:max-w-lg
-}
-
-@media (min-width: 1024px) {
-    .white-gradient {
-        background: linear-gradient(270deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 64.06%, #FFFFFF 100%)
-    }   
 }
 
 /* SERVICIOS */

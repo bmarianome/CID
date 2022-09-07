@@ -19,7 +19,7 @@ const ItemLink = ({ text, link} : { text: string, link: string}) => {
 const Nav = ({mobileMenuActive, setMenuMobile}: { mobileMenuActive: boolean, setMenuMobile: Dispatch<SetStateAction<boolean>> }) => {
 
     return (
-        <div className="
+        <header className="
             NavContainer sticky top-0 z-50 bg-brandOrange shadow-xl w-full flex items-center px-4 h-20 justify-between 
             lg:px-16 lg:py-4 lg:h-max
         ">
@@ -35,7 +35,7 @@ const Nav = ({mobileMenuActive, setMenuMobile}: { mobileMenuActive: boolean, set
                 
                 <nav className="flex flex-col lg:flex-row lg:justify-center lg:gap-10">
                     <ItemLink link='/' text='Home' />
-                    <ItemLink link='/' text='Nosotros' />
+                    <ItemLink link='/nosotros' text='Nosotros' />
                     <ItemLink link='/' text='Servicios' />
                     <ItemLink link='/' text='Obras Sociales' />
                     <ItemLink link='/' text='Contacto' />
@@ -70,7 +70,7 @@ const Nav = ({mobileMenuActive, setMenuMobile}: { mobileMenuActive: boolean, set
                 <span className={`relative w-full h-[3px] bg-white duration-200 ${mobileMenuActive ? '-rotate-45 -top-[12.5px]' : 'rotate-0 top-0'}`} />
             </div>
 
-        </div>
+        </header>
     )
 }
 

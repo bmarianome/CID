@@ -8,13 +8,13 @@ import Estudios from 'components/index/Estudios'
 
 const Home: NextPage = () => {
     return (
-        <div>
+        <main>
             <MainSlider />
             <Servicios />
             <Divisor />
             <ObrasSociales />
             <Estudios />
-        </div>
+        </main>
     )
 }
 
