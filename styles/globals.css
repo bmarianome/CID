@@ -58,6 +58,17 @@
         lg:text-2xl lg:py-4 lg:max-w-lg
 }
 
+/* NAV */
+.before-under-line {
+    @apply before:absolute before:bottom-0 before:left-0 before:h-[1px] 
+    before:z-10 before:bg-white before:w-0 before:duration-500
+    before:hidden lg:before:block
+}
+
+.before-under-line-active {
+    @apply before-under-line before:w-full
+}
+
 /* SERVICIOS */
 .services-swiper-bullet{ 
     @apply  w-2 h-2 rounded-full bg-gray-300

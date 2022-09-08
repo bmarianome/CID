@@ -4,12 +4,17 @@ import Link from "next/link"
 import { useRouter } from "next/router"
 
 const ItemLink = ({ text, link} : { text: string, link: string}) => {
+
+    const router = useRouter()
+
     return (
         <Link href={link} passHref>
-            <a className="
+            <a className={` relative
                 text-xl px-10 py-3 border-b-[1px] font-main font-medium
-                lg:p-0 lg:border-0 lg:font-main lg:font-light
-            ">
+                lg:p-0 lg:font-main lg:font-light lg:border-none
+                hover:before:w-full
+                ${ router.pathname === link ? "before-under-line-active" : "before-under-line" }
+                `}>
 
                 {text}
             </a>
@@ -44,7 +49,7 @@ const Nav = ({mobileMenuActive, setMenuMobile}: { mobileMenuActive: boolean, set
                     <ItemLink link='/servicios' text='Servicios' />
                     <ItemLink link='/obras-sociales' text='Obras Sociales' />
                     <ItemLink link='/contacto' text='Contacto' />
-                    <ItemLink link='/' text='Mis Estudios' />
+                    <ItemLink link='/estudios' text='Mis Estudios' />
                 </nav>
                 
                 {/* MOBILE: REDES SOCIALES */}
@@ -206,7 +211,6 @@ const Layout = ({children}: {children: ReactNode}) => {
         const closeMenuPageChange = () => setMenuMobile(false)
         const closeMenuEscape = (e: KeyboardEvent) => e.key === 'Escape' ? setMenuMobile(false) : null
         const closeMenuClick = (e: MouseEvent) => {
-
             if (window.innerWidth >= 1024) return            
             if (gradient.contains(e.target as Node)) {
                 setMenuMobile(false)
@@ -228,8 +232,22 @@ const Layout = ({children}: {children: ReactNode}) => {
         <div className="relative">
             <Nav mobileMenuActive={mobileMenuActive} setMenuMobile={setMenuMobile} />
             <GrayGradient mobileMenuActive={mobileMenuActive} />
+            <WhatsappFixed />
             {children}  
         </div>
+    )
+}
+
+const WhatsappFixed = () => {
+    return (
+        <a href="https://wa.me/+543543608379?text=Hola, quiero realizar una consulta" target='_blank' rel='noreferrer'
+            className="fixed flex items-center justify-center w-12 h-12 bg-[#25D366] rounded-full z-10 
+            right-8 bottom-8 lg:right-10 lg:bottom-40 
+            hover:cursor-pointer">
+            <figure className="relative w-6 h-6">
+                <Image layout="fill" src='/icons/WHATSAPP_WHITE.svg' alt="WHATSAPP ICON" />
+            </figure>
+        </a>
     )
 }
 
