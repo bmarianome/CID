@@ -3,7 +3,7 @@ import type { AppProps } from 'next/app'
 import Layout from 'components/Layout'
 import Head from 'next/head'
 
-function MyApp({ Component, pageProps }: AppProps) {
+function Cid({ Component, pageProps }: AppProps) {
 
     return (
         <>
@@ -18,4 +18,4 @@ function MyApp({ Component, pageProps }: AppProps) {
     )
 }
 
-export default MyApp
+export default Cid

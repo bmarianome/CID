@@ -1,6 +1,7 @@
 import { ReactNode, useState, SetStateAction, Dispatch, useEffect, useRef } from "react"
 import Image from "next/image"
 import Link from "next/link"
+import { useRouter } from "next/router"
 
 const ItemLink = ({ text, link} : { text: string, link: string}) => {
     return (
@@ -24,9 +25,13 @@ const Nav = ({mobileMenuActive, setMenuMobile}: { mobileMenuActive: boolean, set
             lg:px-16 lg:py-4 lg:h-max
         ">
                     
-            <picture className="w-16 leading-none">
-                <Image src={'/icons/CID_WHITE.svg'} width={280} height={231} alt='CID LOGO BLANCO' />
-            </picture>
+            <Link href='/' passHref>
+                <a>
+                    <figure className="w-16 leading-none">
+                        <Image src={'/icons/CID_WHITE.svg'} width={280} height={231} alt='CID LOGO BLANCO' />
+                    </figure>
+                </a>
+            </Link>
             
             <div className={`
                 absolute top-full z-20 flex flex-col w-3/4 rounded-br-lg bg-brandOrange duration-500 shadow-[0px_10px_5px_-5px_rgb(0,0,0,0.1)_inset] ${ mobileMenuActive ? 'left-0 ' : '-left-full' }
@@ -36,32 +41,37 @@ const Nav = ({mobileMenuActive, setMenuMobile}: { mobileMenuActive: boolean, set
                 <nav className="flex flex-col lg:flex-row lg:justify-center lg:gap-10">
                     <ItemLink link='/' text='Home' />
                     <ItemLink link='/nosotros' text='Nosotros' />
-                    <ItemLink link='/' text='Servicios' />
-                    <ItemLink link='/' text='Obras Sociales' />
-                    <ItemLink link='/' text='Contacto' />
+                    <ItemLink link='/servicios' text='Servicios' />
+                    <ItemLink link='/obras-sociales' text='Obras Sociales' />
+                    <ItemLink link='/contacto' text='Contacto' />
                     <ItemLink link='/' text='Mis Estudios' />
                 </nav>
                 
                 {/* MOBILE: REDES SOCIALES */}
                 <div className="flex justify-between p-6 lg:hidden">
-                    <div className="block bg-white rounded p-2 leading-none">
+                    <a href="https://wa.me/+543543608379?text=Hola, quiero realizar una consulta" target='_blank' rel='noreferrer'
+                     className="block bg-white rounded p-2 leading-none">
                         <Image width={30} height={30} src={'/icons/WHATSAPP_ORANGE.svg'} alt='WHATSAPP ICON' />
-                    </div>
+                    </a>
                     <div className="flex gap-2">
-                        <Image width={30} height={30} src={'/icons/INSTAGRAM_WHITE.svg'} alt='ICONO INSTAGRAM' />
-                        <Image width={30} height={30} src={'/icons/FACEBOOK_WHITE.svg'} alt='ICONO FACEBOOK' />
+                        <a href="https://www.facebook.com/CIDalvit/" target='_blank' rel='noreferrer' className="flex items-center justify-center">
+                            <Image width={30} height={30} src={'/icons/INSTAGRAM_WHITE.svg'} alt='ICONO INSTAGRAM' />
+                        </a>
+                        <a href="https://www.facebook.com/CIDalvit/" target='_blank' rel='noreferrer' className="flex items-center justify-center">
+                            <Image width={30} height={30} src={'/icons/FACEBOOK_WHITE.svg'} alt='ICONO FACEBOOK' />
+                        </a>
                     </div>
                 </div>
 
             </div>
 
             {/* DESKTOP: BOTÓN PEDÍ UN TURNO */}
-            <button className="bg-white flex items-center gap-4 py-2 px-4 rounded">
+            <a href="https://wa.me/+543543608379?text=Hola, quiero realizar una consulta" target='_blank' rel='noreferrer' className="bg-white flex items-center gap-4 py-2 px-4 rounded">
                 <div className="relative w-6 h-6">
                     <Image layout="fill" src={'/icons/WHATSAPP_ORANGE.svg'} alt='WHATSAPP ICON' />
                 </div>
                 <span className="hidden font-main font-medium uppercase text-brandOrange text-lg whitespace-pre xl:inline">Pedí un turno</span>
-            </button>
+            </a>
             
             {/* MOBILE: BOTÓN MENÚ */}
             <div className="MenuContainer w-10 h-7 flex flex-col justify-between lg:hidden" onClick={() => setMenuMobile(() => mobileMenuActive ? false : true)}>
@@ -77,12 +87,12 @@ const Nav = ({mobileMenuActive, setMenuMobile}: { mobileMenuActive: boolean, set
 const MediaIgFb = () => {
     return (
         <div className="flex gap-5 justify-center w-max">
-            <div className="relative w-10 aspect-square">
+            <a href="https://www.facebook.com/CIDalvit/" target='_blank' rel='noreferrer' className="relative w-10 aspect-square">
                 <Image layout='fill' src='/icons/INSTAGRAM_ORANGE.svg' alt="ICONO INSTAGRAM" />
-            </div>
-            <div className="relative w-10 aspect-square">
+            </a>
+            <a href="https://www.facebook.com/CIDalvit/" target='_blank' rel='noreferrer' className="relative w-10 aspect-square">
                 <Image layout='fill' src='/icons/FACEBOOK_ORANGE.svg' alt="ICONO FACEBOOK" />
-            </div>
+            </a>
         </div>
     )
 }
@@ -150,22 +160,22 @@ export const Footer = ({ media, map, footer }: { media?: boolean, map?: boolean,
                         <div className="flex flex-col w-full px-2 m-auto gap-5 max-w-md lg:m-0 lg:flex-row lg:gap-20">
                             <div className="flex justify-center gap-10 lg:flex-col lg:gap-2">
                                 <Link href='/'><a className="w-1/3 text-center text-sm whitespace-pre font-secondary font-light lg:text-base">Home</a></Link>
-                                <Link href='/'><a className="w-1/3 text-center text-sm whitespace-pre font-secondary font-light lg:text-base">Nosotros</a></Link>
-                                <Link href='/'><a className="w-1/3 text-center text-sm whitespace-pre font-secondary font-light lg:text-base">Servicios</a></Link>
+                                <Link href='/nosotros'><a className="w-1/3 text-center text-sm whitespace-pre font-secondary font-light lg:text-base">Nosotros</a></Link>
+                                <Link href='/servicios'><a className="w-1/3 text-center text-sm whitespace-pre font-secondary font-light lg:text-base">Servicios</a></Link>
                             </div>
                             <div className="flex justify-center gap-10 lg:flex-col lg:gap-2">
                                 <Link href='/'><a className="w-1/3 text-center text-sm whitespace-pre font-secondary font-light lg:text-base">Mis Estudios</a></Link>
-                                <Link href='/'><a className="w-1/3 text-center text-sm whitespace-pre font-secondary font-light lg:text-base">Obras Sociales</a></Link>
-                                <Link href='/'><a className="w-1/3 text-center text-sm whitespace-pre font-secondary font-light lg:text-base">Contacto</a></Link>
+                                <Link href='/obras-sociales'><a className="w-1/3 text-center text-sm whitespace-pre font-secondary font-light lg:text-base">Obras Sociales</a></Link>
+                                <Link href='/contacto'><a className="w-1/3 text-center text-sm whitespace-pre font-secondary font-light lg:text-base">Contacto</a></Link>
                             </div>
                         </div>
                         <div className="flex gap-5 justify-center">
-                            <div className="relative w-8 aspect-square lg:w-10">
+                            <a href="https://www.facebook.com/CIDalvit/" target='_blank' rel='noreferrer' className="relative w-8 aspect-square lg:w-10">
                                 <Image layout='fill' src='/icons/INSTAGRAM_WHITE.svg' alt="ICONO INSTAGRAM" />
-                            </div>
-                            <div className="relative w-8 aspect-square lg:w-10">
+                            </a>
+                            <a href="https://www.facebook.com/CIDalvit/" target='_blank' rel='noreferrer' className="relative w-8 aspect-square lg:w-10">
                                 <Image layout='fill' src='/icons/FACEBOOK_WHITE.svg' alt="ICONO FACEBOOK" />
-                            </div>
+                            </a>
                         </div>                    
                     </div>
 
@@ -187,43 +197,49 @@ export const Footer = ({ media, map, footer }: { media?: boolean, map?: boolean,
 const Layout = ({children}: {children: ReactNode}) => {
 
     const [mobileMenuActive, setMenuMobile] = useState(false)
+    const router = useRouter()
 
     useEffect(() => {
 
-        const menu = document.querySelector('.MenuContainer')!
-        const nav = document.querySelector('.NavContainer')!
-
+        const gradient = document.querySelector('.GrayGradient')!
+    
+        const closeMenuPageChange = () => setMenuMobile(false)
         const closeMenuEscape = (e: KeyboardEvent) => e.key === 'Escape' ? setMenuMobile(false) : null
         const closeMenuClick = (e: MouseEvent) => {
 
             if (window.innerWidth >= 1024) return            
-            if (menu.contains(e.target as Node)) return
-
-            const clickOnNav = nav.contains(e.target as Node)
-            setMenuMobile(clickOnNav)
+            if (gradient.contains(e.target as Node)) {
+                setMenuMobile(false)
+            }
         } 
-
+ 
+        router.events.on("routeChangeStart", closeMenuPageChange)
         window.addEventListener('click', (e) => closeMenuClick(e))
         window.addEventListener('keydown', (e) => closeMenuEscape(e))
         return() => {
             window.removeEventListener('keydown', (e) => closeMenuEscape(e))
             window.removeEventListener('click', (e) => closeMenuClick(e))
+            router.events.off("routeChangeStart", closeMenuPageChange)
         }
 
-    }, [])
+    }, [router.events])
 
     return (
         <div className="relative">
             <Nav mobileMenuActive={mobileMenuActive} setMenuMobile={setMenuMobile} />
-
-            <div className={`
-                absolute w-full h-full top-0 transition-[background-color,z-index] duration-[.5s,0s]
-                ${ mobileMenuActive ? 'bg-black/75 z-30 delay-[0s,0s]' : "bg-black/0 -z-10 delay-[0s,.5s]"} 
-                lg:hidden
-            `} />
-            
+            <GrayGradient mobileMenuActive={mobileMenuActive} />
             {children}  
         </div>
+    )
+}
+
+const GrayGradient = ({ mobileMenuActive }: { mobileMenuActive: boolean}) => {
+    return (
+        <div className={`GrayGradient
+            absolute w-full h-full top-0 transition-[background-color,z-index] duration-[.5s,0s]
+            ${ mobileMenuActive ? 'bg-black/75 z-30 delay-[0s,0s]' : "bg-black/0 -z-10 delay-[0s,.5s]"} 
+            lg:hidden
+        `} />
     )
 }
 

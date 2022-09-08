@@ -7,6 +7,12 @@ import { serviciosList } from 'components/index/Servicios'
 import ObrasSociales from 'components/index/ObrasSociales'
 import { Footer } from 'components/Layout'
 
+import { Autoplay } from "swiper";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+import 'swiper/css';
+
 const items: { title: string, desc: string }[] = [
     { title: "Inmediatez", desc: "En el mismo momento que finaliza el estudio, usted puede verlo." },
     { title: "Ecología", desc: "Cuidamos el planeta, todo nuestro sistema es digital, no utilizamos ninguna impresión." },
@@ -21,7 +27,7 @@ const Servicios: NextPage = () => {
             <section className=''>
 
                 {/* TOP */}
-                <div className="relative w-full h-[calc(100vh-80px)] flex flex-col pb-10">
+                <div className="relative w-full h-[calc(100vh-80px)] flex flex-col pb-10 mb-5 lg:mb-10">
 
                     <div className="h-full relative bg-white-gradient">
                         <div className="w-full h-full absolute -z-10">
@@ -53,8 +59,25 @@ const Servicios: NextPage = () => {
                 </div>
 
                 {/* IMAGEN ECOGRAFÍA */}
-                <div className="relative w-full aspect-[3/1] mb-10 lg:mb-20 lg:hidden">
-                    <Image priority layout='fill' objectFit='cover' objectPosition='center' src={'/images/ECOGRAFIA.jpg'} alt='IMAGEN DE FONDO ECOGRAFÍA' />
+                <div className="relative h-max mb-10 lg:mb-20">
+                    <Swiper spaceBetween={48} autoplay={{ delay: 1500, disableOnInteraction: false }} modules={[ Autoplay ]}>
+
+                        <SwiperSlide>
+                            <div className="block w-full aspect-[3/1] relative ">
+                                <Image priority layout='fill' objectFit='cover' objectPosition='center' src={'/images/EQUIPOS_IMAGEN_2.jpg'} alt='IMAGEN DE FONDO ECOGRAFÍA' />
+                            </div>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <div className="block w-full aspect-[3/1] relative">
+                                <Image layout='fill' objectFit='cover' objectPosition='center' src={'/images/EQUIPOS_IMAGEN_3.jpg'} alt='IMAGEN DE FONDO ECOGRAFÍA' />
+                            </div>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <div className="block w-full aspect-[3/1] relative">
+                                <Image layout='fill' objectFit='cover' objectPosition='center' src={'/images/ECOGRAFIA.jpg'} alt='IMAGEN DE FONDO ECOGRAFÍA' />
+                            </div>
+                        </SwiperSlide>
+                    </Swiper>  
                 </div>
 
                 <div className="mb-10 lg:mb-20">
@@ -134,14 +157,12 @@ const Servicios: NextPage = () => {
                         }
                     </ul>
 
-                    <Link href='/' passHref>
-                        <a className="rounded w-max py-2 px-6 bg-brandOrange flex items-center gap-4 lg:w-full lg:max-w-lg">
-                            <div className="relative w-5 h-5">
-                                <Image layout='fill' src='/icons/WHATSAPP_WHITE.svg' alt='ICONO WHATSAPP' />
-                            </div>
-                            <span className='font-main font-medium uppercase text-lg'>Pedí un turno</span>
-                        </a>
-                    </Link>
+                    <a href="https://wa.me/+543543608379?text=Hola, quiero realizar una consulta" target='_blank' rel='noreferrer' className="rounded w-max py-2 px-6 bg-brandOrange flex items-center gap-4 lg:w-full lg:max-w-lg">
+                        <div className="relative w-5 h-5">
+                            <Image layout='fill' src='/icons/WHATSAPP_WHITE.svg' alt='ICONO WHATSAPP' />
+                        </div>
+                        <span className='font-main font-medium uppercase text-lg'>Pedí un turno</span>
+                    </a>
 
                 </div>
 

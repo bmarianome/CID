@@ -9,14 +9,16 @@ import { Footer } from 'components/Layout'
 
 const Home: NextPage = () => {
     return (
-        <main>
-            <MainSlider />
-            <Servicios />
-            <Divisor />
-            <ObrasSociales />
-            <Estudios />
+        <>
+            <main>
+                <MainSlider />
+                <Servicios />
+                <Divisor />
+                <ObrasSociales />
+                <Estudios />
+            </main>
             <Footer media map footer />
-        </main>
+        </>
     )
 }
 

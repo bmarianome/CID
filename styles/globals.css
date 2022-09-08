@@ -13,6 +13,20 @@
         src: local("./styles/fonts/d-din-pro/");
     } */
 
+    input:active, input:focus, textarea:active, textarea:focus {
+        outline: none
+    }   
+
+    input[type="number"]::-webkit-outer-spin-button,
+    input[type="number"]::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    button:hover, a:hover, input[type="submit"]:hover {
+        cursor: pointer;
+    }
+
 }
 
 .title {
@@ -51,4 +65,11 @@
 
 .services-swiper-bullet-active { 
     @apply bg-brandOrange
+}
+
+/* CONTACTANOS */
+.contactanos-input {
+    @apply relative w-full text-center font-secondary font-light text-brandOrange border-brandOrange border-2 rounded-md
+    placeholder:text-brandOrange p-2 text-lg lg:text-left lg:pl-4
+    
 }
