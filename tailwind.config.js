@@ -6,13 +6,15 @@ module.exports = {
         ],
     theme: {
         extend: {
-            colors: {
-                brandOrange: "#EF6A34",
-                brandGray: "#595A5C"
-            },
             fontFamily: {
                 'main': ['din', 'sans-serif'],
                 'secondary': ['d-din-pro', 'sans-serif'],
+                'din': ['din'],
+                'din-pro': ['din-pro'],
+            },
+            colors: {
+                brandOrange: "#EF6A34",
+                brandGray: "#595A5C"
             },
             lineHeight: {
                 'none': '0',

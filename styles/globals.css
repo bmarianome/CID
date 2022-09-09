@@ -4,14 +4,27 @@
 
 @layer base {
 
-    html {
-        @apply font-main font-medium text-white
+    @font-face {
+        font-family: din;
+        src: url("./fonts/din-light.ttf");
+        font-weight: 300
     }
 
-    /* @font-face {
-        font-family: din, sans-serif;
-        src: local("./styles/fonts/d-din-pro/");
-    } */
+    @font-face {
+        font-family: din;
+        src: url("./fonts/din-medium.ttf");
+        font-weight: 500
+    }
+
+    @font-face {
+        font-family: din-pro;
+        src: url("./fonts/din-pro-bold.otf");
+        font-weight: 700
+    }
+
+    html {
+        /* @apply font-main font-medium text-white */
+    }
 
     input:active, input:focus, textarea:active, textarea:focus {
         outline: none
