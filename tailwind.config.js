@@ -7,8 +7,6 @@ module.exports = {
     theme: {
         extend: {
             fontFamily: {
-                'main': ['din', 'sans-serif'],
-                'secondary': ['d-din-pro', 'sans-serif'],
                 'din': ['din'],
                 'din-pro': ['din-pro'],
             },
@@ -20,7 +18,7 @@ module.exports = {
                 'none': '0',
             },
             backgroundImage: {
-                "white-gradient": "linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 66.666667%, #FFFFFF 100%)",
+                "white-gradient": "linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 90%, #FFFFFF 100%)",
                 "white-gradient-desktop": "linear-gradient(270deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 64.06%, #FFFFFF 100%)",
                 "white-gradient-desktop-inverted": "linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 64.06%, #FFFFFF 100%)",
                 "white-gradient-desktop-2": "linear-gradient(270deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 95%, #FFFFFF 100%)",

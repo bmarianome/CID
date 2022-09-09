@@ -23,17 +23,17 @@ const Estudios: NextPage = () => {
                         <Divisor />
                     </div>
 
-                    <div className="flex flex-col gap-5 lg:flex-row lg:px-20 lg:max-w-screen-2xl lg:mx-auto lg:mb-20">
-                        <article className="lg:w-full">
+                    <div className="flex flex-col gap-5 lg:flex-row lg:px-20 lg:w-full lg:max-w-screen-2xl lg:mx-auto lg:mb-20">
+                        <article className="lg:w-1/2">
                             <h1 className="title-w-desc lg:text-7xl lg:text-left">Mis estudios</h1>
                             <p className='description w-3/4 mx-auto lg:text-left lg:m-0 lg:p-0'>Accedé a todos tus estudios con tu DNI y tu número de estudio, de manera 100% digital.</p>
                         </article>
-                        <div className="lg:mx-auto lg:max-w-screen-xl lg:w-full">
+                        <div className="lg:mx-auto lg:max-w-screen-xl lg:w-1/2">
                             
                             <form className='flex flex-col items-center gap-2'>
                                 <div className="flex flex-col gap-2 w-3/4 lg:w-full">
-                                    <input className='contactanos-input h-12' type="number" placeholder='Número de DNI:' />
-                                    <input className='contactanos-input h-12' type="number" placeholder='Número de Estúdio:' />
+                                    <input className='contactanos-input h-12 placeholder:text-brandOrange' type="number" placeholder='Número de DNI:' />
+                                    <input className='contactanos-input h-12 placeholder:text-brandOrange' type="number" placeholder='Número de Estúdio:' />
                                 </div>
                                 <div className="flex flex-col gap-2 w-3/4 lg:w-full">
                                     <input type="submit" value="Ver mis estudios en la web" className='

@@ -17,10 +17,10 @@ const Estudios = () => {
                 
                 <h2 className='
                     text-white text-4xl font-secondary font-bold text-center
-                    lg:max-w-sm lg:text-left lg:text-7xl drop-shadow-lg lg:leading-tight
+                    lg:max-w-sm lg:text-left lg:text-7xl drop-shadow-lg
                 '>Lo más importante, sos vos.</h2>
 
-                <Link href='/'>
+                <Link href='/estudios'>
                     <a className='white-button'>Ver mis estudios online</a>
                 </Link>
             </div>

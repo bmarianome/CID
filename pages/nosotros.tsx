@@ -17,29 +17,31 @@ const Nosotros: NextPage = () => {
                         </div>
                     </div>
                     
-                    <div className="hidden absolute top-1/2 w-full h-max lg:inline-block">
+                    <div className="hidden absolute top-1/3 w-full h-max lg:inline-block">
                         <Divisor />
                     </div>
                     
-                    <div className="
-                        flex flex-col items-center gap-20 relative mb-20
-                        lg:flex-row lg:justify-between lg:px-20
-                    ">
-                        
-                        <div className="px-6 flex lg:p-0 lg:w-full lg:max-w-2xl">
-                            <figure className='w-full min-w-[65%] h-max leading-none'>
-                                <Image layout='responsive' width={496} height={204} src='/icons/LOGO_CID_DESC.svg' alt='LOGO CID DESCRIPCION' />
-                            </figure>
-                            <figure className="w-full h-max leading-none lg:max-w-[50%]">
-                                <Image width={508} height={200} src='/icons/LOGO_FERNANDEZ_OULTON.svg' alt='LOGO FDEZ. OULTON DESCRIPCION' />
-                            </figure>
-                        </div>
-                        
-                        <div className='text-2xl text-center leading-9 font-main font-bold flex flex-col gap-2'>
-                            <h2 className='text-brandOrange text-4xl lg:text-right'>CID ahora es</h2> 
-                            <p className='text-brandGray font-secondary font-light text-xl lg:text-right lg:text-brandOrange lg:text-2xl'>Centro de Imágenes <br /> Diagnósticas Villa Allende</p> 
-                        </div>
+                    <div className="absolute bottom-0 w-full">
+                        <div className="
+                            flex flex-col items-center gap-20 relative mb-20
+                            lg:flex-row lg:justify-between lg:px-20
+                        ">
+                            
+                            <div className="px-6 flex lg:p-0 lg:w-full lg:max-w-2xl">
+                                <figure className='w-full min-w-[65%] h-max leading-none'>
+                                    <Image layout='responsive' width={496} height={204} src='/icons/LOGO_CID_DESC.svg' alt='LOGO CID DESCRIPCION' />
+                                </figure>
+                                <figure className="w-full h-max leading-none lg:max-w-[50%]">
+                                    <Image width={508} height={200} src='/icons/LOGO_FERNANDEZ_OULTON.svg' alt='LOGO FDEZ. OULTON DESCRIPCION' />
+                                </figure>
+                            </div>
+                            
+                            <div className='text-2xl text-center leading-9 font-main font-bold flex flex-col gap-2'>
+                                <h2 className='text-brandOrange text-4xl lg:text-right'>CID ahora es</h2> 
+                                <p className='text-brandGray font-secondary font-light text-xl lg:text-right lg:text-brandOrange lg:text-2xl'>Centro de Imágenes <br /> Diagnósticas Villa Allende</p> 
+                            </div>
 
+                        </div>
                     </div>
                 </div>
 
@@ -75,7 +77,7 @@ const Nosotros: NextPage = () => {
                         </div>
 
                         <div className="w-full aspect-video px-6 lg:aspect-auto lg:h-full
-                            lg:row-span-2 lg:bg-white-gradient-desktop-2 lg:shadow-2xl lg:p-0
+                            lg:row-span-2 lg:bg-white-gradient-desktop-2 hover:shadow-2xl duration-500 lg:p-0
                         ">
                             <div className="relative h-full w-full -z-10">
                                 <Image layout='fill' objectFit='cover' objectPosition='center' src='/images/ECOGRAFIA_2.jpg' alt='FOTO ECOGRAFÍA' />
@@ -114,7 +116,7 @@ const Nosotros: NextPage = () => {
 
                         {/* FOTO */}
                         <div className="w-full px-6 aspect-video lg:aspect-auto lg:h-full
-                            lg:row-start-1 lg:row-end-3 lg:bg-white-gradient-desktop-2-inverted lg:shadow-2xl lg:p-0
+                            lg:row-start-1 lg:row-end-3 lg:bg-white-gradient-desktop-2-inverted hover:shadow-2xl duration-500 lg:p-0
                         ">
                             <div className="relative h-full w-full -z-10">
                                 <Image layout='fill' objectFit='cover' objectPosition='center' src='/images/EQUIPOS_IMAGEN.jpg' alt='FOTO ECOGRAFÍA' />
@@ -163,7 +165,7 @@ const Nosotros: NextPage = () => {
                     lg:mb-20 lg:flex-row lg:max-w-screen-2xl lg:mx-auto lg:px-12 lg:gap-20 
                 ">
 
-                    <div className="rounded-xl bg-brandOrange p-5 w-full flex flex-col gap-3 lg:px-9 py-7 lg:w-1/2">
+                    <div className="rounded-xl bg-brandOrange p-5 w-full flex flex-col gap-3 lg:px-9 py-7 lg:w-1/2 hover:shadow-2xl duration-500">
                         <h5 className='font-main font-black text-xl lg:text-2xl '>Nuestro Compromiso</h5>
                         <p className='text-lg'>En CID la política de calidad es el eje vertebrador de su desarrollo, y entendemos que abarca:</p>
 
@@ -174,7 +176,7 @@ const Nosotros: NextPage = () => {
                         </ul>
                         
                     </div>
-                    <div className="rounded-xl bg-brandOrange p-5 w-full flex flex-col gap-3 lg:px-9 py-7 lg:w-1/2">
+                    <div className="rounded-xl bg-brandOrange p-5 w-full flex flex-col gap-3 lg:px-9 py-7 lg:w-1/2 hover:shadow-2xl duration-500">
                         <h5 className='font-main font-black text-xl lg:text-2xl '>Política de Calidad</h5>
                         <ul className='text-lg font-secondary font-light'>
                             <li>- Brindar atención con calidad y calidez.</li>

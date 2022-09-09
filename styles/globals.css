@@ -7,7 +7,7 @@
     @font-face {
         font-family: din;
         src: url("./fonts/din-light.ttf");
-        font-weight: 300
+        font-weight: 300;
     }
 
     @font-face {
@@ -15,6 +15,7 @@
         src: url("./fonts/din-medium.ttf");
         font-weight: 500
     }
+    
 
     @font-face {
         font-family: din-pro;
@@ -22,13 +23,23 @@
         font-weight: 700
     }
 
+    @font-face {
+        font-family: din-pro;
+        src: url("./fonts/din-pro-regular.otf");
+        font-weight: 400
+    }
+
     html {
-        /* @apply font-main font-medium text-white */
+        @apply font-din-pro font-[700] text-white
     }
 
     input:active, input:focus, textarea:active, textarea:focus {
         outline: none
     }   
+
+    input::placeholder {
+        @apply font-din-pro font-[400]
+    }
 
     input[type="number"]::-webkit-outer-spin-button,
     input[type="number"]::-webkit-inner-spin-button {
@@ -44,31 +55,37 @@
 
 .title {
     @apply 
-        text-brandOrange text-center text-4xl font-secondary font-bold mb-10
+        text-brandOrange text-center text-4xl font-din-pro mb-10
         lg:text-5xl lg:mb-20
 }
 
 .title-w-desc {
     @apply 
-        text-brandOrange text-center text-4xl font-secondary font-bold mb-5
+        text-brandOrange text-center text-4xl font-din-pro mb-5
         lg:text-5xl lg:mb-10
 }
 
 .description {
-    @apply text-center text-brandOrange font-secondary font-light mb-5 px-3
+    @apply text-center text-brandOrange font-din-pro font-[400] mb-5 px-3
     lg:text-2xl lg:mb-10
 }
 
 .orange-button {
     @apply 
-        bg-brandOrange text-white text-center text-base block w-7/12 max-w-sm py-1 rounded-md shadow-[0px_10px_5px_-5px_rgb(0,0,0,0.1)]
+        bg-brandOrange text-white font-din-pro tracking-wide text-center text-base block w-7/12 max-w-sm py-1 rounded-md shadow-simple
         lg:text-2xl lg:py-4 lg:max-w-lg
+        hover:shadow-xl hover:-translate-y-[0.125rem] duration-200
 }
 
 .white-button {
     @apply 
-        bg-white text-brandOrange text-center text-base block w-7/12 max-w-sm py-1 rounded-md shadow-[0px_10px_5px_-5px_rgb(0,0,0,0.1)]
+        bg-white text-brandOrange font-din-pro tracking-wide text-center text-base block w-7/12 max-w-sm py-1 rounded-md shadow-simple
         lg:text-2xl lg:py-4 lg:max-w-lg
+        hover:shadow-xl hover:-translate-y-[0.125rem] duration-200
+}
+
+.shadow-simple {
+    @apply shadow-[0px_5px_5px_rgb(0,0,0,0.15)]
 }
 
 /* NAV */
@@ -93,7 +110,6 @@
 
 /* CONTACTANOS */
 .contactanos-input {
-    @apply relative w-full text-center font-secondary font-light text-brandOrange border-brandOrange border-2 rounded-md
+    @apply relative w-full text-center font-din font-[300] text-brandOrange border-brandOrange border-2 rounded-md
     placeholder:text-brandOrange p-2 text-lg lg:text-left lg:pl-4
-    
 }

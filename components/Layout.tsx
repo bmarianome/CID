@@ -10,8 +10,8 @@ const ItemLink = ({ text, link} : { text: string, link: string}) => {
     return (
         <Link href={link} passHref>
             <a className={` relative
-                text-xl px-10 py-3 border-b-[1px] font-main font-medium
-                lg:p-0 lg:font-main lg:font-light lg:border-none
+                text-xl px-10 py-3 border-b-[1px] font-din-pro font-[400]
+                lg:p-0 lg:font-din lg:font-[300] lg:border-none
                 hover:before:w-full
                 ${ router.pathname === link ? "before-under-line-active" : "before-under-line" }
                 `}>
@@ -75,7 +75,7 @@ const Nav = ({mobileMenuActive, setMenuMobile}: { mobileMenuActive: boolean, set
                 <div className="relative w-6 h-6">
                     <Image layout="fill" src={'/icons/WHATSAPP_ORANGE.svg'} alt='WHATSAPP ICON' />
                 </div>
-                <span className="hidden font-main font-medium uppercase text-brandOrange text-lg whitespace-pre xl:inline">Pedí un turno</span>
+                <span className="hidden font-din-pro uppercase text-brandOrange text-lg whitespace-pre xl:inline">Pedí un turno</span>
             </a>
             
             {/* MOBILE: BOTÓN MENÚ */}
@@ -92,10 +92,10 @@ const Nav = ({mobileMenuActive, setMenuMobile}: { mobileMenuActive: boolean, set
 const MediaIgFb = () => {
     return (
         <div className="flex gap-5 justify-center w-max">
-            <a href="https://www.facebook.com/CIDalvit/" target='_blank' rel='noreferrer' className="relative w-10 aspect-square">
+            <a href="https://www.facebook.com/CIDalvit/" target='_blank' rel='noreferrer' className="relative w-10 aspect-square hover:scale-105 duration-200">
                 <Image layout='fill' src='/icons/INSTAGRAM_ORANGE.svg' alt="ICONO INSTAGRAM" />
             </a>
-            <a href="https://www.facebook.com/CIDalvit/" target='_blank' rel='noreferrer' className="relative w-10 aspect-square">
+            <a href="https://www.facebook.com/CIDalvit/" target='_blank' rel='noreferrer' className="relative w-10 aspect-square hover:scale-105 duration-200">
                 <Image layout='fill' src='/icons/FACEBOOK_ORANGE.svg' alt="ICONO FACEBOOK" />
             </a>
         </div>
@@ -164,14 +164,14 @@ export const Footer = ({ media, map, footer }: { media?: boolean, map?: boolean,
                         </div>
                         <div className="flex flex-col w-full px-2 m-auto gap-5 max-w-md lg:m-0 lg:flex-row lg:gap-20">
                             <div className="flex justify-center gap-10 lg:flex-col lg:gap-2">
-                                <Link href='/'><a className="w-1/3 text-center text-sm whitespace-pre font-secondary font-light lg:text-base">Home</a></Link>
-                                <Link href='/nosotros'><a className="w-1/3 text-center text-sm whitespace-pre font-secondary font-light lg:text-base">Nosotros</a></Link>
-                                <Link href='/servicios'><a className="w-1/3 text-center text-sm whitespace-pre font-secondary font-light lg:text-base">Servicios</a></Link>
+                                <Link href='/'><a className="w-1/3 text-center text-sm whitespace-pre font-din-pro font-[400] lg:text-xl">Home</a></Link>
+                                <Link href='/nosotros'><a className="w-1/3 text-center text-sm whitespace-pre font-din-pro font-[400] lg:text-xl">Nosotros</a></Link>
+                                <Link href='/servicios'><a className="w-1/3 text-center text-sm whitespace-pre font-din-pro font-[400] lg:text-xl">Servicios</a></Link>
                             </div>
                             <div className="flex justify-center gap-10 lg:flex-col lg:gap-2">
-                                <Link href='/'><a className="w-1/3 text-center text-sm whitespace-pre font-secondary font-light lg:text-base">Mis Estudios</a></Link>
-                                <Link href='/obras-sociales'><a className="w-1/3 text-center text-sm whitespace-pre font-secondary font-light lg:text-base">Obras Sociales</a></Link>
-                                <Link href='/contacto'><a className="w-1/3 text-center text-sm whitespace-pre font-secondary font-light lg:text-base">Contacto</a></Link>
+                                <Link href='/'><a className="w-1/3 text-center text-sm whitespace-pre font-din-pro font-[400] lg:text-xl">Mis Estudios</a></Link>
+                                <Link href='/obras-sociales'><a className="w-1/3 text-center text-sm whitespace-pre font-din-pro font-[400] lg:text-xl">Obras Sociales</a></Link>
+                                <Link href='/contacto'><a className="w-1/3 text-center text-sm whitespace-pre font-din-pro font-[400] lg:text-xl">Contacto</a></Link>
                             </div>
                         </div>
                         <div className="flex gap-5 justify-center">
@@ -242,7 +242,7 @@ const WhatsappFixed = () => {
     return (
         <a href="https://wa.me/+543543608379?text=Hola, quiero realizar una consulta" target='_blank' rel='noreferrer'
             className="fixed flex items-center justify-center w-12 h-12 bg-[#25D366] rounded-full z-10 
-            right-8 bottom-8 lg:right-10 lg:bottom-40 
+            right-8 bottom-8 lg:right-10 lg:bottom-10 
             hover:cursor-pointer">
             <figure className="relative w-6 h-6">
                 <Image layout="fill" src='/icons/WHATSAPP_WHITE.svg' alt="WHATSAPP ICON" />

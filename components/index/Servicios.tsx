@@ -28,12 +28,12 @@ const ServiceSlide = ({ text, index }: { text: string, index: number }) => {
             '>{text}</h3>
 
             <p className={`
-                font-secondary font-light text-center flex items-center justify-center px-4 transition-[height,_opacity] 
+                font-din font-light text-lg text-center flex items-center justify-center px-4 transition-[height,_opacity] 
                 ${active ? 'h-32 opacity-1 delay-[0s,_.1s]' : 'h-0 opacity-0 delay-[.1s,_0s]'}
             `}>
                 { index%2 === 0 ? "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium in ipsa, qui quisquam aspernatur maiores." : "Lorem ipsum dolor sit amet consectetur adipisicing elit."}
             </p>
-            <span className='font-main font-light text-lg lg:text-xl'>Ver Mas</span>
+            <span className='font-din font-light text-lg lg:text-xl'>Ver Mas</span>
         </div>
     )
 }

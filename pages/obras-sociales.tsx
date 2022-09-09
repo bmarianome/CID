@@ -12,7 +12,7 @@ const ObrasSocialesList = () => {
     const ObraSocial = ({ name }: { name: string}) => {
         return (
             <li className='
-                text-brandGray font-secondary font-light lg:text-xl
+                text-brandGray font-secondary font-light lg:text-2xl
             '>{name}</li>        
         )
     }
@@ -23,32 +23,46 @@ const ObrasSocialesList = () => {
     return  (
 
         <>
-            {/* INPUT */}
-            <label htmlFor='search' className="relative w-3/4 h-max flex
-                border-2 border-brandOrange mx-auto rounded-md overflow-hidden 
-                text-brandOrange px-2 mb-5 
-                lg:mb-10 lg:max-w-3xl
-            ">
 
-                <div className="absolute h-full flex items-center left-2">
-                    <Image width={20} height={20} src='/icons/LUPA.svg' alt='ICONO LUPA' />
-                </div>
-                
-                <input type="text" id='search' placeholder='Buscá tu obra social' className='
-                    placeholder:text-brandOrange w-full text-center py-2 font-secondary font-light
-                    focus:border-brandGray
-                    lg:text-2xl
+            <div className="lg:flex lg:items-end lg:justify-between lg:max-w-screen-2xl lg:px-20 lg:mx-auto lg:gap-10">
+                <article className='flex flex-col justify-center lg:w-1/2'>
+                    <h1 className="text-brandOrange text-center lg:text-left text-4xl font-din-pro mb-5
+                        lg:text-5xl
+                    ">Obras Sociales</h1>
+                    <p className='text-center text-brandOrange font-din-pro font-[400] mb-5 px-3
+                        lg:text-2xl lg:mb-5 lg:text-left lg:px-0
+                    '>Conocé las obras sociales con las que trabajamos actualmente</p>
+                </article>
+
+                {/* INPUT */}
+                <label htmlFor='search' className="relative w-3/4 lg:w-1/2 h-max flex
+                    border-2 border-brandOrange mx-auto rounded-md overflow-hidden 
+                    text-brandOrange px-2 mb-5 
+                    lg:mb-5 lg:max-w-3xl
+                ">
+
+                    <div className="absolute h-full flex items-center left-2">
+                        <Image width={20} height={20} src='/icons/LUPA.svg' alt='ICONO LUPA' />
+                    </div>
                     
-                ' onChange={(e) => {setSearch(e.target.value.toLowerCase()); setList(false)}} />
-                
-            </label>        
-
-            <span className='h-[2px] w-3/4 bg-brandOrange block mx-auto mb-5 lg:mb-10 lg:max-w-3xl' />
+                    <input type="text" id='search' placeholder='Buscá tu obra social' className='
+                        placeholder:text-brandOrange w-full text-center py-2 font-secondary font-light
+                        focus:border-brandGray active:placeholder:text-transparent focus:placeholder:text-transparent
+                        lg:text-2xl
+                        
+                    ' onChange={(e) => {setSearch(e.target.value.toLowerCase()); setList(false)}} />
+                    
+                </label>        
+            </div>
+        
+            <div className="mx-auto w-3/4 lg:px-20 lg:w-full lg:max-w-screen-2xl mb-5 lg:mb-10">
+                <span className='h-[2px] w-full bg-brandOrange block' />
+            </div>
 
             {/* LISTA */}
             <ul className={`flex flex-col w-3/4 mx-auto overflow-hidden mb-5
-                duration-500 ease-out
-                lg:mb-10 lg:h-max lg:max-w-3xl lg:grid lg:grid-cols-3 lg:min-h-[308px]
+                duration-500 ease-out lg:w-full
+                lg:mb-10 lg:h-max lg:max-w-screen-2xl lg:px-20 lg:grid lg:grid-cols-3 lg:min-h-[308px]
                 ${ !listOpen ? 'h-[288px]' : `h-[744px]` } 
             `}>
                 {ObrasSocialesList.map((name, index) => {
@@ -85,16 +99,13 @@ const ObrasSociales: NextPage = () => {
 
                     <div className="h-full relative bg-white-gradient">
                         <div className="w-full h-full absolute -z-10">
-                            <Image priority layout='fill' objectFit='cover' objectPosition='0px -400px' src={'/images/ECOGRAFIA_3.jpg'} alt='IMAGEN DE FONDO RADIOLOGIA' />
+                            <Image priority layout='fill' objectFit='cover' objectPosition='center' src={'/images/ECOGRAFIA_3.jpg'} alt='IMAGEN DE FONDO RADIOLOGIA' />
                         </div>
                     </div>
                     
                     <div className="absolute top-1/3 w-full h-max lg:inline-block">
                         <Divisor />
                     </div>
-
-                    <h1 className="title-w-desc">Obras Sociales</h1>
-                    <p className='description'>Conocé las obras sociales con las que trabajamos actualmente</p>
                     
                 </div>
 

@@ -7,17 +7,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import "swiper/css/pagination";
 import 'swiper/css';
 
-const ObrasSocialesList: string[][] = [["APROSS","APM"],["ACA SALUD","FEDERADA G1"],["BOREAL","COMFYE"],["CPCE","GALENO"],["MEDIFE","MET"],["NOBIS","OMINT"],["OSDE","OSITAC"],["OSPEDYC", "OSPECOR"],["OSPES","OSPIA"],["OSSOELSAC","OSSEG"],["OSPOCE INT.","PARQUE SALUD"],["POETA LUG.","PREV. SALUD"],["SWISS MEDICAL","SANCOR SALUD"],["PRIVERAL","UNIMED"], ["PREV. SALUD","JERARQ. SALUD"],["OSMATA SANITAS","FEDERADA G2-G3"]]
-
-const HealthCareSlide = ({ texts }: { texts: string[] }) => {
-    return (
-        <div className={`text-black flex items-center justify-between font-secondary font-light whitespace-pre h-8`}>
-            <span className='w-1/2 text-center'>{texts[0]}</span>
-            <span className='h-full bg-brandOrange w-[2px]' />
-            <span className='w-1/2 text-center'>{texts[1]}</span>
-        </div>
-    )
-}
+const ObrasSocialesList = ["APROSS","APM","ACA SALUD","FEDERADA G1","BOREAL","COMFYE","CPCE","GALENO","MEDIFE","MET","NOBIS","OMINT","OSDE","OSITAC","OSPEDYC", "OSPECOR","OSPES","OSPIA","OSSOELSAC","OSSEG","OSPOCE INT.","PARQUE SALUD","POETA LUG.","PREV. SALUD","SWISS MEDICAL","SANCOR SALUD","PRIVERAL","UNIMED", "PREV. SALUD","JERARQ. SALUD","OSMATA SANITAS","FEDERADA G2-G3"]
 
 const ObrasSociales = () => {
     return (
@@ -31,17 +21,21 @@ const ObrasSociales = () => {
                 <Swiper
                     autoplay={{ delay: 1250, disableOnInteraction: true }}
                     modules={[ Autoplay ]}
-                    slidesPerView={1}
+                    slidesPerView={2}
                     breakpoints={{
                         1280: {
-                            slidesPerView: 2
+                            slidesPerView: 4
                         }
                     }}
                 >
                     {
-                        ObrasSocialesList.map((texts, index) => (
+                        ObrasSocialesList.map((text, index) => (
                             <SwiperSlide key={index}>
-                                <HealthCareSlide texts={texts} />
+                                <div className={`flex items-center justify-between h-8`}>
+                                    <span className='w-[2px] h-full bg-brandOrange' />
+                                    <span className={`text-center w-full text-brandGray font-din-pro text-lg font-[400] lg:text-xl`}>{text}</span>
+                                    <span className='w-[2px] h-full bg-brandOrange' />
+                                </div>
                             </SwiperSlide>
                         ))
                     }
