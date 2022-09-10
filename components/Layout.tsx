@@ -33,7 +33,7 @@ const Nav = ({mobileMenuActive, setMenuMobile}: { mobileMenuActive: boolean, set
             <Link href='/' passHref>
                 <a>
                     <figure className="w-16 leading-none">
-                        <Image src={'/icons/CID_WHITE.svg'} width={280} height={231} alt='CID LOGO BLANCO' />
+                        <Image width={280} height={231} src={'/icons/CID_WHITE.svg'} alt='CID LOGO BLANCO' />
                     </figure>
                 </a>
             </Link>
@@ -54,7 +54,7 @@ const Nav = ({mobileMenuActive, setMenuMobile}: { mobileMenuActive: boolean, set
                 
                 {/* MOBILE: REDES SOCIALES */}
                 <div className="flex justify-between p-6 lg:hidden">
-                    <a href="https://wa.me/+543543608379?text=Hola, quiero realizar una consulta" target='_blank' rel='noreferrer'
+                    <a href={`https://wa.me/+543543608379?text=${encodeURIComponent("Hola, quiero realizar una consulta")}`} target='_blank' rel='noreferrer'
                      className="block bg-white rounded p-2 leading-none">
                         <Image width={30} height={30} src={'/icons/WHATSAPP_ORANGE.svg'} alt='WHATSAPP ICON' />
                     </a>
@@ -71,7 +71,7 @@ const Nav = ({mobileMenuActive, setMenuMobile}: { mobileMenuActive: boolean, set
             </div>
 
             {/* DESKTOP: BOTÓN PEDÍ UN TURNO */}
-            <a href="https://wa.me/+543543608379?text=Hola, quiero realizar una consulta" target='_blank' rel='noreferrer' 
+            <a href={`https://wa.me/+543543608379?text=${encodeURIComponent("Hola, quiero realizar una consulta")}`} target='_blank' rel='noreferrer' 
                 className="bg-white flex items-center gap-4 py-2 px-4 rounded shadow-simple hover:hover:-translate-y-[0.125rem] duration-200">
 
                 <div className="relative w-6 h-6">
@@ -118,13 +118,13 @@ export const Footer = ({ media, map, footer }: { media?: boolean, map?: boolean,
                                 <MediaIgFb />
                             </div>
                         </div>
-                        <picture className="
+                        <figure className="
                             relative w-full aspect-square max-w-md flex justify-center mx-auto mb-5
                             lg:max-w-none lg:w-2/5 lg:m-0 
                         ">
 
                             <Image layout="fill" objectFit="cover" src='/icons/TELEFONOS_REDES.svg' alt='FOTO REDES SOCIALES' />
-                        </picture>
+                        </figure>
                     </div>
                     
                     <div className="flex justify-center lg:hidden">
@@ -139,7 +139,7 @@ export const Footer = ({ media, map, footer }: { media?: boolean, map?: boolean,
                 <div className="flex flex-col lg:flex-row-reverse lg:items-center lg:justify-center lg:gap-6 lg:p-6">
 
                     <div className="py-10 px-5 w-full aspect-square max-w-xl mx-auto lg:aspect-video lg:max-w-4xl lg:p-0 lg:m-0">
-                        <iframe className="w-full h-full border-2 border-brandOrange p-4" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3409.394804730663!2d-64.2967309129843!3d-31.292831431852548!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94329d1c0a7d7123%3A0xe4e6f92e385c8c4b!2sCentro%20De%20Im%C3%A1genes%20Diagnosticas!5e0!3m2!1ses-419!2sar!4v1662144970990!5m2!1ses-419!2sar" loading="lazy" referrerPolicy="no-referrer-when-downgrade" />
+                        <iframe title="google-maps" className="w-full h-full border-2 border-brandOrange p-4" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3409.394804730663!2d-64.2967309129843!3d-31.292831431852548!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94329d1c0a7d7123%3A0xe4e6f92e385c8c4b!2sCentro%20De%20Im%C3%A1genes%20Diagnosticas!5e0!3m2!1ses-419!2sar!4v1662144970990!5m2!1ses-419!2sar" loading="lazy" referrerPolicy="no-referrer-when-downgrade" />
                     </div>
 
                     <div className="text-brandOrange text-xl flex flex-col items-center gap-2 lg:gap-4 lg:items-end">
@@ -242,7 +242,7 @@ const Layout = ({children}: {children: ReactNode}) => {
 
 const WhatsappFixed = () => {
     return (
-        <a href="https://wa.me/+543543608379?text=Hola, quiero realizar una consulta" target='_blank' rel='noreferrer'
+        <a href={`https://wa.me/+543543608379?text=${encodeURIComponent("Hola, quiero realizar una consulta")}`} target='_blank' rel='noreferrer'
             className="fixed flex items-center justify-center w-12 h-12 bg-[#25D366] rounded-full z-10 
             right-8 bottom-8 lg:right-10 lg:bottom-10 
             hover:cursor-pointer">

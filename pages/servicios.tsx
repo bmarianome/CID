@@ -1,6 +1,7 @@
 import type { NextPage } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
+import Head from 'next/head'
 import Estudios from 'components/index/Estudios'
 import Divisor from 'components/Divisor'
 import ObrasSociales from 'components/index/ObrasSociales'
@@ -99,7 +100,7 @@ const ServiciosList = () => {
 
 const ButtonTurno = () => {
     return (
-        <a href="https://wa.me/+543543608379?text=Hola, quiero realizar una consulta" target='_blank' rel='noreferrer' 
+        <a href={`https://wa.me/+543543608379?text=${encodeURIComponent("Hola, quiero realizar una consulta")}`} target='_blank' rel='noreferrer' 
             className="rounded w-max py-2 px-6 bg-brandOrange flex items-center gap-4 mx-auto mb-10 lg:mb-20 shadow-simple hover:hover:-translate-y-[0.125rem] duration-200"
         >
             <div className="relative w-5 h-5 lg:w-6 lg:h-6">
@@ -114,7 +115,11 @@ const Servicios: NextPage = () => {
 
     return (
         <>
-            <section className=''>
+            <Head>
+                <title>Servicios</title>
+                <meta name="description" content="Un servicio creado para tu satisfacción" />
+            </Head>
+            <section>
 
                 {/* TOP */}
                 <div className="relative w-full h-[calc(100vh-80px)] flex flex-col mb-5 lg:mb-10">

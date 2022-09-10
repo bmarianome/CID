@@ -1,6 +1,7 @@
 import type { NextPage } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
+import Head from 'next/head'
 import Divisor from 'components/Divisor'
 import { Footer } from 'components/Layout'
 import { useState } from 'react'
@@ -9,6 +10,10 @@ const Contacto: NextPage = () => {
 
     return (
         <>
+            <Head>
+                <title>Contactanos</title>
+                <meta name="description" content="Te responderemos lo antes posible" />
+            </Head>   
             <section>
 
                 {/* TOP */}

@@ -7,8 +7,8 @@ module.exports = {
     theme: {
         extend: {
             fontFamily: {
-                'din': ['din'],
-                'din-pro': ['din-pro'],
+                'din': ['din', 'sans-serif', 'ui-sans-serif', 'system-ui'],
+                'din-pro': ['din-pro', 'sans-serif', 'ui-sans-serif', 'system-ui'],
             },
             colors: {
                 brandOrange: "#EF6A34",

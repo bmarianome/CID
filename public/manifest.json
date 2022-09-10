@@ -1,0 +1,21 @@
+{
+    "name": "Centro de Imágenes",
+    "short_name": "CID",
+    "description": "CID, primer servicio de imágenes médicas totalmente digital de las Sierras Chicas.",
+    "start_url": ".",
+    "display": "standalone",
+    "background_color": "#fff",
+    "theme_color": "#EF6A34",
+    "icons": [
+      {
+        "src": "/favicon.png",
+        "sizes": "64x64",
+        "type": "image/png"
+    },
+    {
+      "src": "/logo-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

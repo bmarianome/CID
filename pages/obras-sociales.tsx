@@ -1,6 +1,7 @@
 import type { NextPage } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
+import Head from 'next/head'
 import Divisor from 'components/Divisor'
 import { Footer } from 'components/Layout'
 import { useState } from 'react'
@@ -23,7 +24,6 @@ const ObrasSocialesList = () => {
     return  (
 
         <>
-
             <div className="lg:flex lg:items-end lg:justify-between lg:max-w-screen-2xl lg:px-20 lg:mx-auto lg:gap-10">
                 <article className='flex flex-col justify-center lg:w-1/2'>
                     <h1 className="text-brandOrange text-center lg:text-left text-4xl font-din-pro mb-5
@@ -92,6 +92,10 @@ const ObrasSociales: NextPage = () => {
 
     return (
         <>
+            <Head>
+                <title>Obras Sociales</title>
+                <meta name="description" content="Conocé las obras sociales con las que trabajamos actualmente" />
+            </Head>
             <section>
 
                 {/* TOP */}

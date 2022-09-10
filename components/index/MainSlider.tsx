@@ -7,8 +7,6 @@ import { Swiper, SwiperSlide, useSwiper } from 'swiper/react';
 import "swiper/css/pagination";
 import 'swiper/css';
 
-// @refresh reset
-
 const Navigation = () => {
 
     const swiper = useSwiper()
@@ -30,7 +28,11 @@ const MainSlider = () => {
     
     return (
         <>
-            <section>
+            <Head>
+                <title>Contactanos</title>
+                <meta name="description" content="Te responderemos lo antes posible" />
+            </Head>        
+            <div>
                 <Swiper
                     autoplay={{ delay: 2000, disableOnInteraction: true }} modules={[ Autoplay ]}
                     speed={500}
@@ -78,8 +80,7 @@ const MainSlider = () => {
 
                     <Navigation />
                 </Swiper>  
-
-            </section>
+            </div>
             <article className="
                 bg-brandOrange px-12 py-5 flex flex-col items-center gap-5
                 lg:flex-row lg:justify-between lg:px-20 lg:py-7

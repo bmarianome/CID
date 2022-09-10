@@ -1,5 +1,6 @@
 import type { NextPage } from 'next'
 import Image from 'next/image'
+import Head from 'next/head'
 import Link from 'next/link'
 import Divisor from 'components/Divisor'
 import { Footer } from 'components/Layout'
@@ -8,6 +9,10 @@ const Estudios: NextPage = () => {
 
     return (
         <>
+            <Head>
+                <title>Contactanos</title>
+                <meta name="description" content="Accedé a todos tus estudios con tu DNI y tu número de estudio, de manera 100% digital." />
+            </Head>   
             <section>
 
                 {/* TOP */}

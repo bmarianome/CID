@@ -1,6 +1,7 @@
 import type { NextPage } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
+import Head from 'next/head'
 import Estudios from 'components/index/Estudios'
 import Divisor from 'components/Divisor'
 import { Footer } from 'components/Layout'
@@ -8,7 +9,11 @@ import { Footer } from 'components/Layout'
 const Nosotros: NextPage = () => {
     return (
         <>
-            <section className=''>
+            <Head>
+                <title>Nosotros</title>
+                <meta name="description" content="CID ahora es Centro de Imágenes Diagnósticas Villa Allende" />
+            </Head>
+            <section>
                 <div className="relative w-full h-[calc(100vh-80px)] flex flex-col">
 
                     <div className="h-full relative bg-white-gradient">
@@ -46,12 +51,12 @@ const Nosotros: NextPage = () => {
                 </div>
 
                 {/* TÍTULO */}
-                <article className='block mb-10 lg:mb-20 lg:px-20 lg:mx-auto lg:max-w-screen-2xl'>
-                    <h1 className="
+                <h1 className='block mb-10 lg:mb-20 lg:px-20 lg:mx-auto lg:max-w-screen-2xl'>
+                    <span className="block
                         bg-brandOrange w-full font-main font-bold text-center text-2xl py-5 whitespace-pre
                         lg:w-max lg:py-4 lg:pl-4 lg:pr-12 lg:text-5xl lg:rounded lg:rounded-tr-3xl lg:uppercase
-                    ">Conocé mas sobre nosotros</h1>
-                </article>
+                    ">Conocé mas sobre nosotros</span>
+                </h1>
 
                 {/* MISION / VISION */}
                 <div className="flex flex-col gap-10 max-w-screen-2xl mx-auto mb-10 lg:gap-20 lg:mb-20">
