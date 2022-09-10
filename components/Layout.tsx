@@ -71,7 +71,9 @@ const Nav = ({mobileMenuActive, setMenuMobile}: { mobileMenuActive: boolean, set
             </div>
 
             {/* DESKTOP: BOTÓN PEDÍ UN TURNO */}
-            <a href="https://wa.me/+543543608379?text=Hola, quiero realizar una consulta" target='_blank' rel='noreferrer' className="bg-white flex items-center gap-4 py-2 px-4 rounded">
+            <a href="https://wa.me/+543543608379?text=Hola, quiero realizar una consulta" target='_blank' rel='noreferrer' 
+                className="bg-white flex items-center gap-4 py-2 px-4 rounded shadow-simple hover:hover:-translate-y-[0.125rem] duration-200">
+
                 <div className="relative w-6 h-6">
                     <Image layout="fill" src={'/icons/WHATSAPP_ORANGE.svg'} alt='WHATSAPP ICON' />
                 </div>

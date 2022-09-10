@@ -97,6 +97,19 @@ const ServiciosList = () => {
     )
 }
 
+const ButtonTurno = () => {
+    return (
+        <a href="https://wa.me/+543543608379?text=Hola, quiero realizar una consulta" target='_blank' rel='noreferrer' 
+            className="rounded w-max py-2 px-6 bg-brandOrange flex items-center gap-4 mx-auto mb-10 lg:mb-20 shadow-simple hover:hover:-translate-y-[0.125rem] duration-200"
+        >
+            <div className="relative w-5 h-5 lg:w-6 lg:h-6">
+                <Image layout='fill' src='/icons/WHATSAPP_WHITE.svg' alt='ICONO WHATSAPP' />
+            </div>
+            <span className='font-din-pro uppercase text-lg'>Pedí un turno</span>
+        </a>
+    )
+}
+
 const Servicios: NextPage = () => {
 
     return (
@@ -125,14 +138,9 @@ const Servicios: NextPage = () => {
                     </div>
                 </div>
 
-                <a href="https://wa.me/+543543608379?text=Hola, quiero realizar una consulta" target='_blank' rel='noreferrer' 
-                    className="rounded w-max py-2 px-6 bg-brandOrange flex items-center gap-4 mx-auto mb-10 lg:mb-20"
-                >
-                    <div className="relative w-5 h-5 lg:w-6 lg:h-6">
-                        <Image layout='fill' src='/icons/WHATSAPP_WHITE.svg' alt='ICONO WHATSAPP' />
-                    </div>
-                    <span className='font-din-pro uppercase text-lg'>Pedí un turno</span>
-                </a>
+                <div className="mb-10 lg:mb-20">
+                    <ButtonTurno />
+                </div>
 
                 {/* IMAGEN ECOGRAFÍA */}
                 <div className="relative h-max mb-10 lg:mb-20">
@@ -232,12 +240,9 @@ const Servicios: NextPage = () => {
                         }
                     </ul>
 
-                    <a href="https://wa.me/+543543608379?text=Hola, quiero realizar una consulta" target='_blank' rel='noreferrer' className="rounded w-max py-2 px-6 bg-brandOrange flex items-center gap-4">
-                        <div className="relative w-5 h-5 lg:w-6 lg:h-6">
-                            <Image layout='fill' src='/icons/WHATSAPP_WHITE.svg' alt='ICONO WHATSAPP' />
-                        </div>
-                        <span className='font-din-pro uppercase text-lg'>Pedí un turno</span>
-                    </a>
+                    <div>
+                        <ButtonTurno />
+                    </div>
 
                 </div>
 

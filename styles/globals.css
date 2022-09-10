@@ -55,14 +55,14 @@
 
 .title {
     @apply 
-        text-brandOrange text-center text-4xl font-din-pro mb-10
-        lg:text-5xl lg:mb-20
+        text-brandOrange text-center text-4xl font-din-pro mb-10 px-5
+        lg:text-5xl lg:mb-20 lg:px-0
 }
 
 .title-w-desc {
     @apply 
-        text-brandOrange text-center text-4xl font-din-pro mb-5
-        lg:text-5xl lg:mb-10
+        text-brandOrange text-center text-4xl font-din-pro mb-5 px-5
+        lg:text-5xl lg:mb-10 lg:px-0
 }
 
 .description {

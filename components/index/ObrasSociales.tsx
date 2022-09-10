@@ -9,6 +9,16 @@ import 'swiper/css';
 
 const ObrasSocialesList = ["APROSS","APM","ACA SALUD","FEDERADA G1","BOREAL","COMFYE","CPCE","GALENO","MEDIFE","MET","NOBIS","OMINT","OSDE","OSITAC","OSPEDYC", "OSPECOR","OSPES","OSPIA","OSSOELSAC","OSSEG","OSPOCE INT.","PARQUE SALUD","POETA LUG.","PREV. SALUD","SWISS MEDICAL","SANCOR SALUD","PRIVERAL","UNIMED", "PREV. SALUD","JERARQ. SALUD","OSMATA SANITAS","FEDERADA G2-G3"]
 
+const ObraSocialSlide = ({ text, index }: { text: string, index?: number}) => {
+    return (
+        <div className={`flex items-center justify-between h-8`}>
+            <span className='w-[2px] h-full bg-brandOrange' />
+            <span className={`text-center w-full text-brandGray font-din-pro text-lg font-[400] lg:text-xl`}>{text}</span>
+            <span className='w-[2px] h-full bg-brandOrange' />
+        </div>
+    )
+}
+
 const ObrasSociales = () => {
     return (
         <section className='py-10 lg:py-20'>
@@ -31,11 +41,7 @@ const ObrasSociales = () => {
                     {
                         ObrasSocialesList.map((text, index) => (
                             <SwiperSlide key={index}>
-                                <div className={`flex items-center justify-between h-8`}>
-                                    <span className='w-[2px] h-full bg-brandOrange' />
-                                    <span className={`text-center w-full text-brandGray font-din-pro text-lg font-[400] lg:text-xl`}>{text}</span>
-                                    <span className='w-[2px] h-full bg-brandOrange' />
-                                </div>
+                                <ObraSocialSlide text={text} />
                             </SwiperSlide>
                         ))
                     }

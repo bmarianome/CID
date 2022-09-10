@@ -7,6 +7,8 @@ import { Swiper, SwiperSlide, useSwiper } from 'swiper/react';
 import "swiper/css/pagination";
 import 'swiper/css';
 
+// @refresh reset
+
 const Navigation = () => {
 
     const swiper = useSwiper()
@@ -45,7 +47,7 @@ const MainSlider = () => {
                             ">
                                 
                                 <figure className='w-full h-max leading-none min-w-[65%]'>
-                                    <Image layout='responsive' width={496} height={204} src='/icons/LOGO_CID_DESC.svg' alt='LOGO CID DESCRIPCION' />
+                                    <Image layout='responsive' width={448} height={156} src='/icons/LOGO_CID_DESC.svg' alt='LOGO CID DESCRIPCION' />
                                 </figure>
                                 <figure className="w-full h-max leading-none lg:max-w-[50%]">
                                     <Image width={508} height={200} src='/icons/LOGO_FERNANDEZ_OULTON.svg' alt='LOGO FDEZ. OULTON DESCRIPCION' />
@@ -65,7 +67,7 @@ const MainSlider = () => {
                             ">
                                 
                                 <figure className='w-full h-max leading-none min-w-[65%]'>
-                                    <Image layout='responsive' width={496} height={204} src='/icons/LOGO_CID_DESC.svg' alt='LOGO CID DESCRIPCION' />
+                                    <Image layout='responsive' width={448} height={156} src='/icons/LOGO_CID_DESC.svg' alt='LOGO CID DESCRIPCION' />
                                 </figure>
                                 <figure className="w-full h-max leading-none lg:max-w-[50%]">
                                     <Image width={508} height={200} src='/icons/LOGO_FERNANDEZ_OULTON.svg' alt='LOGO FDEZ. OULTON DESCRIPCION' />
