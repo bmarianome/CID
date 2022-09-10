@@ -10,7 +10,7 @@ const Estudios: NextPage = () => {
     return (
         <>
             <Head>
-                <title>Contactanos</title>
+                <title>Mis Estudios</title>
                 <meta name="description" content="Accedé a todos tus estudios con tu DNI y tu número de estudio, de manera 100% digital." />
             </Head>   
             <section>

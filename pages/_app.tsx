@@ -8,8 +8,6 @@ function Cid({ Component, pageProps }: AppProps) {
     return (
         <>
             <Head>
-                <title>Centro de Imágenes</title>
-                <meta name="description" content="CID, primer servicio de imágenes médicas totalmente digital de las Sierras Chicas." />
                 <link rel="shortcut icon" type="image/png" href="/favicon.png" />
                 <link rel="apple-touch-icon" type='image/png' href="/favicon.png" />
                 <meta name="theme-color" content="#EF6A34" />

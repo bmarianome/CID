@@ -28,10 +28,6 @@ const MainSlider = () => {
     
     return (
         <>
-            <Head>
-                <title>Contactanos</title>
-                <meta name="description" content="Te responderemos lo antes posible" />
-            </Head>        
             <div>
                 <Swiper
                     autoplay={{ delay: 2000, disableOnInteraction: true }} modules={[ Autoplay ]}
