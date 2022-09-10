@@ -3,8 +3,8 @@ import NextDocument, { Html, Head, Main, NextScript } from 'next/document'
 class Document extends NextDocument {
     render() {
         return (
-            <Html>
-                <Head lang='es' />
+            <Html lang='es'>
+                <Head />
                 <body>
                     <Main />
                     <NextScript />
