@@ -72,13 +72,23 @@ const Nav = ({mobileMenuActive, setMenuMobile}: { mobileMenuActive: boolean, set
 
             {/* DESKTOP: BOTÓN PEDÍ UN TURNO */}
             <a href={`https://wa.me/+543543608379?text=${encodeURIComponent("Hola, quiero realizar una consulta")}`} target='_blank' rel='noreferrer' 
-                className="bg-white flex items-center gap-4 py-2 px-4 rounded shadow-simple hover:hover:-translate-y-[0.125rem] duration-200">
+                className="hidden bg-white lg:flex items-center gap-4 py-2 px-4 rounded shadow-simple hover:hover:-translate-y-[0.125rem] duration-200">
 
                 <div className="relative w-6 h-6">
                     <Image layout="fill" src={'/icons/WHATSAPP_ORANGE.svg'} alt='WHATSAPP ICON' />
                 </div>
                 <span className="hidden font-din-pro uppercase text-brandOrange text-lg whitespace-pre xl:inline">Pedí un turno</span>
             </a>
+
+            {/* MOBILE: BOTÓN MIS ESTUDIOS */}
+            <Link href='/estudios' passHref>
+                <a className="lg:hidden 
+                    font-din-pro uppercase text-brandOrange text-lg whitespace-pre
+                    bg-white flex items-center gap-4 py-2 px-4 rounded shadow-simple hover:hover:-translate-y-[0.125rem] duration-200
+                ">
+                    Mis Estudios
+                </a>
+            </Link>
             
             {/* MOBILE: BOTÓN MENÚ */}
             <div className="MenuContainer w-10 h-7 flex flex-col justify-between lg:hidden" onClick={() => setMenuMobile(() => mobileMenuActive ? false : true)}>
@@ -147,8 +157,8 @@ export const Footer = ({ media, map, footer }: { media?: boolean, map?: boolean,
                             <Image layout="fill" src='/icons/UBICACION_ORANGE.svg' alt='ICONO UBICACIÓN' />
                         </div>
                         <div className="flex gap-2 lg:flex-col items-end">
-                            <h2 className="font-main font-bold whitespace-pre text-xl lg:text-5xl lg:text-right">25 de Mayo 245,</h2>
-                            <span className="font-secondary font-medium text-xl text-right lg:text-4xl lg:max-w-[260px] lg:leading-10">Villa Allende, Córdoba</span>
+                            <h2 className="font-main font-bold whitespace-pre text-xl lg:text-4xl lg:text-right">25 de Mayo 245,</h2>
+                            <span className="font-secondary font-medium text-xl text-right lg:text-3xl lg:max-w-[260px] lg:leading-10">Villa Allende, Córdoba</span>
                         </div>
                     </div>
                     
@@ -219,9 +229,12 @@ const Layout = ({children}: {children: ReactNode}) => {
             }
         } 
  
-        router.events.on("routeChangeStart", closeMenuPageChange)
-        window.addEventListener('click', (e) => closeMenuClick(e))
-        window.addEventListener('keydown', (e) => closeMenuEscape(e))
+        if (window.innerWidth <= 1024) {
+            router.events.on("routeChangeStart", closeMenuPageChange)
+            window.addEventListener('click', (e) => closeMenuClick(e))
+            window.addEventListener('keydown', (e) => closeMenuEscape(e))
+        }
+        
         return() => {
             window.removeEventListener('keydown', (e) => closeMenuEscape(e))
             window.removeEventListener('click', (e) => closeMenuClick(e))
@@ -243,10 +256,11 @@ const Layout = ({children}: {children: ReactNode}) => {
 const WhatsappFixed = () => {
     return (
         <a href={`https://wa.me/+543543608379?text=${encodeURIComponent("Hola, quiero realizar una consulta")}`} target='_blank' rel='noreferrer'
-            className="fixed flex items-center justify-center w-12 h-12 bg-[#25D366] rounded-full z-10 
+            className="fixed flex items-center justify-center w-12 h-12 bg-[#25D366] rounded-full z-10 shadow-simple
             right-8 bottom-8 lg:right-10 lg:bottom-10 
-            hover:cursor-pointer">
-            <figure className="relative w-6 h-6">
+            hover:shadow-xl hover:-translate-y-[0.125rem] duration-200
+            hover:cursor-pointer group">
+            <figure className="relative w-6 h-6 duration-200">
                 <Image layout="fill" src='/icons/WHATSAPP_WHITE.svg' alt="WHATSAPP ICON" />
             </figure>
         </a>

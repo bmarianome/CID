@@ -83,7 +83,7 @@
 
 .white-button {
     @apply 
-        bg-white text-brandOrange font-din-pro tracking-wide text-center text-base block w-7/12 max-w-sm py-1 rounded-md shadow-simple
+        bg-white text-brandOrange font-din-pro tracking-wide text-center text-base w-7/12 max-w-sm py-1 rounded-md shadow-simple
         lg:text-2xl lg:py-4 lg:max-w-lg
         hover:shadow-xl hover:-translate-y-[0.125rem] duration-200
 }
@@ -114,6 +114,7 @@
 
 /* CONTACTANOS */
 .contactanos-input {
-    @apply relative w-full text-center font-din font-[300] text-brandOrange border-brandOrange border-2 rounded-md
+    @apply relative w-full text-center font-din-pro font-[400] text-brandOrange border-brandOrange border-2 rounded-md
     placeholder:text-brandOrange p-2 text-lg lg:text-left lg:pl-4
+    active:placeholder:text-transparent focus:placeholder:text-transparent
 }

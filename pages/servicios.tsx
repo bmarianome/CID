@@ -6,13 +6,15 @@ import Estudios from 'components/index/Estudios'
 import Divisor from 'components/Divisor'
 import ObrasSociales from 'components/index/ObrasSociales'
 import { Footer } from 'components/Layout'
+import MainImage from 'components/MainImage'
 
-import { Autoplay } from "swiper";
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { SwiperSlide } from 'swiper/react';
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import 'swiper/css';
 import { useState, SetStateAction, Dispatch, useEffect } from 'react'
+import SwiperPictures from 'components/SwiperPictures'
+import MainSwiper from 'components/MainSwiper'
 
 const items: { title: string, desc: string }[] = [
     { title: "Inmediatez", desc: "En el mismo momento que finaliza el estudio, usted puede verlo." },
@@ -28,7 +30,7 @@ const serviciosList: { text: string, desc: string }[] = [
     { text: "Mamografía", desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit ullam amet iure. Aliquam beatae sit labore aut cumque autem distinctio commodi." }, 
     { text: "Cardiología", desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit ullam amet iure. Aliquam beatae sit labore aut cumque autem distinctio commodi." }, 
     { text: "Ortopantomografía", desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit ullam amet iure. Aliquam beatae sit labore aut cumque autem distinctio commodi." }, 
-    { text: "Laboratorio", desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit ullam amet iure. Aliquam beatae sit labore aut cumque autem distinctio commodi." }
+    { text: "Punciones", desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit ullam amet iure. Aliquam beatae sit labore aut cumque autem distinctio commodi." }
 ]
 
 const Servicio = ({ index, text, desc, servicioActivo, setServicioActivo }: { index: number, text: string, desc: string, servicioActivo: number | null, setServicioActivo: Dispatch<SetStateAction<number>> }) => {
@@ -37,7 +39,6 @@ const Servicio = ({ index, text, desc, servicioActivo, setServicioActivo }: { in
         className={`bg-brandOrange py-4 flex flex-col items-center gap-1 w-full rounded-md hover:cursor-pointer
             lg:min-w-[320px] select-none
         `} 
-        
         >
 
             <h3 className='
@@ -121,19 +122,17 @@ const Servicios: NextPage = () => {
             </Head>
             <section>
 
-                {/* TOP */}
-                <div className="relative w-full h-[calc(100vh-80px)] flex flex-col mb-5 lg:mb-10">
-
-                    <div className="h-full relative bg-white-gradient">
-                        <div className="w-full h-full absolute -z-10">
-                            <Image priority layout='fill' objectFit='cover' objectPosition='center' src={'/images/EQUIPOS_IMAGEN.jpg'} alt='IMAGEN DE FONDO RADIOLOGIA' />
-                        </div>
-                    </div>
-                    
-                    <div className="absolute top-1/3 w-full h-max lg:inline-block">
-                        <Divisor />
-                    </div>
-                </div>
+                <MainSwiper className='mb-10 lg:mb-20'>
+                    <SwiperSlide>
+                        <MainImage image={{ src: '/images/SERVICIOS_1.jpg', position: 'center', fit: 'cover', alt: 'IMAGEN DE FONDO RADIOLOGIA', priority: true }} />
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <MainImage image={{ src: '/images/SERVICIOS_2.jpg', position: 'center', fit: 'cover', alt: 'IMAGEN DE FONDO RADIOLOGIA' }} />
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <MainImage image={{ src: '/images/SERVICIOS_3.jpg', position: 'center', fit: 'cover', alt: 'IMAGEN DE FONDO RADIOLOGIA' }} />
+                    </SwiperSlide>
+                </MainSwiper>
 
                 <h1 className="title-w-desc">Nuestros Servicios</h1>
 
@@ -147,26 +146,7 @@ const Servicios: NextPage = () => {
                     <ButtonTurno />
                 </div>
 
-                {/* IMAGEN ECOGRAFÍA */}
-                <div className="relative h-max mb-10 lg:mb-20">
-                    <Swiper spaceBetween={48} autoplay={{ delay: 1500, disableOnInteraction: false }} modules={[ Autoplay ]}>
-                        <SwiperSlide>
-                            <div className="block w-full aspect-[2/1] lg:aspect-[3/1] relative ">
-                                <Image priority layout='fill' objectFit='cover' objectPosition='center' src={'/images/EQUIPOS_IMAGEN_2.jpg'} alt='IMAGEN DE FONDO ECOGRAFÍA' />
-                            </div>
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <div className="block w-full aspect-[2/1] lg:aspect-[3/1] relative">
-                                <Image layout='fill' objectFit='cover' objectPosition='center' src={'/images/EQUIPOS_IMAGEN_3.jpg'} alt='IMAGEN DE FONDO ECOGRAFÍA' />
-                            </div>
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <div className="block w-full aspect-[2/1] lg:aspect-[3/1] relative">
-                                <Image layout='fill' objectFit='cover' objectPosition='center' src={'/images/ECOGRAFIA.jpg'} alt='IMAGEN DE FONDO ECOGRAFÍA' />
-                            </div>
-                        </SwiperSlide>
-                    </Swiper>  
-                </div>
+                <SwiperPictures />
 
                 <div className="mb-10 lg:mb-20">
                     <Divisor />
@@ -178,15 +158,15 @@ const Servicios: NextPage = () => {
                     lg:flex-row lg:justify-center lg:gap-20 lg:px-20 lg:max-w-screen-2xl lg:mx-auto
                 ">
 
-                    <div className="flex flex-col gap-2 lg:items-center lg:gap-4 lg:justify-center">
+                    <div className="flex flex-col gap-2 lg:gap-4">
                         
                         <h4 className='
-                            text-brandOrange font-din font-medium text-2xl text-center
-                            lg:text-4xl
+                            text-brandOrange font-din-pro font-bold text-2xl text-center
+                            lg:text-4xl lg:text-left
                         '>Contamos con un laboratorio</h4>
                         
                         <p className='text-brandOrange font-din-pro font-[400] text-center max-w-sm 
-                            lg:max-w-md lg:text-xl lg:min-w-[320px]
+                            lg:max-w-md lg:text-xl lg:min-w-[320px] lg:text-left
                         '>Prestigioso y con años de experiencia, que avalan su calidad de atención y resultados.</p>
 
                     </div>

@@ -7,6 +7,7 @@ import Image from 'next/image'
 import Estudios from 'components/index/Estudios'
 import { Footer } from 'components/Layout'
 import Head from 'next/head'
+import SwiperPictures from 'components/SwiperPictures'
 
 const Home: NextPage = () => {
     return (
@@ -18,6 +19,7 @@ const Home: NextPage = () => {
             <main>
                 <MainSlider />
                 <Servicios />
+                <SwiperPictures />
                 <Divisor />
                 <ObrasSociales />
                 <Estudios />

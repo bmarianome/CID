@@ -5,6 +5,7 @@ import Head from 'next/head'
 import Divisor from 'components/Divisor'
 import { Footer } from 'components/Layout'
 import { useState } from 'react'
+import MainImage from 'components/MainImage'
 
 const ObrasSocialesList = () => {
         
@@ -36,7 +37,7 @@ const ObrasSocialesList = () => {
 
                 {/* INPUT */}
                 <label htmlFor='search' className="relative w-3/4 lg:w-1/2 h-max flex
-                    border-2 border-brandOrange mx-auto rounded-md overflow-hidden 
+                    border-2 border-brandOrange mx-auto rounded-md overflow-hidden
                     text-brandOrange px-2 mb-5 
                     lg:mb-5 lg:max-w-3xl
                 ">
@@ -46,7 +47,7 @@ const ObrasSocialesList = () => {
                     </div>
                     
                     <input type="text" id='search' placeholder='Buscá tu obra social' className='
-                        placeholder:text-brandOrange w-full text-center py-2 font-secondary font-light
+                        placeholder:text-brandOrange w-full text-left pl-8 py-2 font-secondary font-light
                         focus:border-brandGray active:placeholder:text-transparent focus:placeholder:text-transparent
                         lg:text-2xl
                         
@@ -89,7 +90,6 @@ const ObrasSocialesList = () => {
 
 const ObrasSociales: NextPage = () => {
 
-
     return (
         <>
             <Head>
@@ -98,20 +98,7 @@ const ObrasSociales: NextPage = () => {
             </Head>
             <section>
 
-                {/* TOP */}
-                <div className="relative w-full h-[calc(100vh-80px)] flex flex-col">
-
-                    <div className="h-full relative bg-white-gradient">
-                        <div className="w-full h-full absolute -z-10">
-                            <Image priority layout='fill' objectFit='cover' objectPosition='center' src={'/images/ECOGRAFIA_3.jpg'} alt='IMAGEN DE FONDO RADIOLOGIA' />
-                        </div>
-                    </div>
-                    
-                    <div className="absolute top-1/3 w-full h-max lg:inline-block">
-                        <Divisor />
-                    </div>
-                    
-                </div>
+                <MainImage className='mb-10 lg:mb-20' image={{ src: '/images/OBRAS_SOCIALES.jpg', position: 'center', fit: 'cover', alt: 'IMAGEN DE FONDO RADIOLOGIA' }} />
 
                 <ObrasSocialesList />
 

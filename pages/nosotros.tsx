@@ -5,6 +5,7 @@ import Head from 'next/head'
 import Estudios from 'components/index/Estudios'
 import Divisor from 'components/Divisor'
 import { Footer } from 'components/Layout'
+import MainImage from 'components/MainImage'
 
 const Nosotros: NextPage = () => {
     return (
@@ -14,41 +15,7 @@ const Nosotros: NextPage = () => {
                 <meta name="description" content="CID ahora es Centro de Imágenes Diagnósticas Villa Allende" />
             </Head>
             <section>
-                <div className="relative w-full h-[calc(100vh-80px)] flex flex-col">
-
-                    <div className="h-full relative bg-white-gradient">
-                        <div className="w-full h-full absolute -z-10">
-                            <Image priority layout='fill' objectFit='cover' objectPosition='center' src={'/images/RADIOLOGIA.jpg'} alt='IMAGEN DE FONDO RADIOLOGIA' />
-                        </div>
-                    </div>
-                    
-                    <div className="hidden absolute top-1/3 w-full h-max lg:inline-block">
-                        <Divisor />
-                    </div>
-                    
-                    <div className="absolute bottom-0 w-full">
-                        <div className="
-                            flex flex-col items-center gap-20 relative mb-20
-                            lg:flex-row lg:justify-between lg:px-20
-                        ">
-                            
-                            <div className="px-6 flex lg:p-0 lg:w-full lg:max-w-2xl">
-                                <figure className='w-full min-w-[65%] h-max leading-none'>
-                                    <Image layout='responsive' width={496} height={204} src='/icons/LOGO_CID_DESC.svg' alt='LOGO CID DESCRIPCION' />
-                                </figure>
-                                <figure className="w-full h-max leading-none lg:max-w-[50%]">
-                                    <Image width={508} height={200} src='/icons/LOGO_FERNANDEZ_OULTON.svg' alt='LOGO FDEZ. OULTON DESCRIPCION' />
-                                </figure>
-                            </div>
-                            
-                            <div className='text-2xl text-center leading-9 font-main font-bold flex flex-col gap-2'>
-                                <h2 className='text-brandOrange text-4xl lg:text-right'>CID ahora es</h2> 
-                                <p className='text-brandGray font-secondary font-light text-xl lg:text-right lg:text-brandOrange lg:text-2xl'>Centro de Imágenes <br /> Diagnósticas Villa Allende</p> 
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
+                <MainImage className='mb-10 lg:mb-20' image={{ src: '/images/FONDO_NOSOTROS.jpg', position: 'center', fit: 'cover', alt: 'IMAGEN DE FONDO RADIOLOGIA' }} />
 
                 {/* TÍTULO */}
                 <h1 className='block mb-10 lg:mb-20 lg:px-20 lg:mx-auto lg:max-w-screen-2xl'>
@@ -156,11 +123,11 @@ const Nosotros: NextPage = () => {
                 </div>
 
                 {/* SVG VALORES */}
-                <figure className="mx-auto px-10 mb-10 max-w-lg lg:max-w-2xl lg:mb-20">
-                    <div className="lg:hidden">
+                <figure className="mx-auto px-10 mb-10 flex justify-center max-w-lg lg:max-w-2xl lg:mb-20 group">
+                    <div className="lg:hidden group-hover:scale-105 duration-200">
                         <Image width={885} height={718} src='/icons/ESTRUCTURA_VALORES.png' alt='ESTRUCTURA DE VALORES' />
                     </div>
-                    <div className="hidden lg:inline-block">
+                    <div className="hidden lg:inline-block group-hover:scale-105 duration-200">
                         <Image width={885} height={718} src='/icons/ESTRUCTURA_VALORES.png' alt='ESTRUCTURA DE VALORES' />
                     </div>
                 </figure>
@@ -175,8 +142,8 @@ const Nosotros: NextPage = () => {
                         <p className='text-lg'>En CID la política de calidad es el eje vertebrador de su desarrollo, y entendemos que abarca:</p>
 
                         <ul className='text-lg font-secondary font-light'>
-                            <li>- La calidad del producto</li>
                             <li>- La calidad del servicio ofertado al entorno.</li>
+                            <li>- La calidad del producto</li>
                             <li>- La calidad de gestión.</li>
                         </ul>
                         
@@ -188,7 +155,6 @@ const Nosotros: NextPage = () => {
                             <li>- Asegurar a nuestros pacientes turnos en menos de una semana.</li>
                             <li>- Entregar los estudios en menos de 48 hs.</li>
                             <li>- Realizar imágenes de calidad.</li>
-                            <li>- Atención medica en horario a los pacientes con turno (demora menor a 15 minutos).</li>
                         </ul>
                     </div>
                 </div>
