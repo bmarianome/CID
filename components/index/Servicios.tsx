@@ -9,7 +9,7 @@ import "swiper/css/navigation";
 import 'swiper/css';
 import { useEffect, useState } from 'react';
 
-const ServiceSlide = ({ text, index }: { text: string, index: number }) => {
+const ServiceSlide = ({ item, index }: { item: { text: string, items: string[] }, index: number }) => {
 
     const [active, setActive] = useState(false)
     
@@ -20,25 +20,37 @@ const ServiceSlide = ({ text, index }: { text: string, index: number }) => {
     }, [swiperSlide])
     
     return (    
-        <div className={`bg-brandOrange py-4 flex flex-col items-center gap-1 w-full m-auto max-w-sm rounded-md hover:cursor-pointer`} onClick={() => setActive(() => active ? false : true)}>
+        <div className={`bg-brandOrange py-4 flex flex-col items-center w-full m-auto max-w-sm rounded-md hover:cursor-pointer duration-200 ${active ? "gap-3" : "gap-1"}`} onClick={() => setActive(() => active ? false : true)}>
 
             <h3 className='
                 font-secondary font-bold text-2xl
                 lg:text-3xl
-            '>{text}</h3>
+            '>{item.text}</h3>
 
-            <p className={`
-                font-din font-light text-lg text-center flex items-center justify-center px-4 transition-[height,_opacity] 
-                ${active ? 'h-32 opacity-1 delay-[0s,_.1s]' : 'h-0 opacity-0 delay-[.1s,_0s]'}
-            `}>
-                { index%2 === 0 ? "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium in ipsa, qui quisquam aspernatur maiores." : "Lorem ipsum dolor sit amet consectetur adipisicing elit."}
-            </p>
-            <span className='font-din font-light text-lg lg:text-xl'>Ver Mas</span>
+            <ul className={`
+                font-din font-light text-lg text-center flex flex-col items-start list-disc justify-center px-4 transition-[height,_opacity] 
+                `}>
+                {
+                    item.items.map((text, index) => {
+                        return (
+                            <li key={index} className={`duration-200 ${ active ? `h-[28px] opacity-100` : `h-[0px] opacity-0` }`}>{text}</li>
+                        )
+                    })
+                }
+            </ul>
+            <span className='font-din font-light text-lg lg:text-2xl'>{ active ? "Ocultar" : "Ver Mas"}</span>
         </div>
     )
 }
 
-export const serviciosList: string[] = ["Ecografías", "Radiología", "Mamografía", "Cardiología", "Ortopantomografía", "Laboratorio",]
+export const serviciosList: { text: string, items: string[] }[] = [
+    { text: "Ecografías", items: ["General", "Endocavitaria", "Obstétricas", "Valoración de r. cormosomatico", "Ecografías Obstétricas", "Ecodoppler color", "Ecocardiograma Doppler"]}, 
+    { text: "Radiología", items: ["Radiología Digital"]}, 
+    { text: "Mamografía", items: ["Mamografía Digital", "Magnificada", "Focalizada",]}, 
+    { text: "Cardiología", items: ["Electrocardiograma", "Prequirúrgicos","Ergometrías","Holter","Mapa"]}, 
+    { text: "Ortopantomografía", items: ["Ortopantomografía", "Condilografía", "Telerradiografía", "Trazados Cefalométricos"]}, 
+    { text: "Punciones", items: ["Punciones mamarias", "Punciones Tiroideas"]}
+]
 
 const Servicios = () => {
     return (
@@ -73,9 +85,9 @@ const Servicios = () => {
                     modules={[ Autoplay, Pagination, Navigation ]}
                 >
                     {
-                        serviciosList.map((text, index) => (
+                        serviciosList.map((item, index) => (
                             <SwiperSlide key={index}>
-                                <ServiceSlide text={text} index={index} />
+                                <ServiceSlide item={item} index={index} />
                             </SwiperSlide>
                         ))
                     }

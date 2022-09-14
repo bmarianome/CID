@@ -15,6 +15,7 @@ import 'swiper/css';
 import { useState, SetStateAction, Dispatch, useEffect } from 'react'
 import SwiperPictures from 'components/SwiperPictures'
 import MainSwiper from 'components/MainSwiper'
+import { serviciosList } from 'components/index/Servicios'
 
 const items: { title: string, desc: string }[] = [
     { title: "Inmediatez", desc: "En el mismo momento que finaliza el estudio, usted puede verlo." },
@@ -24,73 +25,70 @@ const items: { title: string, desc: string }[] = [
     { title: "Pensamos en tu comodidad", desc: "Con sólo con un click puede enviar sus estudios a quien desee." },
 ]
 
-const serviciosList: { text: string, desc: string }[] = [
-    { text: "Ecografías", desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit ullam amet iure. Aliquam beatae sit labore aut cumque autem distinctio commodi." }, 
-    { text: "Radiología", desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit ullam amet iure. Aliquam beatae sit labore aut cumque autem distinctio commodi." }, 
-    { text: "Mamografía", desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit ullam amet iure. Aliquam beatae sit labore aut cumque autem distinctio commodi." }, 
-    { text: "Cardiología", desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit ullam amet iure. Aliquam beatae sit labore aut cumque autem distinctio commodi." }, 
-    { text: "Ortopantomografía", desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit ullam amet iure. Aliquam beatae sit labore aut cumque autem distinctio commodi." }, 
-    { text: "Punciones", desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit ullam amet iure. Aliquam beatae sit labore aut cumque autem distinctio commodi." }
-]
-
-const Servicio = ({ index, text, desc, servicioActivo, setServicioActivo }: { index: number, text: string, desc: string, servicioActivo: number | null, setServicioActivo: Dispatch<SetStateAction<number>> }) => {
+const Servicio = ({ index, item, isActive, setServicioActivo }: { index: number, item: { text: string, items: string[] }, isActive: boolean, setServicioActivo: Dispatch<SetStateAction<number | null>> }) => {
+    
     return (
-        <li onClick={() => servicioActivo === index ? null : setServicioActivo(index)}
-        className={`bg-brandOrange py-4 flex flex-col items-center gap-1 w-full rounded-md hover:cursor-pointer
-            lg:min-w-[320px] select-none
+        <li onClick={() => setServicioActivo(() => isActive ? null : index)}
+        className={`bg-brandOrange py-4 flex flex-col items-center w-full rounded-md hover:cursor-pointer
+            lg:min-w-[320px] select-none duration-200
+            ${isActive ? "gap-3" : "gap-1"}
         `} 
         >
 
             <h3 className='
                 font-secondary font-bold text-2xl
                 lg:text-3xl
-            '>{text}</h3>
+            '>{item.text}</h3>
 
-            <p className={`
-                font-din font-light text-lg text-center flex items-center justify-center px-4 transition-[height,_opacity] 
-                ${index === servicioActivo ? 'h-40 opacity-1 delay-[0s,_.1s]' : 'h-0 opacity-0 delay-[0s,_0s]'}
-            `}>
-                {desc}
-            </p>
-            <span className='font-din font-light text-lg lg:text-xl'>{servicioActivo === index ? "Ocultar" : "Ver Más"}</span>
+            <ul className={`
+                font-din font-light text-lg text-center flex flex-col items-start list-disc justify-center px-4 transition-[height,_opacity] 
+                `}>
+                {
+                    item.items.map((text, i) => {
+                        return (
+                            <li key={i} className={`duration-200 ${ isActive ? `h-[28px] opacity-100` : `h-[0px] opacity-0` }`}>{text}</li>
+                        )
+                    })
+                }
+            </ul>
+            <span className='font-din font-light text-lg lg:text-2xl'>{isActive ? "Ocultar" : "Ver Más"}</span>
         </li>
     )
 }
 
 const ServiciosList = () => {
 
-    const [servicioActivo, setServicioActivo] = useState<number>(0)
+    const [servicioActivo, setServicioActivo] = useState<number | null>(0)
 
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setServicioActivo(() => {
-                if (servicioActivo === serviciosList.length - 1) return 0
-                else return servicioActivo + 1 ?? 1
-            })
-        }, 4000)
-        return() => clearInterval(interval)
-    })
-    
     return (
         <ul className='
         flex flex-col items-center gap-2 w-4/5 mx-auto 
-        lg:gap-10 
+        lg:gap-10 lg:flex-row lg:justify-center lg:items-stretch
     '>
         <li className='h-max'>
-            <ul className='flex flex-col gap-2 lg:items-start lg:flex-row lg:gap-10'>
+            <ul className='flex flex-col gap-2 lg:gap-10'>
                 {
-                    serviciosList.slice(0, 3).map((servicio, index: number) => (
-                        <Servicio index={index} key={index} text={servicio.text} desc={servicio.desc} servicioActivo={servicioActivo} setServicioActivo={setServicioActivo} />
+                    serviciosList.slice(0, 2).map((item, index: number) => (
+                        <Servicio index={index} key={index} item={item} isActive={servicioActivo === index} setServicioActivo={setServicioActivo} />
                     ))
                 }
 
             </ul>
         </li>
         <li className='h-max'>
-            <ul className='flex flex-col gap-2 lg:items-start lg:flex-row lg:gap-10'>
+            <ul className='flex flex-col gap-2  lg:gap-10'>
                 {
-                    serviciosList.slice(3, 6).map((servicio, index: number) => (
-                        <Servicio index={index + 3} key={index} text={servicio.text} desc={servicio.desc} servicioActivo={servicioActivo} setServicioActivo={setServicioActivo} />
+                    serviciosList.slice(2, 4).map((item, index: number) => (
+                        <Servicio index={index + 2} key={index} item={item} isActive={servicioActivo === index + 2} setServicioActivo={setServicioActivo} />
+                    ))
+                }
+            </ul>
+        </li>
+        <li className='h-max'>
+            <ul className='flex flex-col gap-2  lg:gap-10'>
+                {
+                    serviciosList.slice(4, 6).map((item, index: number) => (
+                        <Servicio index={index + 4} key={index} item={item} isActive={servicioActivo === index + 4} setServicioActivo={setServicioActivo} />
                     ))
                 }
             </ul>
@@ -124,7 +122,7 @@ const Servicios: NextPage = () => {
 
                 <MainSwiper className='mb-10 lg:mb-20'>
                     <SwiperSlide>
-                        <MainImage image={{ src: '/images/SERVICIOS_1.jpg', position: 'center', fit: 'cover', alt: 'IMAGEN DE FONDO RADIOLOGIA', priority: true }} />
+                        <MainImage items image={{ src: '/images/SERVICIOS_1.jpg', position: 'center', fit: 'cover', alt: 'IMAGEN DE FONDO RADIOLOGIA', priority: true }} />
                     </SwiperSlide>
                     <SwiperSlide>
                         <MainImage image={{ src: '/images/SERVICIOS_2.jpg', position: 'center', fit: 'cover', alt: 'IMAGEN DE FONDO RADIOLOGIA' }} />
@@ -136,10 +134,8 @@ const Servicios: NextPage = () => {
 
                 <h1 className="title-w-desc">Nuestros Servicios</h1>
 
-                <div className="lg:h-[408px] relative mb-5 lg:mb-10">
-                    <div className="flex items-center w-full h-full">
-                        <ServiciosList />
-                    </div>
+                <div className="relative mb-5 lg:mb-10">
+                    <ServiciosList />
                 </div>
 
                 <div className="mb-10 lg:mb-20">

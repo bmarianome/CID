@@ -15,7 +15,7 @@ const MainSlider = () => {
         <>
             <MainSwiper>
                 <SwiperSlide>
-                    <MainImage image={{ src: '/images/HOME_FONDO_RADIOLOGIA.jpg', position: 'center', fit: 'cover', alt: 'IMAGEN DE FONDO RADIOLOGIA', priority: true }} />
+                    <MainImage items image={{ src: '/images/HOME_FONDO_RADIOLOGIA.jpg', position: 'center', fit: 'cover', alt: 'IMAGEN DE FONDO RADIOLOGIA', priority: true }} />
                 </SwiperSlide>
                 <SwiperSlide>
                     <MainImage image={{ src: '/images/HOME_FONDO_CORAZON.jpg', position: 'center', fit: 'cover', alt: 'IMAGEN DE FONDO RADIOLOGIA' }} />
