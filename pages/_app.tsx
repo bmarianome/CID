@@ -19,6 +19,7 @@ function Cid({ Component, pageProps }: AppProps) {
                 <meta content="website" property="og:type" />
 
                 <link rel="manifest" href="/manifest.json" />
+                <script defer data-domain="cidvillaallende.com.ar" src="https://plausible.io/js/plausible.js" />
             </Head> 
             
             <Layout>

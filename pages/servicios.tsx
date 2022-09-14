@@ -58,7 +58,7 @@ const Servicio = ({ index, item, isActive, setServicioActivo }: { index: number,
 
 const ServiciosList = () => {
 
-    const [servicioActivo, setServicioActivo] = useState<number | null>(0)
+    const [servicioActivo, setServicioActivo] = useState<number | null>(null)
 
     return (
         <ul className='
