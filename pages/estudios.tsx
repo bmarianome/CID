@@ -61,10 +61,10 @@ const Estudios: NextPage = () => {
                 <title>Mis Estudios</title>
                 <meta name="description" content="Accedé a todos tus estudios con tu DNI y tu número de estudio, de manera 100% digital." />
             </Head>   
-            <section>
+            <section className='pt-10 lg:pt-20'>
 
                 {/* TOP */}
-                <MainImage className='mb-10 lg:mb-20' image={{ src: '/images/DOCTOR_PC.jpg', position: 'center', fit: 'cover', alt: 'IMAGEN DE FONDO RADIOLOGIA' }} />
+                {/* <MainImage className='mb-10 lg:mb-20' image={{ src: '/images/DOCTOR_PC.jpg', position: 'center', fit: 'cover', alt: 'IMAGEN DE FONDO RADIOLOGIA' }} /> */}
 
                 <div className="flex flex-col gap-5 lg:flex-row lg:px-20 lg:w-full lg:max-w-screen-2xl lg:mx-auto mb-10 lg:mb-20">
                     <article className="lg:w-1/2">

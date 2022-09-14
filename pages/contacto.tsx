@@ -15,10 +15,10 @@ const Contacto: NextPage = () => {
                 <title>Contactanos</title>
                 <meta name="description" content="Te responderemos lo antes posible" />
             </Head>   
-            <section>
+            <section className='pt-10 lg:pt-20'>
 
                 {/* TOP */}
-                <MainImage className='mb-10 lg:mb-20' image={{ src: '/images/DOCTOR_DIGITAL.jpg', position: 'center', fit: 'cover', alt: 'IMAGEN DE FONDO RADIOLOGIA', priority: true }} />
+                {/* <MainImage className='mb-10 lg:mb-20' image={{ src: '/images/DOCTOR_DIGITAL.jpg', position: 'center', fit: 'cover', alt: 'IMAGEN DE FONDO RADIOLOGIA', priority: true }} /> */}
 
                 <div className="flex flex-col gap-5 lg:flex-row lg:px-20 lg:w-full lg:max-w-screen-2xl lg:mx-auto lg:mb-20">
                     <article className="lg:w-1/2">

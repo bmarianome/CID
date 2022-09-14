@@ -96,9 +96,9 @@ const ObrasSociales: NextPage = () => {
                 <title>Obras Sociales</title>
                 <meta name="description" content="Conocé las obras sociales con las que trabajamos actualmente" />
             </Head>
-            <section>
+            <section className='pt-10 lg:pt-20'>
 
-                <MainImage className='mb-10 lg:mb-20' image={{ src: '/images/OBRAS_SOCIALES.jpg', position: 'center', fit: 'cover', alt: 'IMAGEN DE FONDO RADIOLOGIA' }} />
+                {/* <MainImage className='mb-10 lg:mb-20' image={{ src: '/images/OBRAS_SOCIALES.jpg', position: 'center', fit: 'cover', alt: 'IMAGEN DE FONDO RADIOLOGIA' }} /> */}
 
                 <ObrasSocialesList />
 

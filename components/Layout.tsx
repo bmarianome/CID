@@ -59,7 +59,7 @@ const Nav = ({mobileMenuActive, setMenuMobile}: { mobileMenuActive: boolean, set
                         <Image width={30} height={30} src={'/icons/WHATSAPP_ORANGE.svg'} alt='WHATSAPP ICON' />
                     </a>
                     <div className="flex gap-2">
-                        <a href="https://www.facebook.com/CIDalvit/" target='_blank' rel='noreferrer' className="flex items-center justify-center">
+                        <a href="https://www.instagram.com/cid.va/" target='_blank' rel='noreferrer' className="flex items-center justify-center">
                             <Image width={30} height={30} src={'/icons/INSTAGRAM_WHITE.svg'} alt='ICONO INSTAGRAM' />
                         </a>
                         <a href="https://www.facebook.com/CIDalvit/" target='_blank' rel='noreferrer' className="flex items-center justify-center">
@@ -104,7 +104,7 @@ const Nav = ({mobileMenuActive, setMenuMobile}: { mobileMenuActive: boolean, set
 const MediaIgFb = () => {
     return (
         <div className="flex gap-5 justify-center w-max">
-            <a href="https://www.facebook.com/CIDalvit/" target='_blank' rel='noreferrer' className="relative w-10 aspect-square hover:scale-105 duration-200">
+            <a href="https://www.instagram.com/cid.va/" target='_blank' rel='noreferrer' className="relative w-10 aspect-square hover:scale-105 duration-200">
                 <Image layout='fill' src='/icons/INSTAGRAM_ORANGE.svg' alt="ICONO INSTAGRAM" />
             </a>
             <a href="https://www.facebook.com/CIDalvit/" target='_blank' rel='noreferrer' className="relative w-10 aspect-square hover:scale-105 duration-200">
@@ -133,7 +133,7 @@ export const Footer = ({ media, map, footer }: { media?: boolean, map?: boolean,
                             lg:max-w-none lg:w-2/5 lg:m-0 
                         ">
 
-                            <Image layout="fill" objectFit="cover" src='/icons/TELEFONOS_REDES.svg' alt='FOTO REDES SOCIALES' />
+                            <Image layout="fill" objectFit="cover" src='/icons/TELEFONOS_REDES.png' sizes="(max-width: 1024px) 80vw, 50vw" alt='FOTO REDES SOCIALES' />
                         </figure>
                     </div>
                     
@@ -187,7 +187,7 @@ export const Footer = ({ media, map, footer }: { media?: boolean, map?: boolean,
                             </div>
                         </div>
                         <div className="flex gap-5 justify-center">
-                            <a href="https://www.facebook.com/CIDalvit/" target='_blank' rel='noreferrer' className="relative w-8 aspect-square lg:w-10">
+                            <a href="https://www.instagram.com/cid.va/" target='_blank' rel='noreferrer' className="relative w-8 aspect-square lg:w-10">
                                 <Image layout='fill' src='/icons/INSTAGRAM_WHITE.svg' alt="ICONO INSTAGRAM" />
                             </a>
                             <a href="https://www.facebook.com/CIDalvit/" target='_blank' rel='noreferrer' className="relative w-8 aspect-square lg:w-10">

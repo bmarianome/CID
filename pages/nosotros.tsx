@@ -14,8 +14,9 @@ const Nosotros: NextPage = () => {
                 <title>Nosotros</title>
                 <meta name="description" content="CID ahora es Centro de Imágenes Diagnósticas Villa Allende" />
             </Head>
-            <section>
-                <MainImage className='mb-10 lg:mb-20' image={{ src: '/images/FONDO_NOSOTROS.jpg', position: 'center', fit: 'cover', alt: 'IMAGEN DE FONDO RADIOLOGIA' }} />
+            <section className='pt-10 lg:pt-20'>
+
+                {/* <MainImage className='mb-10 lg:mb-20' image={{ src: '/images/FONDO_NOSOTROS.jpg', position: 'center', fit: 'cover', alt: 'IMAGEN DE FONDO RADIOLOGIA' }} /> */}
 
                 {/* TÍTULO */}
                 <h1 className='block mb-10 lg:mb-20 lg:px-20 lg:mx-auto lg:max-w-screen-2xl'>
@@ -43,7 +44,7 @@ const Nosotros: NextPage = () => {
                             </div>
                             <h3 className='
                                 text-brandOrange whitespace-pre text-2xl font-main font-bold 
-                                lg:text-7xl lg:whitespace-normal lg:max-w-md lg:uppercase
+                                lg:text-5xl lg:whitespace-normal lg:max-w-xs lg:uppercase
                             '>Nuestra Visión</h3>
                             <span className='h-1 bg-brandOrange grow lg:hidden' />
                         </div>
@@ -57,7 +58,7 @@ const Nosotros: NextPage = () => {
                         </div>
 
                         <div className="px-6 flex flex-col gap-5 lg:p-0 lg:pl-10">
-                            <p className='text-brandGray font-secondary font-light text-xl lg:max-w-md lg:text-2xl'>Ser el Centro de Imágenes referente de las Sierras Chicas, brindando calidad y calidez a nuestros pacientes y profesionales derivantes</p>
+                            <p className='text-brandGray font-secondary font-light text-xl lg:text-2xl'>Ser el Centro de Imágenes referente de las Sierras Chicas, brindando calidad y calidez a nuestros pacientes y profesionales derivantes</p>
                         </div>
 
                     </div>
@@ -80,7 +81,7 @@ const Nosotros: NextPage = () => {
                             
                             <h3 className='
                                 text-brandOrange whitespace-pre text-2xl font-main font-bold 
-                                lg:text-7xl lg:whitespace-normal lg:max-w-md lg:uppercase lg:text-right 
+                                lg:text-5xl lg:whitespace-normal lg:max-w-xs lg:uppercase lg:text-right 
                             '>Nuestra Misión</h3>
                             
                             <span className='max-w-[24px] h-1 bg-brandOrange grow lg:hidden' />
@@ -97,7 +98,7 @@ const Nosotros: NextPage = () => {
 
                         {/* TEXTO */}
                         <div className="px-6 flex flex-col gap-5 lg:p-0 lg:pr-10 lg:items-end">
-                            <p className='text-brandGray font-secondary font-light text-xl lg:max-w-md lg:text-2xl lg:text-right'>Participar en el proceso asistencial satisfaciendo las necesidades diagnósticas de los médicos derivantes mediante el uso de la imagentología, en el contexto de una asistencia eficiente y de alta calidad centrada en el paciente.</p>
+                            <p className='text-brandGray font-secondary font-light text-xl lg:text-2xl lg:text-right'>Participar en el proceso asistencial satisfaciendo las necesidades diagnósticas de los médicos derivantes mediante el uso de la imagentología, en el contexto de una asistencia eficiente y de alta calidad centrada en el paciente.</p>
                         </div>
 
                     </div>
@@ -115,7 +116,7 @@ const Nosotros: NextPage = () => {
                         <span className='hidden lg:inline-block h-2 w-full bg-brandOrange' />
                         <span className='
                             text-4xl font-main font-bold text-brandOrange  border border-brandOrange py-2 px-4 bg-white
-                            lg:border-0 lg:text-7xl lg:uppercase
+                            lg:border-0 lg:text-5xl lg:uppercase
                         '>Valores</span>
                         <span className='hidden lg:inline-block h-2 w-full bg-brandOrange' />
                     </div>

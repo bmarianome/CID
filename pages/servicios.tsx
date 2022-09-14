@@ -65,7 +65,7 @@ const ServiciosList = () => {
         flex flex-col items-center gap-2 w-4/5 mx-auto 
         lg:gap-10 lg:flex-row lg:justify-center lg:items-stretch
     '>
-        <li className='h-max'>
+        <li className='h-max w-full max-w-md'>
             <ul className='flex flex-col gap-2 lg:gap-10'>
                 {
                     serviciosList.slice(0, 2).map((item, index: number) => (
@@ -75,7 +75,7 @@ const ServiciosList = () => {
 
             </ul>
         </li>
-        <li className='h-max'>
+        <li className='h-max w-full max-w-md'>
             <ul className='flex flex-col gap-2  lg:gap-10'>
                 {
                     serviciosList.slice(2, 4).map((item, index: number) => (
@@ -84,7 +84,7 @@ const ServiciosList = () => {
                 }
             </ul>
         </li>
-        <li className='h-max'>
+        <li className='h-max w-full max-w-md'>
             <ul className='flex flex-col gap-2  lg:gap-10'>
                 {
                     serviciosList.slice(4, 6).map((item, index: number) => (
@@ -118,9 +118,9 @@ const Servicios: NextPage = () => {
                 <title>Servicios</title>
                 <meta name="description" content="Un servicio creado para tu satisfacción" />
             </Head>
-            <section>
+            <section className='pt-10 lg:pt-20'>
 
-                <MainSwiper className='mb-10 lg:mb-20'>
+                {/* <MainSwiper className='mb-10 lg:mb-20'>
                     <SwiperSlide>
                         <MainImage items image={{ src: '/images/SERVICIOS_1.jpg', position: 'center', fit: 'cover', alt: 'IMAGEN DE FONDO RADIOLOGIA', priority: true }} />
                     </SwiperSlide>
@@ -130,7 +130,7 @@ const Servicios: NextPage = () => {
                     <SwiperSlide>
                         <MainImage image={{ src: '/images/SERVICIOS_3.jpg', position: 'center', fit: 'cover', alt: 'IMAGEN DE FONDO RADIOLOGIA' }} />
                     </SwiperSlide>
-                </MainSwiper>
+                </MainSwiper> */}
 
                 <h1 className="title-w-desc">Nuestros Servicios</h1>
 
