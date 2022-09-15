@@ -18,6 +18,9 @@ const Nosotros: NextPage = () => {
 
                 {/* <MainImage className='mb-10 lg:mb-20' image={{ src: '/images/FONDO_NOSOTROS.jpg', position: 'center', fit: 'cover', alt: 'IMAGEN DE FONDO RADIOLOGIA' }} /> */}
 
+                <h2 className='title-w-desc'>CID ahora es</h2> 
+                <p className='description'>Centro de Imágenes Diagnósticas Villa Allende</p> 
+
                 {/* TÍTULO */}
                 <h1 className='block mb-10 lg:mb-20 lg:px-20 lg:mx-auto lg:max-w-screen-2xl'>
                     <span className="block

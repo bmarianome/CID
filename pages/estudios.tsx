@@ -16,10 +16,6 @@ interface Estudio {
     paciente?: string
 }
 
-const foo = {
-    
-}
-
 const Estudios: NextPage = () => {
 
     const [estudios, setEstudios] = useState<never[] | Estudio[]>([])
@@ -75,8 +71,8 @@ const Estudios: NextPage = () => {
                         
                         <form className='flex flex-col items-center gap-2' onSubmit={(e) => requestEstudios(e)}>
                             <div className="flex flex-col gap-2 w-3/4 lg:w-full">
-                                <input name='estudio' className='contactanos-input h-12 placeholder:text-brandOrange' type="text" placeholder='Número de Estúdio:' />
                                 <input name='dni' className='contactanos-input h-12 placeholder:text-brandOrange' type="number" placeholder='Número de DNI:' />
+                                <input name='estudio' className='contactanos-input h-12 placeholder:text-brandOrange' type="text" placeholder='Número de Estúdio:' />
                             </div>
                             <div className="flex flex-col gap-2 w-3/4 lg:w-full">
                                 <input type="submit" value="Ver mis estudios en la web" className='

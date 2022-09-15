@@ -30,7 +30,7 @@ const Servicio = ({ index, item, isActive, setServicioActivo }: { index: number,
     return (
         <li onClick={() => setServicioActivo(() => isActive ? null : index)}
         className={`bg-brandOrange py-4 flex flex-col items-center w-full rounded-md hover:cursor-pointer
-            lg:min-w-[320px] select-none duration-200
+            lg:min-w-max select-none duration-200 px-4
             ${isActive ? "gap-3" : "gap-1"}
         `} 
         >
@@ -41,12 +41,12 @@ const Servicio = ({ index, item, isActive, setServicioActivo }: { index: number,
             '>{item.text}</h3>
 
             <ul className={`
-                font-din font-light text-lg text-center flex flex-col items-start list-disc justify-center px-4 transition-[height,_opacity] 
+                font-din font-light text-lg text-left whitespace-pre flex flex-col items-start justify-center transition-[height,_opacity] 
                 `}>
                 {
                     item.items.map((text, i) => {
                         return (
-                            <li key={i} className={`duration-200 ${ isActive ? `h-[28px] opacity-100` : `h-[0px] opacity-0` }`}>{text}</li>
+                            <li key={i} className={`duration-200 list-disc ${ isActive ? `h-[28px] opacity-100` : `h-[0px] opacity-0` }`}>{text}</li>
                         )
                     })
                 }
@@ -62,7 +62,7 @@ const ServiciosList = () => {
 
     return (
         <ul className='
-        flex flex-col items-center gap-2 w-4/5 mx-auto 
+        flex flex-col items-center gap-2 w-full px-4 mx-auto 
         lg:gap-10 lg:flex-row lg:justify-center lg:items-stretch
     '>
         <li className='h-max w-full max-w-md'>
@@ -100,13 +100,22 @@ const ServiciosList = () => {
 const ButtonTurno = () => {
     return (
         <a href={`https://wa.me/+543543608379?text=${encodeURIComponent("Hola, quiero realizar una consulta")}`} target='_blank' rel='noreferrer' 
-            className="rounded w-max py-2 px-6 bg-brandOrange flex items-center gap-4 mx-auto mb-10 lg:mb-20 shadow-simple hover:hover:-translate-y-[0.125rem] duration-200"
+            className="rounded w-max py-2 px-6 bg-brandOrange flex items-center gap-4 shadow-simple hover:hover:-translate-y-[0.125rem] duration-200"
         >
             <div className="relative w-5 h-5 lg:w-6 lg:h-6">
                 <Image layout='fill' src='/icons/WHATSAPP_WHITE.svg' alt='ICONO WHATSAPP' />
             </div>
             <span className='font-din-pro uppercase text-lg'>Pedí un turno</span>
         </a>
+    )
+}
+
+const ButtonLaboratorio = () => {
+    return (
+        <a href={`tel:+543543538208`} className="
+            rounded w-max py-2 px-6 bg-brandOrange flex items-center gap-4 shadow-simple hover:hover:-translate-y-[0.125rem] duration-200
+            font-din-pro uppercase text-lg
+        ">Contactar Laboratorio</a>
     )
 }
 
@@ -120,26 +129,15 @@ const Servicios: NextPage = () => {
             </Head>
             <section className='pt-10 lg:pt-20'>
 
-                {/* <MainSwiper className='mb-10 lg:mb-20'>
-                    <SwiperSlide>
-                        <MainImage items image={{ src: '/images/SERVICIOS_1.jpg', position: 'center', fit: 'cover', alt: 'IMAGEN DE FONDO RADIOLOGIA', priority: true }} />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <MainImage image={{ src: '/images/SERVICIOS_2.jpg', position: 'center', fit: 'cover', alt: 'IMAGEN DE FONDO RADIOLOGIA' }} />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <MainImage image={{ src: '/images/SERVICIOS_3.jpg', position: 'center', fit: 'cover', alt: 'IMAGEN DE FONDO RADIOLOGIA' }} />
-                    </SwiperSlide>
-                </MainSwiper> */}
-
                 <h1 className="title-w-desc">Nuestros Servicios</h1>
 
                 <div className="relative mb-5 lg:mb-10">
                     <ServiciosList />
                 </div>
 
-                <div className="mb-10 lg:mb-20">
+                <div className="mb-10 lg:mb-20 flex flex-col justify-center items-center gap-5 lg:gap-10 lg:flex-row">
                     <ButtonTurno />
+                    <ButtonLaboratorio />
                 </div>
 
                 <SwiperPictures />
@@ -162,7 +160,7 @@ const Servicios: NextPage = () => {
                         '>Contamos con un laboratorio</h4>
                         
                         <p className='text-brandOrange font-din-pro font-[400] text-center max-w-sm 
-                            lg:max-w-md lg:text-xl lg:min-w-[320px] lg:text-left
+                            lg:max-w-md lg:text-xl lg:min-w-[300px] lg:text-left
                         '>Prestigioso y con años de experiencia, que avalan su calidad de atención y resultados.</p>
 
                     </div>
@@ -221,8 +219,9 @@ const Servicios: NextPage = () => {
                         }
                     </ul>
 
-                    <div>
+                    <div className="flex flex-col justify-center items-center gap-5 lg:gap-10 lg:flex-row">
                         <ButtonTurno />
+                        <ButtonLaboratorio />
                     </div>
 
                 </div>

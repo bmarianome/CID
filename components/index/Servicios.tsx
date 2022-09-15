@@ -44,7 +44,7 @@ const ServiceSlide = ({ item, index }: { item: { text: string, items: string[] }
 }
 
 export const serviciosList: { text: string, items: string[] }[] = [
-    { text: "Ecografías", items: ["General", "Endocavitaria", "Obstétricas", "Valoración de r. cormosomatico", "Ecografías Obstétricas", "Ecodoppler color", "Ecocardiograma Doppler"]}, 
+    { text: "Ecografías", items: ["General", "Endocavitaria", "Obstétricas", "Valoración de riesgo cromosómico", "Ecografías Obstétricas", "Ecodoppler color", "Ecocardiograma Doppler"]}, 
     { text: "Radiología", items: ["Radiología Digital"]}, 
     { text: "Mamografía", items: ["Mamografía Digital", "Magnificada", "Focalizada",]}, 
     { text: "Cardiología", items: ["Electrocardiograma", "Prequirúrgicos","Ergometrías","Holter","Mapa"]}, 
