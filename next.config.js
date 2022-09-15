@@ -1,7 +1,6 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  reactStrictMode: true,
-  swcMinify: true,
-}
+const { withPlausibleProxy } = require('next-plausible')
 
-module.exports = nextConfig
+module.exports = withPlausibleProxy()({
+    reactStrictMode: true,
+    swcMinify: true,
+})

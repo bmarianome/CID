@@ -1,4 +1,5 @@
 import { ReactNode, useState, SetStateAction, Dispatch, useEffect, useRef } from "react"
+import { usePlausible } from 'next-plausible'
 import Image from "next/image"
 import Link from "next/link"
 import { useRouter } from "next/router"
@@ -23,6 +24,8 @@ const ItemLink = ({ text, link} : { text: string, link: string}) => {
 }
 
 const Nav = ({mobileMenuActive, setMenuMobile}: { mobileMenuActive: boolean, setMenuMobile: Dispatch<SetStateAction<boolean>> }) => {
+
+    const plausible = usePlausible()
 
     return (
         <header className="
@@ -55,14 +58,14 @@ const Nav = ({mobileMenuActive, setMenuMobile}: { mobileMenuActive: boolean, set
                 {/* MOBILE: REDES SOCIALES */}
                 <div className="flex justify-between p-6 lg:hidden">
                     <a href={`https://wa.me/+543543608379?text=${encodeURIComponent("Hola, quiero realizar una consulta")}`} target='_blank' rel='noreferrer'
-                     className="block bg-white rounded p-2 leading-none">
+                     className="block bg-white rounded p-2 leading-none" onClick={() => plausible('WhatsappClick')}>
                         <Image width={30} height={30} src={'/icons/WHATSAPP_ORANGE.svg'} alt='WHATSAPP ICON' />
                     </a>
                     <div className="flex gap-2">
-                        <a href="https://www.instagram.com/cid.va/" target='_blank' rel='noreferrer' className="flex items-center justify-center">
+                        <a href="https://www.instagram.com/cid.va/" target='_blank' rel='noreferrer' className="flex items-center justify-center" onClick={() => plausible('InstagramClick')}>
                             <Image width={30} height={30} src={'/icons/INSTAGRAM_WHITE.svg'} alt='ICONO INSTAGRAM' />
                         </a>
-                        <a href="https://www.facebook.com/CIDalvit/" target='_blank' rel='noreferrer' className="flex items-center justify-center">
+                        <a href="https://www.facebook.com/CIDalvit/" target='_blank' rel='noreferrer' className="flex items-center justify-center" onClick={() => plausible('FacebookClick')}>
                             <Image width={30} height={30} src={'/icons/FACEBOOK_WHITE.svg'} alt='ICONO FACEBOOK' />
                         </a>
                     </div>
@@ -71,7 +74,7 @@ const Nav = ({mobileMenuActive, setMenuMobile}: { mobileMenuActive: boolean, set
             </div>
 
             {/* DESKTOP: BOTÓN PEDÍ UN TURNO */}
-            <a href={`https://wa.me/+543543608379?text=${encodeURIComponent("Hola, quiero realizar una consulta")}`} target='_blank' rel='noreferrer' 
+            <a href={`https://wa.me/+543543608379?text=${encodeURIComponent("Hola, quiero realizar una consulta")}`} target='_blank' rel='noreferrer' onClick={() => plausible('WhatsappClick')}
                 className="hidden bg-white lg:flex items-center gap-4 py-2 px-4 rounded shadow-simple hover:hover:-translate-y-[0.125rem] duration-200">
 
                 <div className="relative w-6 h-6">
@@ -102,12 +105,15 @@ const Nav = ({mobileMenuActive, setMenuMobile}: { mobileMenuActive: boolean, set
 }
 
 const MediaIgFb = () => {
+
+    const plausible = usePlausible()
+
     return (
         <div className="flex gap-5 justify-center w-max">
-            <a href="https://www.instagram.com/cid.va/" target='_blank' rel='noreferrer' className="relative w-10 aspect-square hover:scale-105 duration-200">
+            <a href="https://www.instagram.com/cid.va/" target='_blank' rel='noreferrer' className="relative w-10 aspect-square hover:scale-105 duration-200" onClick={() => plausible('InstagramClick')}>
                 <Image layout='fill' src='/icons/INSTAGRAM_ORANGE.svg' alt="ICONO INSTAGRAM" />
             </a>
-            <a href="https://www.facebook.com/CIDalvit/" target='_blank' rel='noreferrer' className="relative w-10 aspect-square hover:scale-105 duration-200">
+            <a href="https://www.facebook.com/CIDalvit/" target='_blank' rel='noreferrer' className="relative w-10 aspect-square hover:scale-105 duration-200" onClick={() => plausible('FacebookClick')}>
                 <Image layout='fill' src='/icons/FACEBOOK_ORANGE.svg' alt="ICONO FACEBOOK" />
             </a>
         </div>
@@ -115,6 +121,9 @@ const MediaIgFb = () => {
 }
 
 export const Footer = ({ media, map, footer }: { media?: boolean, map?: boolean, footer?: boolean }) => {
+
+    const plausible = usePlausible()
+
     return (
         <footer className="mt-10 lg:mt-20">
             
@@ -187,10 +196,10 @@ export const Footer = ({ media, map, footer }: { media?: boolean, map?: boolean,
                             </div>
                         </div>
                         <div className="flex gap-5 justify-center">
-                            <a href="https://www.instagram.com/cid.va/" target='_blank' rel='noreferrer' className="relative w-8 aspect-square lg:w-10">
+                            <a href="https://www.instagram.com/cid.va/" target='_blank' rel='noreferrer' className="relative w-8 aspect-square lg:w-10" onClick={() => plausible('InstagramClick')}>
                                 <Image layout='fill' src='/icons/INSTAGRAM_WHITE.svg' alt="ICONO INSTAGRAM" />
                             </a>
-                            <a href="https://www.facebook.com/CIDalvit/" target='_blank' rel='noreferrer' className="relative w-8 aspect-square lg:w-10">
+                            <a href="https://www.facebook.com/CIDalvit/" target='_blank' rel='noreferrer' className="relative w-8 aspect-square lg:w-10" onClick={() => plausible('FacebookClick')}>
                                 <Image layout='fill' src='/icons/FACEBOOK_WHITE.svg' alt="ICONO FACEBOOK" />
                             </a>
                         </div>                    
@@ -254,12 +263,15 @@ const Layout = ({children}: {children: ReactNode}) => {
 }
 
 const WhatsappFixed = () => {
+
+    const plausible = usePlausible()
+    
     return (
         <a href={`https://wa.me/+543543608379?text=${encodeURIComponent("Hola, quiero realizar una consulta")}`} target='_blank' rel='noreferrer'
             className="fixed flex items-center justify-center w-12 h-12 bg-[#25D366] rounded-full z-10 shadow-simple
             right-8 bottom-8 lg:right-10 lg:bottom-10 
             hover:shadow-xl hover:-translate-y-[0.125rem] duration-200
-            hover:cursor-pointer group">
+            hover:cursor-pointer group" onClick={() => plausible('WhatsappClick')}>
             <figure className="relative w-6 h-6 duration-200">
                 <Image layout="fill" src='/icons/WHATSAPP_WHITE.svg' alt="WHATSAPP ICON" />
             </figure>

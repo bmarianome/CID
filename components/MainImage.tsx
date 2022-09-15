@@ -10,7 +10,7 @@ interface MainImage {
 
 const MainImage = ({ image, className, items }: { image: MainImage, className?: string, items?: boolean }) => {
     return (
-        <div className={`relative w-full h-[calc(100vh-80px)] ${className}`}>
+        <div className={`h-full ${className}`}>
             <div className={`h-full relative flex flex-col justify-center items-center ${ items ? "bg-white/80" : "" }`}>
                 <div className="w-full h-full absolute -z-10">
                     <Image priority={image.priority} layout='fill' objectFit={image.fit} objectPosition={image.position} src={image.src} alt={image.alt ?? ''} />

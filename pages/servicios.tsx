@@ -7,6 +7,7 @@ import Divisor from 'components/Divisor'
 import ObrasSociales from 'components/index/ObrasSociales'
 import { Footer } from 'components/Layout'
 import MainImage from 'components/MainImage'
+import { usePlausible } from 'next-plausible'
 
 import { SwiperSlide } from 'swiper/react';
 import "swiper/css/pagination";
@@ -98,9 +99,13 @@ const ServiciosList = () => {
 }
 
 const ButtonTurno = () => {
+
+    const plausible = usePlausible()
+    
     return (
         <a href={`https://wa.me/+543543608379?text=${encodeURIComponent("Hola, quiero realizar una consulta")}`} target='_blank' rel='noreferrer' 
             className="rounded w-max py-2 px-6 bg-brandOrange flex items-center gap-4 shadow-simple hover:hover:-translate-y-[0.125rem] duration-200"
+            onClick={() => plausible('WhatsappClick')}
         >
             <div className="relative w-5 h-5 lg:w-6 lg:h-6">
                 <Image layout='fill' src='/icons/WHATSAPP_WHITE.svg' alt='ICONO WHATSAPP' />
@@ -111,11 +116,17 @@ const ButtonTurno = () => {
 }
 
 const ButtonLaboratorio = () => {
+
+    const plausible = usePlausible()
+    
     return (
-        <a href={`tel:+543543538208`} className="
+        <a href={`tel:+543543538208`} onClick={() => plausible('LaboratorioClick')} className="
             rounded w-max py-2 px-6 bg-brandOrange flex items-center gap-4 shadow-simple hover:hover:-translate-y-[0.125rem] duration-200
             font-din-pro uppercase text-lg
-        ">Contactar Laboratorio</a>
+        ">
+            <span className='lg:hidden'>Laboratorio (3543-538208)</span>
+            <span className='hidden lg:inline'>Contactar Laboratorio</span>
+        </a>
     )
 }
 

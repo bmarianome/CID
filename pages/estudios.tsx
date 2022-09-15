@@ -6,6 +6,7 @@ import Divisor from 'components/Divisor'
 import { Footer } from 'components/Layout'
 import { FormEvent, useState } from 'react'
 import MainImage from 'components/MainImage'
+import { usePlausible } from 'next-plausible'
 
 interface Estudio {
     estudio?: string
@@ -17,6 +18,8 @@ interface Estudio {
 }
 
 const Estudios: NextPage = () => {
+
+    const plausible = usePlausible()
 
     const [estudios, setEstudios] = useState<never[] | Estudio[]>([])
     const [hash, setHash] = useState<string>()
@@ -82,7 +85,9 @@ const Estudios: NextPage = () => {
                                 <a href='https://wa.me/+543543608379?text=Hola, quiero realizar una consulta' target='_blank' rel='noreferrer' className='
                                     w-full text-white font-main font-medium text-lg bg-[#25D366] py-2 rounded-md text-center
                                     lg:text-left lg:px-4 lg:flex lg:justify-between
-                                ' >O pedí tus estudios por Whatsapp
+                                ' 
+                                onClick={() => plausible('WhatsappClick')}
+                                >O pedí tus estudios por Whatsapp
                                     <div className="hidden lg:block relative w-6">
                                         <Image layout='fill' src='/icons/WHATSAPP_WHITE.svg' alt='ICONO WHATSAPP' />
                                     </div>

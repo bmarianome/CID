@@ -6,8 +6,11 @@ import Divisor from 'components/Divisor'
 import { Footer } from 'components/Layout'
 import { useState } from 'react'
 import MainImage from 'components/MainImage'
+import { usePlausible } from 'next-plausible'
 
 const Contacto: NextPage = () => {
+
+    const plausible = usePlausible()
 
     return (
         <>
@@ -46,7 +49,9 @@ const Contacto: NextPage = () => {
                                 <a href='https://wa.me/+543543608379?text=Hola, quiero realizar una consulta' target='_blank' rel='noreferrer' className='
                                     w-full text-white font-main font-medium text-lg bg-[#25D366] py-2 rounded-md text-center
                                     lg:text-left lg:px-4 lg:flex lg:justify-between
-                                ' >O contactanos por Whatsapp
+                                ' 
+                                onClick={() => plausible('WhatsappClick')}
+                                >O contactanos por Whatsapp
                                     <div className="hidden lg:block relative w-6 h-6">
                                         <Image layout='fill' src='/icons/WHATSAPP_WHITE.svg' alt='ICONO WHATSAPP' />
                                     </div>

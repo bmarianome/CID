@@ -2,9 +2,10 @@ import '../styles/globals.css'
 import type { AppProps } from 'next/app'
 import Layout from 'components/Layout'
 import Head from 'next/head'
+import PlausibleProvider from 'next-plausible'
 
 function Cid({ Component, pageProps }: AppProps) {
-
+    
     return (
         <>
             <Head>
@@ -22,9 +23,11 @@ function Cid({ Component, pageProps }: AppProps) {
                 <script defer data-domain="cidvillaallende.com.ar" src="https://plausible.io/js/plausible.js" />
             </Head> 
             
-            <Layout>
-                <Component {...pageProps} />
-            </Layout>
+            <PlausibleProvider domain="cidvillaallende.com.ar" trackOutboundLinks={true}>
+                <Layout>
+                    <Component {...pageProps} />
+                </Layout>
+            </PlausibleProvider>
         </>
     )
 }

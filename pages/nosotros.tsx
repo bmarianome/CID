@@ -56,7 +56,7 @@ const Nosotros: NextPage = () => {
                             lg:row-span-2 lg:bg-white-gradient-desktop-2 hover:shadow-2xl duration-500 lg:p-0
                         ">
                             <div className="relative h-full w-full -z-10">
-                                <Image layout='fill' objectFit='cover' objectPosition='center' src='/images/ECOGRAFIA_2.jpg' alt='FOTO ECOGRAFÍA' />
+                                <Image layout='fill' objectFit='cover' objectPosition='center' src='/images/ECOGRAFIA_2.jpg' alt='FOTO ECOGRAFÍA' sizes='(max-width: 1024px) 90vw, 45vw' />
                             </div>
                         </div>
 
@@ -95,7 +95,7 @@ const Nosotros: NextPage = () => {
                             lg:row-start-1 lg:row-end-3 lg:bg-white-gradient-desktop-2-inverted hover:shadow-2xl duration-500 lg:p-0
                         ">
                             <div className="relative h-full w-full -z-10">
-                                <Image layout='fill' objectFit='cover' objectPosition='center' src='/images/EQUIPOS_IMAGEN.jpg' alt='FOTO ECOGRAFÍA' />
+                                <Image layout='fill' objectFit='cover' objectPosition='center' src='/images/EQUIPOS_IMAGEN.jpg' alt='FOTO ECOGRAFÍA' sizes='(max-width: 1024px) 90vw, 45vw' />
                             </div>
                         </div>
 
@@ -128,11 +128,8 @@ const Nosotros: NextPage = () => {
 
                 {/* SVG VALORES */}
                 <figure className="mx-auto px-10 mb-10 flex justify-center max-w-lg lg:max-w-2xl lg:mb-20 group">
-                    <div className="lg:hidden group-hover:scale-105 duration-200">
-                        <Image width={885} height={718} src='/icons/ESTRUCTURA_VALORES.png' alt='ESTRUCTURA DE VALORES' />
-                    </div>
-                    <div className="hidden lg:inline-block group-hover:scale-105 duration-200">
-                        <Image width={885} height={718} src='/icons/ESTRUCTURA_VALORES.png' alt='ESTRUCTURA DE VALORES' />
+                    <div className="group-hover:scale-105 duration-200">
+                        <Image width={885} height={718} src='/icons/ESTRUCTURA_VALORES.png' alt='ESTRUCTURA DE VALORES' sizes='(max-width: 512px) 100vw, (max-width: 1024px) 50vw, 33vw' />
                     </div>
                 </figure>
 
