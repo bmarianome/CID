@@ -46,6 +46,7 @@ const Estudios: NextPage = () => {
         const estudios = await fetch(`https://impacs.cidvillaallende.com.ar/cgi-bin/minisite.bf/studies/${hash}`)
         .then(estudios => estudios.json())
         .then(estudios => {
+            plausible('EstudioBuscado')
             setEstudios(estudios)
             window.scrollTo(0, document.body.scrollHeight)
         })
@@ -133,7 +134,9 @@ const Estudios: NextPage = () => {
                                                     <td className='text-md font-din-pro font-[400] lg:text-2xl'>{estudio.estudio}</td>
                                                     <td className='text-md font-din-pro font-[400] lg:text-2xl'>{estudio.fecha}</td>
                                                     <td className='text-xl font-din-pro font-[400] lg:text-2xl w-12 h-12 text-center bg-brandOrange text-white'>
-                                                        <a href={`https://estudio.informemedico.com.ar/#/54/${hash}`} target='_blank' rel='noreferrer'>Ver</a>
+                                                        <a href={`https://estudio.informemedico.com.ar/#/54/${hash}`} target='_blank' rel='noreferrer'
+                                                            onClick={() => plausible('EstudioVisto')}
+                                                        >Ver</a>
                                                     </td>
                                                 </tr>
                                             )
