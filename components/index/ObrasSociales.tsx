@@ -29,8 +29,7 @@ const ObrasSociales = () => {
 
             <div className="w-4/5 mb-10 m-auto border-y-2 border-brandOrange flex items-center py-4 select-none">
                 <Swiper
-                    autoplay={{ delay: 1250, disableOnInteraction: true }}
-                    modules={[ Autoplay ]}
+                    speed={2000} autoplay={{ delay: 3000, disableOnInteraction: true }} modules={[ Autoplay ]}
                     slidesPerView={2}
                     breakpoints={{
                         1280: {

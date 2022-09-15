@@ -15,7 +15,7 @@ const images = [
 const SwiperPictures = () => {
     return (
         <div className="relative h-max mb-10 lg:mb-20">
-            <Swiper spaceBetween={48} autoplay={{ delay: 1500, disableOnInteraction: false }} modules={[ Autoplay ]}>
+            <Swiper spaceBetween={48} autoplay={{ delay: 6000, disableOnInteraction: false }} modules={[ Autoplay ]} speed={3000}>
                 {
                     images.map((image, index) => {
                         return (

@@ -37,8 +37,8 @@ const MainSwiper = ({ children, className }: { children: ReactNode, className?: 
     return (
         <div className={className}>
             <Swiper
-                autoplay={{ delay: 2000, disableOnInteraction: true }} modules={[ Autoplay ]}
-                speed={500}
+                autoplay={{ delay: 12000, disableOnInteraction: true }} modules={[ Autoplay ]}
+                speed={3000}
             >
                 {children}            
 

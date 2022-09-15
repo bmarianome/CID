@@ -59,8 +59,7 @@ const Servicios = () => {
 
             <div className="relative w-3/4 mb-10 mx-auto md:max-w-5xl lg:max-w-7xl lg:mb-20 select-none">
                 <Swiper
-                    slidesPerView='auto'
-                    spaceBetween={48}
+                    slidesPerView='auto' spaceBetween={48} speed={2000} modules={[ Autoplay, Pagination, Navigation ]}
                     breakpoints={{
                         768: {
                             slidesPerView: 2
@@ -70,7 +69,7 @@ const Servicios = () => {
                         }
                     }}
                     autoplay={{
-                        delay: 2000,
+                        delay: 4000,
                         disableOnInteraction: true
                     }}
                     pagination={{
@@ -82,7 +81,6 @@ const Servicios = () => {
                         prevEl: '.prev-arrow',
                         nextEl: '.next-arrow',
                     }}
-                    modules={[ Autoplay, Pagination, Navigation ]}
                 >
                     {
                         serviciosList.map((item, index) => (
