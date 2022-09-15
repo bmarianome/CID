@@ -124,8 +124,8 @@ const ButtonLaboratorio = () => {
             rounded w-max py-2 px-6 bg-brandOrange flex items-center gap-4 shadow-simple hover:hover:-translate-y-[0.125rem] duration-200
             font-din-pro uppercase text-lg
         ">
-            <span className='lg:hidden'>Laboratorio (3543-538208)</span>
-            <span className='hidden lg:inline'>Contactar Laboratorio</span>
+            <span className='hidden lg:inline'>Laboratorio (3543-538208)</span>
+            <span className='lg:hidden'>Contactar Laboratorio</span>
         </a>
     )
 }
