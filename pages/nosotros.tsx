@@ -128,8 +128,8 @@ const Nosotros: NextPage = () => {
 
                 {/* SVG VALORES */}
                 <figure className="mx-auto px-10 mb-10 flex justify-center max-w-lg lg:max-w-2xl lg:mb-20 group">
-                    <div className="group-hover:scale-105 duration-200">
-                        <Image width={885} height={718} src='/icons/ESTRUCTURA_VALORES.png' alt='ESTRUCTURA DE VALORES' sizes='(max-width: 512px) 100vw, (max-width: 1024px) 50vw, 33vw' />
+                    <div className="group-hover:scale-105 duration-200 w-full">
+                        <Image sizes='(max-width: 512px) 100vw, (max-width: 1024px) 50vw, 33vw' layout='responsive' width={885} height={718} src='/icons/ESTRUCTURA_VALORES.png' alt='ESTRUCTURA DE VALORES' />
                     </div>
                 </figure>
 
