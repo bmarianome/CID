@@ -147,7 +147,7 @@ const Nosotros: NextPage = () => {
                             <li>- La calidad del producto</li>
                             <li>- La calidad de gestión.</li>
                         </ul>
-                        
+                         
                     </div>
                     <div className="rounded-xl bg-brandOrange p-5 w-full flex flex-col gap-3 lg:px-9 py-7 lg:w-1/2 hover:shadow-2xl duration-500">
                         <h5 className='font-main font-black text-xl lg:text-2xl '>Política de Calidad</h5>

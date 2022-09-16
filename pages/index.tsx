@@ -21,7 +21,7 @@ const Home: NextPage = () => {
                 <meta name="description" content="CID, primer servicio de imágenes médicas totalmente digital de las Sierras Chicas." />     
             </Head>
             <main>
-                <div className="h-[calc(100vh-80px)] lg:h-[calc(100vh-84.8px)] bg-red-500 flex flex-col">
+                <div className="h-[calc(100vh-80px)] lg:h-[calc(100vh-84.8px)] flex flex-col">
                     <MainSwiper className='h-full'>
                         <SwiperSlide>
                             <MainImage items image={{ src: '/images/HOME_FONDO_RADIOLOGIA.jpg', position: 'center', fit: 'cover', alt: 'IMAGEN DE FONDO RADIOLOGIA', priority: true }} />
