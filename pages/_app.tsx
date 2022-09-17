@@ -23,7 +23,7 @@ function Cid({ Component, pageProps }: AppProps) {
             </Head> 
             
             <PlausibleProvider 
-                customDomain='https://plausible.bmariano.me/js/plausible.js' 
+                customDomain='https://plausible.bmariano.me' 
                 domain="cidvillaallende.com.ar" 
                 trackOutboundLinks={true} selfHosted={true}>
 
