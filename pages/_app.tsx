@@ -26,6 +26,7 @@ function Cid({ Component, pageProps }: AppProps) {
                     <meta content="website" property="og:type" />
 
                     <link rel="manifest" href="/manifest.json" />
+                    <meta name="google-site-verification" content="bkgSz1QnJlMd0nex0MOr0SRzv4vo423_KaE5dI3779o" />
                 </Head> 
                 <Layout>
                     <Component {...pageProps} />
