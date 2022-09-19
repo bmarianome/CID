@@ -16,6 +16,7 @@ const Contacto: NextPage = () => {
     let sending = false
 
     async function sendMail(e: FormEvent<HTMLFormElement>) {
+        
         e.preventDefault()
 
         if (sending) return
@@ -33,6 +34,7 @@ const Contacto: NextPage = () => {
         })
         .then(() => {
             plausible('Consulta')
+            e.currentTarget.reset()
             return alert('Hemos recibido tu consulta y en las próximas 48h hábiles nos contactaremos con usted.')
         })
         .finally(() => sending = false)
