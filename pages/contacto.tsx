@@ -4,13 +4,27 @@ import Link from 'next/link'
 import Head from 'next/head'
 import Divisor from 'components/Divisor'
 import { Footer } from 'components/Layout'
-import { useState } from 'react'
+import { FormEvent, useState } from 'react'
 import MainImage from 'components/MainImage'
 import { usePlausible } from 'next-plausible'
+import axios from 'axios'
 
 const Contacto: NextPage = () => {
 
     const plausible = usePlausible()
+
+    async function sendMail(e: FormEvent<HTMLFormElement>) {
+        e.preventDefault()
+        const form = new FormData(e.currentTarget)
+
+        const mail = await axios.post('/api/send_email', {
+            name: form.get('name'),
+            phone: form.get('tel'),
+            text: form.get('text')
+        })
+        .catch(() => {throw alert('Hubo un error. Porfavor comunícate con nosotros.')})
+        .then(() => {throw alert('Hemos recibido tu consulta y en las próximas 48h hábiles nos contactaremos con usted.')})
+    }
 
     return (
         <>
@@ -33,13 +47,13 @@ const Contacto: NextPage = () => {
                         
                         {/* <h2 className='text-center text-brandOrange font-main text-xl font-bold mb-5 lg:mb-10 lg:text-2xl'>Contactanos por correo electrónico</h2> */}
                         
-                        <form className='flex flex-col items-center gap-2'>
+                        <form className='flex flex-col items-center gap-2' onSubmit={(e) => sendMail(e)}>
                             <div className="flex flex-col gap-2 w-3/4 lg:flex-row lg:w-full">
-                                <input className='contactanos-input h-12' type="text" placeholder='Nombre completo:' />
-                                <input className='contactanos-input h-12' type="number" placeholder='Número de teléfono:' />
+                                <input name='name' className='contactanos-input h-12' type="text" placeholder='Nombre completo:' required />
+                                <input name='tel' className='contactanos-input h-12' type="number" placeholder='Número de teléfono:' required />
                             </div>
                             <div className="w-3/4 lg:w-full">
-                                <textarea className='contactanos-input h-32' placeholder='Motivo de su Consulta:'></textarea>
+                                <textarea name='text' className='contactanos-input h-32' placeholder='Motivo de su Consulta:' required></textarea>
                             </div>
                             <div className="flex flex-col gap-2 w-3/4 lg:w-full">
                                 <input type="submit" value="Enviar correo electrónico" className='
@@ -61,7 +75,6 @@ const Contacto: NextPage = () => {
 
                     </div>
                 </div>
-
 
                 <div className="mt-10 lg:mt-20">
                     <Divisor />
