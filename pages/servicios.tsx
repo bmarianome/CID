@@ -47,7 +47,7 @@ const Servicio = ({ index, item, isActive, setServicioActivo }: { index: number,
                 {
                     item.items.map((text, i) => {
                         return (
-                            <li key={i} className={`duration-200 list-disc ${ isActive ? `h-[28px] opacity-100` : `h-[0px] opacity-0` }`}>{text}</li>
+                            <li key={i} className={`duration-200 list-disc text-white ${ isActive ? `h-[28px] opacity-100` : `h-[0px] opacity-0` }`}>{text}</li>
                         )
                     })
                 }
