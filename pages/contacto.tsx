@@ -16,26 +16,27 @@ const Contacto: NextPage = () => {
     let sending = false
 
     async function sendMail(e: FormEvent<HTMLFormElement>) {
-        
+
         e.preventDefault()
 
         if (sending) return
         sending = true
         
-        const form = new FormData(e.currentTarget)
+        const form = e.currentTarget
+        const formData = new FormData(e.currentTarget)
 
         const mail = await axios.post('/api/send_email', {
-            name: form.get('name'),
-            phone: form.get('tel'),
-            text: form.get('text'),
+            name: formData.get('name'),
+            phone: formData.get('tel'),
+            text: formData.get('text'),
         })
         .catch(() => {
             throw alert('Hubo un error. Porfavor comunícate con nosotros.')
         })
         .then(() => {
             plausible('Consulta')
-            e.currentTarget.reset()
-            return alert('Hemos recibido tu consulta y en las próximas 48h hábiles nos contactaremos con usted.')
+            form.reset()
+            alert('Hemos recibido tu consulta y en las próximas 48h hábiles nos contactaremos con usted.')
         })
         .finally(() => sending = false)
     }
