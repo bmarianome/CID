@@ -18,6 +18,12 @@ export default async function Mailer(req: NextApiRequest, res: NextApiResponse) 
                 logoUrl: "https://www.cidvillaallende.com.ar/icons/CID_WHITE_EMAIL.png",
                 mainColor: "#ef6a34",
                 bgColor: "rgba(239, 106, 52, .1)"
+            },
+            transporter: {
+                host: "smtp.zoho.com",
+                secure: true,
+                user: "secretaria@cidvillaallende.com.ar",
+                pass: process.env.CID_MAILS_KEY
             }
         }, {
             headers: {
