@@ -20,10 +20,13 @@ const Contacto: NextPage = () => {
         const mail = await axios.post('/api/send_email', {
             name: form.get('name'),
             phone: form.get('tel'),
-            text: form.get('text')
+            text: form.get('text'),
         })
         .catch(() => {throw alert('Hubo un error. Porfavor comunícate con nosotros.')})
-        .then(() => {throw alert('Hemos recibido tu consulta y en las próximas 48h hábiles nos contactaremos con usted.')})
+        .then(() => {
+            plausible('Consulta')
+            return alert('Hemos recibido tu consulta y en las próximas 48h hábiles nos contactaremos con usted.')
+        })
     }
 
     return (
