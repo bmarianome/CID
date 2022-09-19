@@ -30,6 +30,8 @@ export default async function Mailer(req: NextApiRequest, res: NextApiResponse) 
                 </div>
             `
         })
+
+        return res.json({ status: 'Email Sent'})
     }
 
     catch (error) {
