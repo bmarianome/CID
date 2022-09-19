@@ -13,8 +13,14 @@ const Contacto: NextPage = () => {
 
     const plausible = usePlausible()
 
+    let sending = false
+
     async function sendMail(e: FormEvent<HTMLFormElement>) {
         e.preventDefault()
+
+        if (sending) return
+        sending = true
+        
         const form = new FormData(e.currentTarget)
 
         const mail = await axios.post('/api/send_email', {
@@ -22,11 +28,14 @@ const Contacto: NextPage = () => {
             phone: form.get('tel'),
             text: form.get('text'),
         })
-        .catch(() => {throw alert('Hubo un error. Porfavor comunícate con nosotros.')})
+        .catch(() => {
+            throw alert('Hubo un error. Porfavor comunícate con nosotros.')
+        })
         .then(() => {
             plausible('Consulta')
             return alert('Hemos recibido tu consulta y en las próximas 48h hábiles nos contactaremos con usted.')
         })
+        .finally(() => sending = false)
     }
 
     return (
