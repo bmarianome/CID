@@ -6,7 +6,7 @@ export default async function Mailer(req: NextApiRequest, res: NextApiResponse) 
     try {
 
         const mail = await axios.post('https://bmariano.me/api/send_mail', {
-            receiver: 'bmariano.me@gmail.com',
+            receiver: 'secretaria@cidvillaallende.com.ar',
             siteUrl: 'cidvillaallende.com.ar',
             data: {
                 type: 'Consulta',
