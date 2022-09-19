@@ -1,38 +1,35 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
+const nodemailer = require('nodemailer')
 import axios from 'axios'
 
 export default async function Mailer(req: NextApiRequest, res: NextApiResponse) {
+    
+    let transporter = nodemailer.createTransport({
+        host: "smtp.zoho.com",
+        port: 465,
+        auth: {
+            user: "secretaria@cidvillaallende.com.ar",
+            pass: process.env.CID_MAILS_KEY
+        }
+    })
 
     try {
-
-        const mail = await axios.post('https://bmariano.me/api/send_mail', {
-            receiver: 'secretaria@cidvillaallende.com.ar',
-            siteUrl: 'cidvillaallende.com.ar',
-            data: {
-                type: 'Consulta',
-                name: req.body.name,
-                phone: req.body.phone,
-                message: req.body.text
-            },
-            branding: {
-                logoUrl: "https://www.cidvillaallende.com.ar/icons/CID_WHITE_EMAIL.png",
-                mainColor: "#ef6a34",
-                bgColor: "rgba(239, 106, 52, .1)"
-            },
-            transporter: {
-                host: "smtp.zoho.com",
-                secure: true,
-                user: "secretaria@cidvillaallende.com.ar",
-                pass: process.env.CID_MAILS_KEY
-            }
-        }, {
-            headers: {
-                'authorization': process.env.BMARIANO_API_KEY as string,
-                'referer': 'cidvillaallende.com.ar'
-            }
+        
+        let mail = await transporter.sendMail({
+            from: 'secretaria@cidvillaallende.com.ar', // sender address
+            to: `secretaria@cidvillaallende.com.ar`, // list of receivers
+            subject: `Alerta desde el Sitio Web: cidvillaallende.com.ar`, // Subject line
+            html: `
+                <div>
+                    <h1>Nombre:</h1>
+                    <h6>${req.body.name}</h6>
+                    <h1>Teléfono:</h1>
+                    <h6>${req.body.tel}</h6>
+                    <h1>Consulta:</h1>
+                    <h6>${req.body.text}</h6>
+                </div>
+            `
         })
-
-        return res.json({ status: "Email sent"})
     }
 
     catch (error) {
