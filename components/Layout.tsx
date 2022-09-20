@@ -65,7 +65,7 @@ const Nav = ({mobileMenuActive, setMenuMobile}: { mobileMenuActive: boolean, set
                         <a href="https://www.instagram.com/cid.va/" target='_blank' rel='noreferrer' className="flex items-center justify-center" onClick={() => plausible('InstagramClick')}>
                             <Image width={30} height={30} src={'/icons/INSTAGRAM_WHITE.svg'} alt='ICONO INSTAGRAM' />
                         </a>
-                        <a href="https://www.facebook.com/CIDalvit/" target='_blank' rel='noreferrer' className="flex items-center justify-center" onClick={() => plausible('FacebookClick')}>
+                        <a href="https://www.facebook.com/Cid.Villaallende" target='_blank' rel='noreferrer' className="flex items-center justify-center" onClick={() => plausible('FacebookClick')}>
                             <Image width={30} height={30} src={'/icons/FACEBOOK_WHITE.svg'} alt='ICONO FACEBOOK' />
                         </a>
                     </div>
@@ -113,7 +113,7 @@ const MediaIgFb = () => {
             <a href="https://www.instagram.com/cid.va/" target='_blank' rel='noreferrer' className="relative w-10 aspect-square hover:scale-105 duration-200" onClick={() => plausible('InstagramClick')}>
                 <Image layout='fill' src='/icons/INSTAGRAM_ORANGE.svg' alt="ICONO INSTAGRAM" />
             </a>
-            <a href="https://www.facebook.com/CIDalvit/" target='_blank' rel='noreferrer' className="relative w-10 aspect-square hover:scale-105 duration-200" onClick={() => plausible('FacebookClick')}>
+            <a href="https://www.facebook.com/Cid.Villaallende" target='_blank' rel='noreferrer' className="relative w-10 aspect-square hover:scale-105 duration-200" onClick={() => plausible('FacebookClick')}>
                 <Image layout='fill' src='/icons/FACEBOOK_ORANGE.svg' alt="ICONO FACEBOOK" />
             </a>
         </div>
@@ -199,7 +199,7 @@ export const Footer = ({ media, map, footer }: { media?: boolean, map?: boolean,
                             <a href="https://www.instagram.com/cid.va/" target='_blank' rel='noreferrer' className="relative w-8 aspect-square lg:w-10" onClick={() => plausible('InstagramClick')}>
                                 <Image layout='fill' src='/icons/INSTAGRAM_WHITE.svg' alt="ICONO INSTAGRAM" />
                             </a>
-                            <a href="https://www.facebook.com/CIDalvit/" target='_blank' rel='noreferrer' className="relative w-8 aspect-square lg:w-10" onClick={() => plausible('FacebookClick')}>
+                            <a href="https://www.facebook.com/Cid.Villaallende" target='_blank' rel='noreferrer' className="relative w-8 aspect-square lg:w-10" onClick={() => plausible('FacebookClick')}>
                                 <Image layout='fill' src='/icons/FACEBOOK_WHITE.svg' alt="ICONO FACEBOOK" />
                             </a>
                         </div>                    
