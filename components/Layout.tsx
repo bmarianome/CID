@@ -209,7 +209,12 @@ export const Footer = ({ media, map, footer }: { media?: boolean, map?: boolean,
 
                     <div className="flex flex-col justify-center items-center gap-2 lg:flex-row lg:justify-between">
                         <span className="text-center text-sm font-secondary font-light">CID Villa Allende 2022 - Todos los derechos reservados</span>
-                        <span className="text-center text-sm font-secondary font-light">Realizado por 0092 Estudio Creativo</span>
+                        <span className="text-sm font-secondary font-light">
+                            <div className="flex flex-col items-end">
+                                <span>Diseños: 0092 Estudio Creativo.</span>
+                                <span>Desarrollador: <a className="underline" href="https://bmariano.me">bmariano.me</a></span>
+                            </div>
+                        </span>
                     </div>
                 </div>
                 : null

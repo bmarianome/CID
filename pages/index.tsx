@@ -1,5 +1,4 @@
 import type { NextPage } from 'next'
-import MainSlider from 'components/index/MainSlider'
 import Servicios from 'components/index/Servicios'
 import ObrasSociales from 'components/index/ObrasSociales'
 import Divisor from 'components/Divisor'
