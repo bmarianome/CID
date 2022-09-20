@@ -35,7 +35,6 @@ const Servicio = ({ index, item, isActive, setServicioActivo }: { index: number,
             ${isActive ? "gap-3" : "gap-1"}
         `} 
         >
-
             <h3 className='
                 font-secondary font-bold text-2xl
                 lg:text-3xl
@@ -77,7 +76,7 @@ const ServiciosList = () => {
             </ul>
         </li>
         <li className='h-max w-full max-w-md'>
-            <ul className='flex flex-col gap-2  lg:gap-10'>
+            <ul className='flex flex-col gap-2 lg:gap-10'>
                 {
                     serviciosList.slice(2, 4).map((item, index: number) => (
                         <Servicio index={index + 2} key={index} item={item} isActive={servicioActivo === index + 2} setServicioActivo={setServicioActivo} />
@@ -86,7 +85,7 @@ const ServiciosList = () => {
             </ul>
         </li>
         <li className='h-max w-full max-w-md'>
-            <ul className='flex flex-col gap-2  lg:gap-10'>
+            <ul className='flex flex-col gap-2 lg:gap-10'>
                 {
                     serviciosList.slice(4, 6).map((item, index: number) => (
                         <Servicio index={index + 4} key={index} item={item} isActive={servicioActivo === index + 4} setServicioActivo={setServicioActivo} />

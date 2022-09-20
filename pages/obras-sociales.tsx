@@ -6,6 +6,7 @@ import Divisor from 'components/Divisor'
 import { Footer } from 'components/Layout'
 import { useState } from 'react'
 import MainImage from 'components/MainImage'
+import ObrasSocialesLogos from 'components/ObrasSocialesLogos'
 
 const ObrasSocialesList = () => {
         
@@ -24,7 +25,7 @@ const ObrasSocialesList = () => {
 
     return  (
 
-        <>
+        <div className=''>
             <div className="lg:flex lg:items-end lg:justify-between lg:max-w-screen-2xl lg:px-20 lg:mx-auto lg:gap-10">
                 <article className='flex flex-col justify-center lg:w-1/2'>
                     <h1 className="text-brandOrange text-center lg:text-left text-4xl font-din-pro mb-5
@@ -62,8 +63,8 @@ const ObrasSocialesList = () => {
 
             {/* LISTA */}
             <ul className={`flex flex-col w-3/4 mx-auto overflow-hidden mb-5
-                duration-500 ease-out lg:w-full
-                lg:mb-10 lg:h-max lg:max-w-screen-2xl lg:px-20 lg:grid lg:grid-cols-3 lg:min-h-[308px]
+                duration-500 ease-out lg:w-full lg:mb-20
+                lg:h-max lg:max-w-screen-2xl lg:px-20 lg:grid lg:grid-cols-3 lg:min-h-[308px]
                 ${ !listOpen ? 'h-[288px]' : `h-[744px]` } 
             `}>
                 {ObrasSocialesList.map((name, index) => {
@@ -81,10 +82,10 @@ const ObrasSocialesList = () => {
             </ul>
 
             {/* VER MAS */}
-            <button className="text-brandOrange font-secondary font-light block mx-auto lg:hidden"
+            <button className="text-brandOrange font-secondary font-light block mx-auto lg:hidden mb-10"
                 onClick={() => !search ? setList(!listOpen) : null}
             >{ !listOpen ? "Ver Más" : "Ocultar"}</button>
-        </>
+        </div>
     )
 }
 
@@ -97,11 +98,10 @@ const ObrasSociales: NextPage = () => {
                 <meta name="description" content="Conocé las obras sociales con las que trabajamos actualmente" />
             </Head>
             <section className='pt-10 lg:pt-20'>
-
                 {/* <MainImage className='mb-10 lg:mb-20' image={{ src: '/images/OBRAS_SOCIALES.jpg', position: 'center', fit: 'cover', alt: 'IMAGEN DE FONDO RADIOLOGIA' }} /> */}
 
                 <ObrasSocialesList />
-
+                <ObrasSocialesLogos />
             </section>
             <Footer footer />
         </>
