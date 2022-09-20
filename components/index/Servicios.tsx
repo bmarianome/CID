@@ -33,7 +33,7 @@ const ServiceSlide = ({ item, index }: { item: { text: string, items: string[] }
                 {
                     item.items.map((text, index) => {
                         return (
-                            <li key={index} className={`duration-200 ${ active ? `h-[28px] opacity-100` : `h-[0px] opacity-0` }`}>{text}</li>
+                            <li key={index} className={`duration-200 text-white font-din-pro font-light ${ active ? `h-[28px] opacity-100` : `h-[0px] opacity-0` }`}>{text}</li>
                         )
                     })
                 }
