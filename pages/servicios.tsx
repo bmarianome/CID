@@ -6,16 +6,13 @@ import Estudios from 'components/index/Estudios'
 import Divisor from 'components/Divisor'
 import ObrasSociales from 'components/index/ObrasSociales'
 import { Footer } from 'components/Layout'
-import MainImage from 'components/MainImage'
 import { usePlausible } from 'next-plausible'
 
-import { SwiperSlide } from 'swiper/react';
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import 'swiper/css';
 import { useState, SetStateAction, Dispatch, useEffect } from 'react'
 import SwiperPictures from 'components/SwiperPictures'
-import MainSwiper from 'components/MainSwiper'
 import { serviciosList } from 'components/index/Servicios'
 
 const items: { title: string, desc: string }[] = [
@@ -108,7 +105,7 @@ const ButtonTurno = () => {
         >
             <div className="relative w-5 h-5 lg:w-6 lg:h-6">
                 <Image layout='fill' src='/icons/WHATSAPP_WHITE.svg' alt='ICONO WHATSAPP' />
-            </div>
+            </div>  
             <span className='font-din-pro uppercase text-lg'>Pedí un turno</span>
         </a>
     )

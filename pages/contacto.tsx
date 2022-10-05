@@ -41,11 +41,25 @@ const Contacto: NextPage = () => {
         .finally(() => sending = false)
     }
 
+    const Telefono = ({ text, link }: { text: string, link: string}) => {
+        return (
+            <a href={link}
+                className="rounded w-max py-2 px-6 bg-brandOrange flex items-center gap-4 shadow-simple hover:hover:-translate-y-[0.125rem] duration-200"
+                onClick={() => plausible('Click en Llamada')}
+            >
+                <span className='font-din-pro uppercase text-lg'>{text}</span>
+                <div className="relative w-5 h-5 lg:w-6 lg:h-6">
+                    <Image layout="fill" src='/icons/TELEFONO_WHITE.svg' alt='ICONO TELEFONO' />
+                </div>  
+            </a>
+        )
+    }
+
     return (
         <>
             <Head>
                 <title>Contactanos</title>
-                <meta name="description" content="Te responderemos lo antes posible" />
+                <meta name="description" content="Encontrá aquí todos nuestros medios de contacto. Teléfonos, whatsapp, emails y otros." />
             </Head>   
             <section className='pt-10 lg:pt-20'>
 
@@ -55,14 +69,14 @@ const Contacto: NextPage = () => {
                 <div className="flex flex-col gap-5 lg:flex-row lg:px-20 lg:w-full lg:max-w-screen-2xl lg:mx-auto lg:mb-20">
                     <article className="lg:w-1/2">
                         <h1 className="title-w-desc lg:text-7xl lg:text-left">Contactanos</h1>
-                        <p className='description w-3/4 mx-auto lg:text-left lg:m-0 lg:p-0'>Te responderemos lo antes posible</p>
+                        <p className='description w-3/4 mx-auto lg:text-left lg:m-0 lg:p-0'>Encontrá aquí todos nuestros medios de contacto. <br /> Teléfonos, whatsapp, emails y otros. <br /> Te responderemos lo antes posible.</p>
                     </article>
 
                     <div className="lg:mx-auto lg:w-1/2">
                         
-                        {/* <h2 className='text-center text-brandOrange font-main text-xl font-bold mb-5 lg:mb-10 lg:text-2xl'>Contactanos por correo electrónico</h2> */}
+                        <h2 className='text-center text-brandOrange font-main text-xl font-bold mb-5 lg:mb-10 lg:text-2xl'>Contactanos por correo electrónico</h2>
                         
-                        <form className='flex flex-col items-center gap-2' onSubmit={(e) => sendMail(e)}>
+                        <form className='flex flex-col items-center gap-2 mb-10' onSubmit={(e) => sendMail(e)}>
                             <div className="flex flex-col gap-2 w-3/4 lg:flex-row lg:w-full">
                                 <input name='name' className='contactanos-input h-12' type="text" placeholder='Nombre completo:' required />
                                 <input name='tel' className='contactanos-input h-12' type="number" placeholder='Número de teléfono:' required />
@@ -87,6 +101,13 @@ const Contacto: NextPage = () => {
                                 </a>
                             </div>
                         </form>
+
+                        <h2 className='text-center text-brandOrange font-main text-xl font-bold mb-5 lg:mb-10 lg:text-2xl'>Nuestros teléfonos</h2>
+
+                        <div className="flex-col lg:flex-row flex justify-center items-center gap-5 lg:gap-10">
+                            <Telefono link='tel:+543543432372' text='3543 - 432372' />
+                            <Telefono link='tel:+543543432646' text='3543 - 432646' />
+                        </div>
 
                     </div>
                 </div>
