@@ -3,6 +3,7 @@ import type { AppProps } from 'next/app'
 import Layout from 'components/Layout'
 import Head from 'next/head'
 import PlausibleProvider from 'next-plausible'
+import { Analytics } from '@vercel/analytics/react';
 
 function Cid({ Component, pageProps }: AppProps) {
     
@@ -30,6 +31,7 @@ function Cid({ Component, pageProps }: AppProps) {
                 </Head> 
                 <Layout>
                     <Component {...pageProps} />
+                    <Analytics />
                 </Layout>
             </PlausibleProvider>
         </>
