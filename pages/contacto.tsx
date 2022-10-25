@@ -27,7 +27,7 @@ const Contacto: NextPage = () => {
 
         const mail = await axios.post('/api/send_email', {
             name: formData.get('name'),
-            phone: formData.get('tel'),
+            email: formData.get('email'),
             text: formData.get('text'),
         })
         .catch(() => {
@@ -79,7 +79,7 @@ const Contacto: NextPage = () => {
                         <form className='flex flex-col items-center gap-2 mb-10' onSubmit={(e) => sendMail(e)}>
                             <div className="flex flex-col gap-2 w-3/4 lg:flex-row lg:w-full">
                                 <input name='name' className='contactanos-input h-12' type="text" placeholder='Nombre completo:' required />
-                                <input name='tel' className='contactanos-input h-12' type="number" placeholder='Número de teléfono:' required />
+                                <input name='email' className='contactanos-input h-12' type="email" placeholder='Email:' required />
                             </div>
                             <div className="w-3/4 lg:w-full">
                                 <textarea name='text' className='contactanos-input h-32' placeholder='Motivo de su Consulta:' required></textarea>

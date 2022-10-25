@@ -22,7 +22,7 @@ export default async function Mailer(req: NextApiRequest, res: NextApiResponse) 
             html: `
                 <div style="padding: 10px 50px; background-color: rgba(239, 106, 52, .1); width: max-content; border: 2px solid #ef6a34;">
                     <h2 style="color: #ef6a34;">Nombre: <span style="color: black; font-weight: 500;">${req.body.name}</span></h1>
-                    <h2 style="color: #ef6a34;">Teléfono: <span style="color: black; font-weight: 500;">${req.body.phone}</span></h2>
+                    <h2 style="color: #ef6a34;">Teléfono: <span style="color: black; font-weight: 500;">${req.body.email}</span></h2>
                     <h2 style="color: #ef6a34;">Mensaje: <span style="color: black; font-weight: 500;">${req.body.text}</span></h2>
                 </div>
             `
