@@ -22,6 +22,7 @@ function Cid({ Component, pageProps }: AppProps) {
                     <link rel="shortcut icon" type="image/png" href="/favicon.png" />
                     <link rel="apple-touch-icon" type='image/png' href="/favicon.png" />
                     <meta name="theme-color" content="#EF6A34" />
+                    <link rel="manifest" href="/manifest.json" />
 
                     <meta content="Centro de Imágenes" property="og:title" />
                     <meta property="og:description" content="CID, primer servicio de imágenes médicas totalmente digital de las Sierras Chicas." />
@@ -29,7 +30,6 @@ function Cid({ Component, pageProps }: AppProps) {
                     <meta content="https://www.cidvillaallende.com.ar/" property="og:url" />
                     <meta content="website" property="og:type" />
 
-                    <link rel="manifest" href="/manifest.json" />
                     <meta name="google-site-verification" content="y9cPai12p28lTh7GrjVuyJWfG-1T7bfYyyopM64yKvo" />
                 </Head> 
                 <Layout>
