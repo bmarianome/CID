@@ -36,7 +36,7 @@ const Nav = ({mobileMenuActive, setMenuMobile}: { mobileMenuActive: boolean, set
             <Link href='/' passHref>
                 <a>
                     <figure className="w-16 leading-none">
-                        <Image width={280} height={231} src={'/icons/CID_WHITE.svg'} alt='CID LOGO BLANCO' />
+                        <Image width={280} height={231} src={'/icons/CID_WHITE.svg'} alt='' />
                     </figure>
                 </a>
             </Link>
@@ -59,14 +59,14 @@ const Nav = ({mobileMenuActive, setMenuMobile}: { mobileMenuActive: boolean, set
                 <div className="flex justify-between p-6 lg:hidden">
                     <a href={`https://wa.me/+543543608379?text=${encodeURIComponent("Hola, quiero realizar una consulta")}`} target='_blank' rel='noreferrer'
                      className="block bg-white rounded p-2 leading-none" onClick={() => plausible('WhatsappClick')}>
-                        <Image width={30} height={30} src={'/icons/WHATSAPP_ORANGE.svg'} alt='WHATSAPP ICON' />
+                        <Image width={30} height={30} src={'/icons/WHATSAPP_ORANGE.svg'} alt='' />
                     </a>
                     <div className="flex gap-2">
                         <a href="https://www.instagram.com/cid.va/" target='_blank' rel='noreferrer' className="flex items-center justify-center" onClick={() => plausible('InstagramClick')}>
-                            <Image width={30} height={30} src={'/icons/INSTAGRAM_WHITE.svg'} alt='ICONO INSTAGRAM' />
+                            <Image width={30} height={30} src={'/icons/INSTAGRAM_WHITE.svg'} alt='' />
                         </a>
                         <a href="https://www.facebook.com/Cid.Villaallende" target='_blank' rel='noreferrer' className="flex items-center justify-center" onClick={() => plausible('FacebookClick')}>
-                            <Image width={30} height={30} src={'/icons/FACEBOOK_WHITE.svg'} alt='ICONO FACEBOOK' />
+                            <Image width={30} height={30} src={'/icons/FACEBOOK_WHITE.svg'} alt='' />
                         </a>
                     </div>
                 </div>
@@ -78,7 +78,7 @@ const Nav = ({mobileMenuActive, setMenuMobile}: { mobileMenuActive: boolean, set
                 className="hidden bg-white lg:flex items-center gap-4 py-2 px-4 rounded shadow-simple hover:hover:-translate-y-[0.125rem] duration-200">
 
                 <div className="relative w-6 h-6">
-                    <Image layout="fill" src={'/icons/WHATSAPP_ORANGE.svg'} alt='WHATSAPP ICON' />
+                    <Image layout="fill" src={'/icons/WHATSAPP_ORANGE.svg'} alt='' />
                 </div>
                 <span className="hidden font-din-pro uppercase text-brandOrange text-lg whitespace-pre xl:inline">Pedí un turno</span>
             </a>
@@ -111,10 +111,10 @@ const MediaIgFb = () => {
     return (
         <div className="flex gap-5 justify-center w-max">
             <a href="https://www.instagram.com/cid.va/" target='_blank' rel='noreferrer' className="relative w-10 aspect-square hover:scale-105 duration-200" onClick={() => plausible('InstagramClick')}>
-                <Image layout='fill' src='/icons/INSTAGRAM_ORANGE.svg' alt="ICONO INSTAGRAM" />
+                <Image layout='fill' src='/icons/INSTAGRAM_ORANGE.svg' alt="" />
             </a>
             <a href="https://www.facebook.com/Cid.Villaallende" target='_blank' rel='noreferrer' className="relative w-10 aspect-square hover:scale-105 duration-200" onClick={() => plausible('FacebookClick')}>
-                <Image layout='fill' src='/icons/FACEBOOK_ORANGE.svg' alt="ICONO FACEBOOK" />
+                <Image layout='fill' src='/icons/FACEBOOK_ORANGE.svg' alt="" />
             </a>
         </div>
     )
@@ -139,7 +139,7 @@ export const Footer = ({ media, map, footer }: { media?: boolean, map?: boolean,
                         lg:max-w-none lg:w-2/5 lg:m-0 
                     ">
 
-                        <Image layout="fill" objectFit="cover" src='/icons/TELEFONOS_REDES.png' sizes="(max-width: 1024px) 80vw, 50vw" alt='FOTO REDES SOCIALES' />
+                        <Image layout="fill" objectFit="cover" src='/icons/TELEFONOS_REDES.png' sizes="(max-width: 1024px) 80vw, 50vw" alt=' SOCIALES' />
                     </figure>
                 </div>
                 
@@ -160,7 +160,7 @@ export const Footer = ({ media, map, footer }: { media?: boolean, map?: boolean,
 
                 <div className="text-brandOrange text-xl flex flex-col items-center gap-2 lg:gap-4 lg:items-end">
                     <div className="relative w-10 h-10 lg:w-20 lg:h-20">
-                        <Image layout="fill" src='/icons/UBICACION_ORANGE.svg' alt='ICONO UBICACIÓN' />
+                        <Image layout="fill" src='/icons/UBICACION_ORANGE.svg' alt='' />
                     </div>
                     <div className="flex gap-2 lg:flex-col items-end">
                         <h2 className="font-main font-bold whitespace-pre text-xl lg:text-4xl lg:text-right">25 de Mayo 245,</h2>
@@ -179,7 +179,7 @@ export const Footer = ({ media, map, footer }: { media?: boolean, map?: boolean,
                 {/* LOGO, NAV Y MEDIA */}
                 <div className="flex flex-col gap-5 lg:flex-row lg:justify-between lg:items-center lg:m-auto">
                     <div className="block w-1/3 m-auto max-w-[150px] lg:m-0">
-                        <Image src={'/icons/CID_WHITE.svg'} width={280} height={231} alt='CID LOGO BLANCO' />
+                        <Image src={'/icons/CID_WHITE.svg'} width={280} height={231} alt='' />
                     </div>
                     
                     <div className="flex flex-col w-max px-2 m-auto gap-5 max-w-md lg:m-0 lg:flex-row lg:gap-20">
@@ -197,10 +197,10 @@ export const Footer = ({ media, map, footer }: { media?: boolean, map?: boolean,
 
                     <div className="flex gap-5 justify-center">
                         <a href="https://www.instagram.com/cid.va/" target='_blank' rel='noreferrer' className="relative w-8 aspect-square lg:w-10 hover:scale-110 duration-200" onClick={() => plausible('InstagramClick')}>
-                            <Image layout='fill' src='/icons/INSTAGRAM_WHITE.svg' alt="ICONO INSTAGRAM" />
+                            <Image layout='fill' src='/icons/INSTAGRAM_WHITE.svg' alt="" />
                         </a>
                         <a href="https://www.facebook.com/Cid.Villaallende" target='_blank' rel='noreferrer' className="relative w-8 aspect-square lg:w-10 hover:scale-110 duration-200" onClick={() => plausible('FacebookClick')}>
-                            <Image layout='fill' src='/icons/FACEBOOK_WHITE.svg' alt="ICONO FACEBOOK" />
+                            <Image layout='fill' src='/icons/FACEBOOK_WHITE.svg' alt="" />
                         </a>
                     </div>                    
                 </div>
@@ -210,20 +210,20 @@ export const Footer = ({ media, map, footer }: { media?: boolean, map?: boolean,
 
                 {/* DERECHOS, TELÉFONOS, DESARROLLO */}
                 <div className="flex flex-col justify-center items-center gap-2 lg:flex-row lg:justify-between">
-                    <span className="text-center text-sm font-secondary font-light">CID Villa Allende 2022 - Todos los derechos reservados</span>
+                    <span className="text-center text-sm font-secondary font-light">CID 2022 - Todos los derechos reservados</span>
 
                     {/* TELEFONOS */}
                     <span className="text-center flex gap-4">
                         <a onClick={() => plausible('Click en Llamada')} className="flex items-center gap-4 rounded-md border-[1px] border-white px-2 py-1 group" href="tel:+543543432372">
                             <span className="text-white text-lg font-secondary font-medium whitespace-pre">3543 - 432372</span>
                             <figure className="h-5 w-5 relative group-hover:scale-110 duration-200">
-                                <Image layout="fill" src='/icons/TELEFONO_WHITE.svg' alt='ICONO TELEFONO' />
+                                <Image layout="fill" src='/icons/TELEFONO_WHITE.svg' alt='' />
                             </figure>
                         </a>
                         <a onClick={() => plausible('Click en Llamada')} className="flex items-center gap-4 rounded-md border-[1px] border-white px-2 py-1 group" href="tel:+543543432646">
                             <span className="text-white text-lg font-secondary font-medium whitespace-pre">3543 - 432646</span>
                             <figure className="h-5 w-5 relative group-hover:scale-110 duration-200">
-                                <Image layout="fill" src='/icons/TELEFONO_WHITE.svg' alt='ICONO TELEFONO' />
+                                <Image layout="fill" src='/icons/TELEFONO_WHITE.svg' alt='' />
                             </figure>
                         </a>
                     </span>

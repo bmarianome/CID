@@ -18,7 +18,7 @@ const Home: NextPage = () => {
         <>
             <Head>
                 <title>Centro de Imágenes</title>
-                <meta name="description" content="CID, primer servicio de imágenes médicas totalmente digital de las Sierras Chicas." />     
+                <meta name="description" content="CID Villa Allende, primer servicio de imágenes médicas totalmente digital de las Sierras Chicas." />     
             </Head>
             <main>
                 <div className="h-[calc(100vh-80px)] lg:h-[calc(100vh-84.8px)] flex flex-col">
@@ -50,7 +50,7 @@ const Home: NextPage = () => {
                             '>
                                 
                                 <div className="relative w-5 h-5">
-                                    <Image layout='fill' src='/icons/COMUNIDAD_ORANGE.svg' alt='ICONO COMUNIDAD' />
+                                    <Image layout='fill' src='/icons/COMUNIDAD_ORANGE.svg' alt='' />
                                 </div>
                                 <span className='uppercase text-brandOrange text-sm font-din-pro lg:text-xl'>Conocé más sobre nosotros</span>
                             </a>

@@ -94,10 +94,10 @@ const Servicios = () => {
                 </Swiper>     
 
                 <div className="prev-arrow w-8 h-8 absolute z-10 top-[calc(50%-36px)] -left-10 md:-left-20 rotate-180 hover:cursor-pointer">
-                    <Image layout='fill' src='/icons/FLECHA_CARRUSEL.svg' alt='ICONO FLECHA CARRUSEL' />
+                    <Image layout='fill' src='/icons/FLECHA_CARRUSEL.svg' alt='' />
                 </div>
                 <div className="next-arrow w-8 h-8 absolute z-10 top-[calc(50%-36px)] -right-10 md:-right-20 hover:cursor-pointer">
-                    <Image layout='fill' src='/icons/FLECHA_CARRUSEL.svg' alt='ICONO FLECHA CARRUSEL' />
+                    <Image layout='fill' src='/icons/FLECHA_CARRUSEL.svg' alt='' />
                 </div>
 
             </div>                

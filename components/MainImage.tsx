@@ -21,12 +21,12 @@ const MainImage = ({ image, className, items }: { image: MainImage, className?: 
                     <>
                         {/* DESKTOP */}
                         <figure className="hidden lg:inline leading-none">
-                            <Image width={981} height={217} src='/icons/LOGO_CID_COMPLETO.png' alt='CID LOGO COMPLETO' />
+                            <Image width={981} height={217} src='/icons/LOGO_CID_COMPLETO.png' alt='' />
                         </figure>
 
                         {/* MOBILE */}
                         <figure className="lg:hidden w-4/5 leading-none">
-                            <Image width={544} height={457} src='/icons/LOGO_CID_COMPLETO_MOBILE.png' alt='CID LOGO COMPLETO' />
+                            <Image width={544} height={457} src='/icons/LOGO_CID_COMPLETO_MOBILE.png' alt='' />
                         </figure>
                     </>
                     : null
