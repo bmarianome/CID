@@ -21,8 +21,46 @@ const Home: NextPage = () => {
         <meta name="description" content="CID Villa Allende, primer servicio de imágenes médicas totalmente digital de las Sierras Chicas." />
       </Head>
       <main>
-        <div className="h-[calc(100vh-80px)] lg:h-[calc(100vh-84.8px)] flex flex-col">
+        <div className="flex flex-col">
           <MainSwiper className='h-full'>
+            <SwiperSlide>
+              <div className="h-full">
+                <div className={`h-full relative flex flex-col justify-center items-center bg-white/60 `}>
+                  <div className="w-full h-full absolute -z-10">
+                    <Image
+                      priority={true}
+                      layout='fill'
+                      objectFit='cover'
+                      objectPosition="center"
+                      src="/images/RESONANCIA.jpg"
+                      alt="Resonancias en Cid Villa Allende"
+                    />
+                  </div>
+
+                  <div className='w-3/4 flex flex-col items-center mb-8'>
+                    <div className='scale-90 mt-8'>
+                      <figure className="hidden lg:inline leading-none">
+                        <Image width={981} height={217} src='/icons/LOGO_CID_COMPLETO.png' alt='' />
+                      </figure>
+
+                      <figure className="lg:hidden w-full leading-none">
+                        <Image width={544} height={457} src='/icons/LOGO_CID_COMPLETO_MOBILE.png' alt='' />
+                      </figure>
+                    </div>
+                    <div className="bg-brandOrange md:w-max mx-auto flex p-4 md:p-6 rounded-md mt-12 flex-col items-center gap-4 tracking-tighter ">
+                      <p className='text-lg text-center font-din-pro font-normal lg:max-w-lg lg:text-2xl leading-6'>
+                        CID, desde julio de 2023, ofrece el servicio de <br />
+                        <span className='font-bold'>Resonancias Magnéticas</span>
+                      </p>
+                      <button className='bg-white text-brandOrange px-2 py-1 rounded-md'>
+                        Ver todos los servicios
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <MainImage image={{ src: '', position: 'center', fit: 'cover', alt: 'IMAGEN DE FONDO RADIOLOGIA', priority: true }} />
+            </SwiperSlide>
             <SwiperSlide>
               <MainImage items image={{ src: '/images/HOME_FONDO_RADIOLOGIA.jpg', position: 'center', fit: 'cover', alt: 'IMAGEN DE FONDO RADIOLOGIA', priority: true }} />
             </SwiperSlide>
