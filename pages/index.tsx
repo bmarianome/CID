@@ -49,8 +49,8 @@ const Home: NextPage = () => {
                     </div>
                     <div className="bg-brandOrange md:w-max mx-auto flex p-4 md:p-6 rounded-md mt-12 flex-col items-center gap-4 tracking-tighter ">
                       <p className='text-lg text-center font-din-pro font-normal lg:max-w-lg lg:text-2xl leading-6'>
-                        CID, desde julio de 2023, ofrece el servicio de <br />
-                        <span className='font-bold'>Resonancias Magnéticas</span>
+                        CID, desde julio de 2023, ofrece el servicio <br />
+                        <span className='font-bold'>Resonancia Magnética</span>
                       </p>
                       <button className='bg-white text-brandOrange px-2 py-1 rounded-md'>
                         Ver todos los servicios
