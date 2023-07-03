@@ -21,7 +21,7 @@ const Home: NextPage = () => {
         <meta name="description" content="CID Villa Allende, primer servicio de imágenes médicas totalmente digital de las Sierras Chicas." />
       </Head>
       <main>
-        <div className="flex flex-col">
+        <div className="lg:h-[calc(100vh-84.8px)] flex flex-col">
           <MainSwiper className='h-full'>
             <SwiperSlide>
               <div className="h-full">
@@ -59,7 +59,6 @@ const Home: NextPage = () => {
                   </div>
                 </div>
               </div>
-              <MainImage image={{ src: '', position: 'center', fit: 'cover', alt: 'IMAGEN DE FONDO RADIOLOGIA', priority: true }} />
             </SwiperSlide>
             <SwiperSlide>
               <MainImage items image={{ src: '/images/HOME_FONDO_RADIOLOGIA.jpg', position: 'center', fit: 'cover', alt: 'IMAGEN DE FONDO RADIOLOGIA', priority: true }} />
