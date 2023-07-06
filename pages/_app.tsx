@@ -8,11 +8,7 @@ function Cid({ Component, pageProps }: AppProps) {
 
   return (
     <>
-      <PlausibleProvider
-        customDomain='https://plausible.bmariano.me'
-        domain="cidvillaallende.com.ar"
-        trackOutboundLinks={true} selfHosted={true}
-      >
+      <PlausibleProvider domain="cidvillaallende.com.ar">
         <Head>
           <link rel="shortcut icon" type="image/png" href="/favicon.png" />
           <link rel="apple-touch-icon" type='image/png' href="/favicon.png" />

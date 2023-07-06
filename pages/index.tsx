@@ -80,12 +80,12 @@ const Home: NextPage = () => {
             </h1>
 
             <Link href='/nosotros' passHref>
-              <a className='bg-white flex justify-center items-center gap-3 w-max py-2 px-6 rounded shadow-simple hover:shadow-xl hover:-translate-y-[0.125rem] duration-200'>
+              <div className='bg-white flex justify-center items-center gap-3 w-max py-2 px-6 rounded shadow-simple hover:shadow-xl hover:-translate-y-[0.125rem] duration-200'>
                 <div className="relative w-5 h-5">
                   <Image layout='fill' src='/icons/COMUNIDAD_ORANGE.svg' alt='' />
                 </div>
                 <span className='uppercase text-brandOrange text-sm font-din-pro lg:text-xl'>Conocé más sobre nosotros</span>
-              </a>
+              </div>
             </Link>
           </article>
         </div>

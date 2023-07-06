@@ -43,7 +43,7 @@ const Contacto: NextPage = () => {
 
   const Telefono = ({ text, link }: { text: string, link: string }) => {
     return (
-      <a href={link}
+      <Link href={link}
         className="rounded w-max py-2 px-6 bg-brandOrange flex items-center gap-4 shadow-simple hover:hover:-translate-y-[0.125rem] duration-200"
         onClick={() => plausible('Click en Llamada')}
       >
@@ -51,7 +51,7 @@ const Contacto: NextPage = () => {
         <div className="relative w-5 h-5 lg:w-6 lg:h-6">
           <Image layout="fill" src='/icons/TELEFONO_WHITE.svg' alt='ICONO TELEFONO' />
         </div>
-      </a>
+      </Link>
     )
   }
 
@@ -89,7 +89,7 @@ const Contacto: NextPage = () => {
                                     w-full text-white font-main font-medium text-lg bg-brandOrange py-2 rounded-md
                                     lg:text-left pl-4
                                 ' />
-                <a href='https://wa.me/+543543608379?text=Hola, quiero realizar una consulta' target='_blank' rel='noreferrer' className='
+                <Link href='https://wa.me/+543543608379?text=Hola, quiero realizar una consulta' target='_blank' rel='noreferrer' className='
                                     w-full text-white font-main font-medium text-lg bg-[#25D366] py-2 rounded-md text-center
                                     lg:text-left lg:px-4 lg:flex lg:justify-between
                                 '
@@ -98,7 +98,7 @@ const Contacto: NextPage = () => {
                   <div className="hidden lg:block relative w-6 h-6">
                     <Image layout='fill' src='/icons/WHATSAPP_WHITE.svg' alt='ICONO WHATSAPP' />
                   </div>
-                </a>
+                </Link>
               </div>
             </form>
 

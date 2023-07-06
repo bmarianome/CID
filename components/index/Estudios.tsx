@@ -20,13 +20,13 @@ const Estudios = () => {
                     lg:max-w-sm lg:text-left lg:text-7xl drop-shadow-lg
                 '>Lo más importante, sos vos.</h2>
 
-                <Link href='/estudios'>
-                    <a className='white-button'>Ver mis estudios online</a>
+                <Link href='/estudios' className='white-button'>
+                    Ver mis estudios online
                 </Link>
             </div>
             
         </section>
-    )
+    );
 }
 
 export default Estudios

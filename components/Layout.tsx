@@ -9,18 +9,20 @@ const ItemLink = ({ text, link }: { text: string, link: string }) => {
   const router = useRouter()
 
   return (
-    <Link href={link} passHref>
-      <a className={` relative
+    (<Link
+      href={link}
+      passHref
+      className={` relative
                 text-xl px-10 py-3 border-b-[1px] font-din-pro font-[400]
                 lg:p-0 lg:font-din lg:font-[300] lg:border-none
                 hover:before:w-full
                 ${router.pathname === link ? "before-under-line-active" : "before-under-line"}
                 `}>
 
-        {text}
-      </a>
-    </Link>
-  )
+      {text}
+
+    </Link>)
+  );
 }
 
 const Nav = ({ mobileMenuActive, setMenuMobile }: { mobileMenuActive: boolean, setMenuMobile: Dispatch<SetStateAction<boolean>> }) => {
@@ -33,7 +35,7 @@ const Nav = ({ mobileMenuActive, setMenuMobile }: { mobileMenuActive: boolean, s
             lg:px-16 lg:py-4 lg:h-max
         ">
 
-      <Link href='/' passHref>
+      <Link href='/' passHref legacyBehavior>
         <figure className="w-16 leading-none">
           <Image width={280} height={231} src={'/icons/CID_WHITE.svg'} alt='' />
         </figure>
@@ -55,40 +57,43 @@ const Nav = ({ mobileMenuActive, setMenuMobile }: { mobileMenuActive: boolean, s
 
         {/* MOBILE: REDES SOCIALES */}
         <div className="flex justify-between p-6 lg:hidden">
-          <a href={`https://wa.me/+543543608379?text=${encodeURIComponent("Hola, quiero realizar una consulta")}`} target='_blank' rel='noreferrer'
+          <Link href={`https://wa.me/+543543608379?text=${encodeURIComponent("Hola, quiero realizar una consulta")}`} target='_blank' rel='noreferrer'
             className="block bg-white rounded p-2 leading-none" onClick={() => plausible('WhatsappClick')}>
             <Image width={30} height={30} src={'/icons/WHATSAPP_ORANGE.svg'} alt='' />
-          </a>
+          </Link>
           <div className="flex gap-2">
-            <a href="https://www.instagram.com/cid.va/" target='_blank' rel='noreferrer' className="flex items-center justify-center" onClick={() => plausible('InstagramClick')}>
+            <Link href="https://www.instagram.com/cid.va/" target='_blank' rel='noreferrer' className="flex items-center justify-center" onClick={() => plausible('InstagramClick')}>
               <Image width={30} height={30} src={'/icons/INSTAGRAM_WHITE.svg'} alt='' />
-            </a>
-            <a href="https://www.facebook.com/Cid.Villaallende" target='_blank' rel='noreferrer' className="flex items-center justify-center" onClick={() => plausible('FacebookClick')}>
+            </Link>
+            <Link href="https://www.facebook.com/Cid.Villaallende" target='_blank' rel='noreferrer' className="flex items-center justify-center" onClick={() => plausible('FacebookClick')}>
               <Image width={30} height={30} src={'/icons/FACEBOOK_WHITE.svg'} alt='' />
-            </a>
+            </Link>
           </div>
         </div>
 
       </div>
 
       {/* DESKTOP: BOTÓN PEDÍ UN TURNO */}
-      <a href={`https://wa.me/+543543608379?text=${encodeURIComponent("Hola, quiero realizar una consulta")}`} target='_blank' rel='noreferrer' onClick={() => plausible('WhatsappClick')}
+      <Link href={`https://wa.me/+543543608379?text=${encodeURIComponent("Hola, quiero realizar una consulta")}`} target='_blank' rel='noreferrer' onClick={() => plausible('WhatsappClick')}
         className="hidden bg-white lg:flex items-center gap-4 py-2 px-4 rounded shadow-simple hover:hover:-translate-y-[0.125rem] duration-200">
 
         <div className="relative w-6 h-6">
           <Image layout="fill" src={'/icons/WHATSAPP_ORANGE.svg'} alt='' />
         </div>
         <span className="hidden font-din-pro uppercase text-brandOrange text-lg whitespace-pre xl:inline">Pedí un turno</span>
-      </a>
+      </Link>
 
       {/* MOBILE: BOTÓN MIS ESTUDIOS */}
-      <Link href='/estudios' passHref>
-        <a className="lg:hidden 
+      <Link
+        href='/estudios'
+        passHref
+        className="lg:hidden 
                     font-din-pro uppercase text-brandOrange text-lg whitespace-pre
                     bg-white flex items-center gap-4 py-2 px-4 rounded shadow-simple hover:hover:-translate-y-[0.125rem] duration-200
                 ">
+        
           Mis Estudios
-        </a>
+        
       </Link>
 
       {/* MOBILE: BOTÓN MENÚ */}
@@ -99,7 +104,7 @@ const Nav = ({ mobileMenuActive, setMenuMobile }: { mobileMenuActive: boolean, s
       </div>
 
     </header>
-  )
+  );
 }
 
 const MediaIgFb = () => {
@@ -108,12 +113,12 @@ const MediaIgFb = () => {
 
   return (
     <div className="flex gap-5 justify-center w-max">
-      <a href="https://www.instagram.com/cid.va/" target='_blank' rel='noreferrer' className="relative w-10 aspect-square hover:scale-105 duration-200" onClick={() => plausible('InstagramClick')}>
+      <Link href="https://www.instagram.com/cid.va/" target='_blank' rel='noreferrer' className="relative w-10 aspect-square hover:scale-105 duration-200" onClick={() => plausible('InstagramClick')}>
         <Image layout='fill' src='/icons/INSTAGRAM_ORANGE.svg' alt="" />
-      </a>
-      <a href="https://www.facebook.com/Cid.Villaallende" target='_blank' rel='noreferrer' className="relative w-10 aspect-square hover:scale-105 duration-200" onClick={() => plausible('FacebookClick')}>
+      </Link>
+      <Link href="https://www.facebook.com/Cid.Villaallende" target='_blank' rel='noreferrer' className="relative w-10 aspect-square hover:scale-105 duration-200" onClick={() => plausible('FacebookClick')}>
         <Image layout='fill' src='/icons/FACEBOOK_ORANGE.svg' alt="" />
-      </a>
+      </Link>
     </div>
   )
 }
@@ -182,24 +187,36 @@ export const Footer = ({ media, map, footer }: { media?: boolean, map?: boolean,
 
           <div className="flex flex-col w-max px-2 m-auto gap-5 max-w-md lg:m-0 lg:flex-row lg:gap-20">
             <div className="flex justify-center gap-10 lg:flex-col lg:gap-2">
-              <Link href='/'><a className="w-1/3 text-center text-sm whitespace-pre font-din-pro font-[400] lg:text-xl">Home</a></Link>
-              <Link href='/nosotros'><a className="w-1/3 text-center text-sm whitespace-pre font-din-pro font-[400] lg:text-xl">Nosotros</a></Link>
-              <Link href='/servicios'><a className="w-1/3 text-center text-sm whitespace-pre font-din-pro font-[400] lg:text-xl">Servicios</a></Link>
+              <Link
+                href='/'
+                className="w-1/3 text-center text-sm whitespace-pre font-din-pro font-[400] lg:text-xl">Home</Link>
+              <Link
+                href='/nosotros'
+                className="w-1/3 text-center text-sm whitespace-pre font-din-pro font-[400] lg:text-xl">Nosotros</Link>
+              <Link
+                href='/servicios'
+                className="w-1/3 text-center text-sm whitespace-pre font-din-pro font-[400] lg:text-xl">Servicios</Link>
             </div>
             <div className="flex justify-center gap-10 lg:flex-col lg:gap-2">
-              <Link href='/'><a className="w-1/3 text-center text-sm whitespace-pre font-din-pro font-[400] lg:text-xl">Mis Estudios</a></Link>
-              <Link href='/obras-sociales'><a className="w-1/3 text-center text-sm whitespace-pre font-din-pro font-[400] lg:text-xl">Obras Sociales</a></Link>
-              <Link href='/contacto'><a className="w-1/3 text-center text-sm whitespace-pre font-din-pro font-[400] lg:text-xl">Contacto</a></Link>
+              <Link
+                href='/'
+                className="w-1/3 text-center text-sm whitespace-pre font-din-pro font-[400] lg:text-xl">Mis Estudios</Link>
+              <Link
+                href='/obras-sociales'
+                className="w-1/3 text-center text-sm whitespace-pre font-din-pro font-[400] lg:text-xl">Obras Sociales</Link>
+              <Link
+                href='/contacto'
+                className="w-1/3 text-center text-sm whitespace-pre font-din-pro font-[400] lg:text-xl">Contacto</Link>
             </div>
           </div>
 
           <div className="flex gap-5 justify-center">
-            <a href="https://www.instagram.com/cid.va/" target='_blank' rel='noreferrer' className="relative w-8 aspect-square lg:w-10 hover:scale-110 duration-200" onClick={() => plausible('InstagramClick')}>
+            <Link href="https://www.instagram.com/cid.va/" target='_blank' rel='noreferrer' className="relative w-8 aspect-square lg:w-10 hover:scale-110 duration-200" onClick={() => plausible('InstagramClick')}>
               <Image layout='fill' src='/icons/INSTAGRAM_WHITE.svg' alt="" />
-            </a>
-            <a href="https://www.facebook.com/Cid.Villaallende" target='_blank' rel='noreferrer' className="relative w-8 aspect-square lg:w-10 hover:scale-110 duration-200" onClick={() => plausible('FacebookClick')}>
+            </Link>
+            <Link href="https://www.facebook.com/Cid.Villaallende" target='_blank' rel='noreferrer' className="relative w-8 aspect-square lg:w-10 hover:scale-110 duration-200" onClick={() => plausible('FacebookClick')}>
               <Image layout='fill' src='/icons/FACEBOOK_WHITE.svg' alt="" />
-            </a>
+            </Link>
           </div>
         </div>
 
@@ -212,28 +229,28 @@ export const Footer = ({ media, map, footer }: { media?: boolean, map?: boolean,
 
           {/* TELEFONOS */}
           <span className="text-center flex gap-4">
-            <a onClick={() => plausible('Click en Llamada')} className="flex items-center gap-4 rounded-md border-[1px] border-white px-2 py-1 group" href="tel:+543543432372">
+            <Link onClick={() => plausible('Click en Llamada')} className="flex items-center gap-4 rounded-md border-[1px] border-white px-2 py-1 group" href="tel:+543543432372">
               <span className="text-white text-lg font-secondary font-medium whitespace-pre">3543 - 432372</span>
               <figure className="h-5 w-5 relative group-hover:scale-110 duration-200">
                 <Image layout="fill" src='/icons/TELEFONO_WHITE.svg' alt='' />
               </figure>
-            </a>
-            <a onClick={() => plausible('Click en Llamada')} className="flex items-center gap-4 rounded-md border-[1px] border-white px-2 py-1 group" href="tel:+543543432646">
+            </Link>
+            <Link onClick={() => plausible('Click en Llamada')} className="flex items-center gap-4 rounded-md border-[1px] border-white px-2 py-1 group" href="tel:+543543432646">
               <span className="text-white text-lg font-secondary font-medium whitespace-pre">3543 - 432646</span>
               <figure className="h-5 w-5 relative group-hover:scale-110 duration-200">
                 <Image layout="fill" src='/icons/TELEFONO_WHITE.svg' alt='' />
               </figure>
-            </a>
+            </Link>
           </span>
           <span className="text-sm font-secondary font-light">
             <div className="flex flex-col items-end">
               <span>Diseños: 0092 Estudio Creativo.</span>
-              <span>Desarrollador: <a className="underline" href="https://bmariano.me">bmariano.me</a></span>
+              <span>Desarrollador: <Link className="underline" href="https://bmariano.me">bmariano.me</Link></span>
             </div>
           </span>
         </div>
       </div>
-    )
+    );
   }
 
   return (
@@ -263,7 +280,7 @@ const WhatsappFixed = () => {
   const plausible = usePlausible()
 
   return (
-    <a href={`https://wa.me/+543543608379?text=${encodeURIComponent("Hola, quiero realizar una consulta")}`} target='_blank' rel='noreferrer'
+    <Link href={`https://wa.me/+543543608379?text=${encodeURIComponent("Hola, quiero realizar una consulta")}`} target='_blank' rel='noreferrer'
       className="fixed flex items-center justify-center w-12 h-12 bg-[#25D366] rounded-full z-10 shadow-simple
             right-8 bottom-8 lg:right-10 lg:bottom-10 
             hover:shadow-xl hover:-translate-y-[0.125rem] duration-200
@@ -271,7 +288,7 @@ const WhatsappFixed = () => {
       <figure className="relative w-6 h-6 duration-200">
         <Image layout="fill" src='/icons/WHATSAPP_WHITE.svg' alt="WHATSAPP ICON" />
       </figure>
-    </a>
+    </Link>
   )
 }
 

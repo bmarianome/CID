@@ -5,6 +5,7 @@ import Divisor from 'components/Divisor'
 import { Footer } from 'components/Layout'
 import { FormEvent, useState } from 'react'
 import { usePlausible } from 'next-plausible'
+import Link from 'next/link'
 
 interface Estudio {
   estudio?: string
@@ -81,7 +82,7 @@ const Estudios: NextPage = () => {
                                     w-full text-white font-main font-medium text-lg bg-brandOrange py-2 rounded-md
                                     lg:text-left pl-4 shadow-xl
                                 ' />
-                <a href='https://wa.me/+543543608379?text=Hola, quiero realizar una consulta' target='_blank' rel='noreferrer' className='
+                <Link href='https://wa.me/+543543608379?text=Hola, quiero realizar una consulta' target='_blank' rel='noreferrer' className='
                                     w-full text-white font-main font-medium text-lg bg-[#25D366] py-2 rounded-md text-center
                                     lg:text-left lg:px-4 lg:flex lg:justify-between
                                 '
@@ -90,7 +91,7 @@ const Estudios: NextPage = () => {
                   <div className="hidden lg:block relative w-6">
                     <Image layout='fill' src='/icons/WHATSAPP_WHITE.svg' alt='ICONO WHATSAPP' />
                   </div>
-                </a>
+                </Link>
               </div>
             </form>
 
@@ -132,9 +133,9 @@ const Estudios: NextPage = () => {
                             <td className='text-md font-din-pro font-[400] lg:text-2xl'>{estudio.estudio}</td>
                             <td className='text-md font-din-pro font-[400] lg:text-2xl'>{estudio.fecha}</td>
                             <td className='text-xl font-din-pro font-[400] lg:text-2xl w-12 h-12 text-center bg-brandOrange text-white'>
-                              <a href={`https://estudio.informemedico.com.ar/#/54/${hash}`} target='_blank' rel='noreferrer'
+                              <Link href={`https://estudio.informemedico.com.ar/#/54/${hash}`} target='_blank' rel='noreferrer'
                                 onClick={() => plausible('EstudioVisto')}
-                              >Ver</a>
+                              >Ver</Link>
                             </td>
                           </tr>
                         )

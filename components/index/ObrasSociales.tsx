@@ -50,12 +50,12 @@ const ObrasSociales = () => {
                 <div className="pagination-container flex justify-center gap-2 mt-5 w-max m-auto" />
             </div>             
 
-            <Link href='/obras-sociales' passHref>
-                <a className='orange-button mx-auto'>Ver Todas</a>
+            <Link href='/obras-sociales' passHref className='orange-button mx-auto'>
+                Ver Todas
             </Link>   
 
         </section>
-    )
+    );
 }
 
 export default ObrasSociales

@@ -103,12 +103,12 @@ const Servicios = () => {
 
       </div>
 
-      <Link href='/servicios' passHref>
-        <a className='orange-button mx-auto'>Ir a la sección Servicios</a>
+      <Link href='/servicios' passHref className='orange-button mx-auto'>
+        Ir a la sección Servicios
       </Link>
 
     </section>
-  )
+  );
 }
 
 export default Servicios

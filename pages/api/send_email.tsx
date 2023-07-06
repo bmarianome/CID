@@ -25,7 +25,7 @@ export default async function Mailer(req: NextApiRequest, res: NextApiResponse) 
                     <h2 style="color: #ef6a34;">Email: <span style="color: black; font-weight: 500;">${req.body.email}</span></h2>
                     <h2 style="color: #ef6a34;">Mensaje: <span style="color: black; font-weight: 500;">${req.body.text}</span></h2>
                     <h2>
-                        <a style="color: blue; font-weight: 500;" href="mailto:${req.body.email}?subject=${encodeURIComponent('Respuesta CID')}">Responder</a>
+                        <Link style="color: blue; font-weight: 500;" href="mailto:${req.body.email}?subject=${encodeURIComponent('Respuesta CID')}">Responder</Link>
                     </h2>
                 </div>
             `
