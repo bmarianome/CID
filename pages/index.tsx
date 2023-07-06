@@ -2,7 +2,7 @@ import type { NextPage } from 'next'
 import Servicios from 'components/index/Servicios'
 import ObrasSociales from 'components/index/ObrasSociales'
 import Divisor from 'components/Divisor'
-import Image from 'next/image'
+import Image from "next/legacy/image";
 import Estudios from 'components/index/Estudios'
 import { Footer } from 'components/Layout'
 import Head from 'next/head'

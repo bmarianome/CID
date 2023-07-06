@@ -1,4 +1,4 @@
-import Image from "next/image"
+import Image from "next/legacy/image";
 
 const obrasSocialesImagenes = [
     { src: '/obras-sociales/medife.svg', w:400, h:101.87, alt: 'LOGO DE MEDIFE' },

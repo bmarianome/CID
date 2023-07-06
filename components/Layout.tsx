@@ -1,6 +1,6 @@
 import { ReactNode, useState, SetStateAction, Dispatch, useEffect, useRef } from "react"
 import { usePlausible } from 'next-plausible'
-import Image from "next/image"
+import Image from "next/legacy/image";
 import Link from "next/link"
 import { useRouter } from "next/router"
 

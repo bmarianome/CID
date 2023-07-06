@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "next/legacy/image";
 import cidExteriorImg from 'public/images/cid-exterior.jpg'
 import { Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from 'swiper/react';

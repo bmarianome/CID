@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "next/legacy/image";
 import MainImage from "./MainImage";
 import { Autoplay } from "swiper";
 import { Swiper, useSwiper } from 'swiper/react';
