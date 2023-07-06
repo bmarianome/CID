@@ -52,9 +52,9 @@ const Home: NextPage = () => {
                         CID, desde julio 2023, ofrece el servicio de<br />
                         <span className='font-bold'>Resonancia Magnética</span>
                       </p>
-                      <button className='bg-white text-brandOrange px-2 py-1 rounded-md'>
+                      <Link href='/servicios' className='block bg-white text-brandOrange px-2 py-1 rounded-md'>
                         Ver todos los servicios
-                      </button>
+                      </Link>
                     </div>
                   </div>
                 </div>

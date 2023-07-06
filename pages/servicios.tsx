@@ -64,30 +64,23 @@ const ServiciosList = () => {
     '>
       <li className='h-max w-full max-w-md'>
         <ul className='flex flex-col gap-2 lg:gap-10'>
-          {
-            serviciosList.slice(0, 2).map((item, index: number) => (
-              <Servicio index={index} key={index} item={item} isActive={servicioActivo === index} setServicioActivo={setServicioActivo} />
-            ))
-          }
-
+          {serviciosList.slice(0, 2).map((item, index: number) => (
+            <Servicio index={index} key={index} item={item} isActive={servicioActivo === index} setServicioActivo={setServicioActivo} />
+          ))}
         </ul>
       </li>
       <li className='h-max w-full max-w-md'>
         <ul className='flex flex-col gap-2 lg:gap-10'>
-          {
-            serviciosList.slice(2, 5).map((item, index: number) => (
-              <Servicio index={index + 2} key={index} item={item} isActive={servicioActivo === index + 2} setServicioActivo={setServicioActivo} />
-            ))
-          }
+          {serviciosList.slice(2, 5).map((item, index: number) => (
+            <Servicio index={index + 2} key={index} item={item} isActive={servicioActivo === index + 2} setServicioActivo={setServicioActivo} />
+          ))}
         </ul>
       </li>
       <li className='h-max w-full max-w-md'>
         <ul className='flex flex-col gap-2 lg:gap-10'>
-          {
-            serviciosList.slice(5, 7).map((item, index: number) => (
-              <Servicio index={index + 4} key={index} item={item} isActive={servicioActivo === index + 4} setServicioActivo={setServicioActivo} />
-            ))
-          }
+          {serviciosList.slice(5, 7).map((item, index: number) => (
+            <Servicio index={index + 4} key={index} item={item} isActive={servicioActivo === index + 4} setServicioActivo={setServicioActivo} />
+          ))}
         </ul>
       </li>
     </ul>
