@@ -12,8 +12,12 @@ import MainSwiper from 'components/MainSwiper'
 import MainImage from 'components/MainImage'
 import { SwiperSlide } from 'swiper/react'
 import ObrasSocialesLogos from 'components/ObrasSocialesLogos'
+import { usePlausible } from 'next-plausible'
 
 const Home: NextPage = () => {
+
+  const plausible = usePlausible()
+
   return (
     <>
       <Head>
@@ -52,7 +56,9 @@ const Home: NextPage = () => {
                         CID, desde julio 2023, ofrece el servicio de<br />
                         <span className='font-bold'>Resonancia Magnética</span>
                       </p>
-                      <Link href='/servicios' className='block bg-white text-brandOrange px-2 py-1 rounded-md'>
+                      <Link href='/servicios' className='block bg-white text-brandOrange px-2 py-1 rounded-md'
+                        onClick={() => plausible('Click servicios Index')}
+                      >
                         Ver todos los servicios
                       </Link>
                     </div>
