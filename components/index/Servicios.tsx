@@ -27,7 +27,7 @@ const ServiceSlide = ({ item }: { item: { statisticsLabel: string, text: string,
     <div 
       className={`bg-brandOrange py-4 flex flex-col items-center w-full m-auto max-w-sm rounded-md hover:cursor-pointer duration-200 ${active ? "gap-3" : "gap-1"}`} 
       onClick={() => setActive(() => {
-        plausible(item.statisticsLabel)
+        !active ? plausible(item.statisticsLabel) : null
         return active ? false : true
       })}
     >

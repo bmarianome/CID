@@ -29,7 +29,7 @@ const Servicio = ({ index, item, isActive, setServicioActivo }: { index: number,
 
   return (
     <li onClick={() => setServicioActivo(() => {
-      plausible(item.statisticsLabel)
+      !isActive ? plausible(item.statisticsLabel) : null
       return isActive ? null : index
     })}
       className={`bg-brandOrange py-4 flex flex-col items-center w-full rounded-md hover:cursor-pointer
