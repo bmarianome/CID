@@ -11,11 +11,11 @@ import { usePlausible } from 'next-plausible'
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import 'swiper/css';
-import { useState, SetStateAction, Dispatch, useEffect } from 'react'
+import { useState, SetStateAction, Dispatch } from 'react'
 import SwiperPictures from 'components/SwiperPictures'
 import { serviciosList } from 'components/index/Servicios'
 
-const items: { title: string, desc: string }[] = [
+const items = [
   { title: "Inmediatez", desc: "En el mismo momento que finaliza el estudio, usted puede verlo." },
   { title: "Ecología", desc: "Cuidamos el planeta, todo nuestro sistema es digital, no utilizamos ninguna impresión." },
   { title: "Cuidamos tu tiempo", desc: "No tiene que volver a buscar sus estudios." },
@@ -23,30 +23,28 @@ const items: { title: string, desc: string }[] = [
   { title: "Pensamos en tu comodidad", desc: "Con sólo con un click puede enviar sus estudios a quien desee." },
 ]
 
-const Servicio = ({ index, item, isActive, setServicioActivo }: { index: number, item: { text: string, items: string[] }, isActive: boolean, setServicioActivo: Dispatch<SetStateAction<number | null>> }) => {
+const Servicio = ({ index, item, isActive, setServicioActivo }: { index: number, item: { statisticsLabel: string, text: string, items: string[] }, isActive: boolean, setServicioActivo: Dispatch<SetStateAction<number | null>> }) => {
+
+  const plausible = usePlausible()
 
   return (
-    <li onClick={() => setServicioActivo(() => isActive ? null : index)}
+    <li onClick={() => setServicioActivo(() => {
+      plausible(item.statisticsLabel)
+      return isActive ? null : index
+    })}
       className={`bg-brandOrange py-4 flex flex-col items-center w-full rounded-md hover:cursor-pointer
-            lg:min-w-max select-none duration-200 px-4
-            ${isActive ? "gap-3" : "gap-1"}
-        `}
+        lg:min-w-max select-none duration-200 px-4
+        ${isActive ? "gap-3" : "gap-1"}
+      `}
     >
-      <h3 className='
-                font-secondary font-bold text-2xl
-                lg:text-3xl
-            '>{item.text}</h3>
+      <h3 className='font-secondary font-bold text-2xl lg:text-3xl'>
+        {item.text}
+      </h3>
 
-      <ul className={`
-                font-din font-light text-lg text-left whitespace-pre flex flex-col items-start justify-center transition-[height,_opacity] 
-                `}>
-        {
-          item.items.map((text, i) => {
-            return (
-              <li key={i} className={`duration-200 font-din-pro font-light list-disc text-white ${isActive ? `h-[28px] opacity-100` : `h-[0px] opacity-0`}`}>{text}</li>
-            )
-          })
-        }
+      <ul className={`font-din font-light text-lg text-left whitespace-pre flex flex-col items-start justify-center transition-[height,_opacity] `}>
+        {item.items.map((text, i) => (
+          <li key={i} className={`duration-200 font-din-pro font-light list-disc text-white ${isActive ? `h-[28px] opacity-100` : `h-[0px] opacity-0`}`}>{text}</li>
+        ))}
       </ul>
       <span className='font-din font-light text-lg lg:text-2xl'>{isActive ? "Ocultar" : "Ver Más"}</span>
     </li>

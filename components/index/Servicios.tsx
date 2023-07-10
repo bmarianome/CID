@@ -8,10 +8,14 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import 'swiper/css';
 import { useEffect, useState } from 'react';
+import { usePlausible } from 'next-plausible';
 
-const ServiceSlide = ({ item, index }: { item: { text: string, items: string[] }, index: number }) => {
+type ServiciosProps = typeof serviciosList
+
+const ServiceSlide = ({ item }: { item: { statisticsLabel: string, text: string, items: string[] } }) => {
 
   const [active, setActive] = useState(false)
+  const plausible = usePlausible()
 
   const swiperSlide = useSwiperSlide()
 
@@ -20,37 +24,63 @@ const ServiceSlide = ({ item, index }: { item: { text: string, items: string[] }
   }, [swiperSlide])
 
   return (
-    <div className={`bg-brandOrange py-4 flex flex-col items-center w-full m-auto max-w-sm rounded-md hover:cursor-pointer duration-200 ${active ? "gap-3" : "gap-1"}`} onClick={() => setActive(() => active ? false : true)}>
+    <div 
+      className={`bg-brandOrange py-4 flex flex-col items-center w-full m-auto max-w-sm rounded-md hover:cursor-pointer duration-200 ${active ? "gap-3" : "gap-1"}`} 
+      onClick={() => setActive(() => {
+        plausible(item.statisticsLabel)
+        return active ? false : true
+      })}
+    >
+      <h3 className='font-secondary font-bold text-2xl lg:text-3xl'>
+        {item.text}
+      </h3>
 
-      <h3 className='
-                font-secondary font-bold text-2xl
-                lg:text-3xl
-            '>{item.text}</h3>
-
-      <ul className={`
-                font-din font-light text-lg text-center flex flex-col items-start list-disc justify-center px-4 transition-[height,_opacity] 
-                `}>
-        {
-          item.items.map((text, index) => {
-            return (
-              <li key={index} className={`duration-200 text-white font-din-pro font-light ${active ? `h-[28px] opacity-100` : `h-[0px] opacity-0`}`}>{text}</li>
-            )
-          })
-        }
+      <ul className={`font-din font-light text-lg text-center flex flex-col items-start list-disc justify-center px-4 transition-[height,_opacity]`}>
+        {item.items.map((text, index) => (
+          <li key={index} className={`duration-200 text-white font-din-pro font-light ${active ? `h-[28px] opacity-100` : `h-[0px] opacity-0`}`}>{text}</li>
+        ))}
       </ul>
       <span className='font-din font-light text-lg lg:text-2xl'>{active ? "Ocultar" : "Ver Mas"}</span>
     </div>
   )
 }
 
-export const serviciosList: { text: string, items: string[] }[] = [
-  { text: "Resonancias", items: ["Angioresonancia" , "Colangioresonancia" , "Contraste" , "RMN Abdomen" , "RMN Cabeza" , "RMN de Torax" , "RMN Osteoarticular", "RMN Raquis"] },
-  { text: "Ecografías", items: ["General", "Endocavitaria", "Obstétricas", "Valoración de riesgo cromosómico", "Ecografías Obstétricas", "Ecodoppler color", "Ecocardiograma Doppler"] },
-  { text: "Radiología", items: ["Radiología Digital"] },
-  { text: "Mamografía", items: ["Mamografía Digital", "Magnificada", "Focalizada",] },
-  { text: "Cardiología", items: ["Electrocardiograma", "Prequirúrgicos", "Ergometrías", "Holter", "Mapa"] },
-  { text: "Ortopantomografía", items: ["Ortopantomografía", "Condilografía", "Telerradiografía", "Trazados Cefalométricos"] },
-  { text: "Punciones", items: ["Punciones mamarias", "Punciones Tiroideas"] }
+export const serviciosList = [
+  {
+    statisticsLabel: "Click en: Resonancias", 
+    text: "Resonancias", 
+    items: ["Angioresonancia", "Colangioresonancia", "Contraste", "RMN Abdomen", "RMN Cabeza", "RMN de Torax", "RMN Osteoarticular", "RMN Raquis"] 
+  },
+  {
+    statisticsLabel: "Click en: Ecografias", 
+    text: "Ecografías", 
+    items: ["General", "Endocavitaria", "Obstétricas", "Valoración de riesgo cromosómico", "Ecografías Obstétricas", "Ecodoppler color", "Ecocardiograma Doppler"] 
+  },
+  {
+    statisticsLabel: "Click en: Radiologia", 
+    text: "Radiología", 
+    items: ["Radiología Digital"] 
+  },
+  {
+    statisticsLabel: "Click en: Mamografia", 
+    text: "Mamografía", 
+    items: ["Mamografía Digital", "Magnificada", "Focalizada",] 
+  },
+  {
+    statisticsLabel: "Click en: Cardiologia", 
+    text: "Cardiología", 
+    items: ["Electrocardiograma", "Prequirúrgicos", "Ergometrías", "Holter", "Mapa"] 
+  },
+  {
+    statisticsLabel: "Click en: Ortopantomografia", 
+    text: "Ortopantomografía", 
+    items: ["Ortopantomografía", "Condilografía", "Telerradiografía", "Trazados Cefalométricos"] 
+  },
+  {
+    statisticsLabel: "Click en: Punciones", 
+    text: "Punciones", 
+    items: ["Punciones mamarias", "Punciones Tiroideas"]
+   }
 ]
 
 const Servicios = () => {
@@ -86,7 +116,7 @@ const Servicios = () => {
           {
             serviciosList.map((item, index) => (
               <SwiperSlide key={index}>
-                <ServiceSlide item={item} index={index} />
+                <ServiceSlide item={item} />
               </SwiperSlide>
             ))
           }
