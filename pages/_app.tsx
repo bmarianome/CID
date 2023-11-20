@@ -8,7 +8,11 @@ function Cid({ Component, pageProps }: AppProps) {
 
   return (
     <>
-      <PlausibleProvider domain="cidvillaallende.com.ar">
+      <PlausibleProvider domain="cidvillaallende.com.ar"
+        customDomain="plausible-analytics.up.railway.app"
+        trackLocalhost
+        selfHosted
+      >
         <Head>
           <link rel="shortcut icon" type="image/png" href="/favicon.png" />
           <link rel="apple-touch-icon" type='image/png' href="/favicon.png" />
