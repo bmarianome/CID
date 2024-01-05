@@ -11,6 +11,7 @@ function Cid({ Component, pageProps }: AppProps) {
         domain="cidvillaallende.com.ar"
         customDomain="stats.bmariano.me"
         selfHosted
+        enabled={false}
       >
         <Head>
           <link rel="shortcut icon" type="image/png" href="/favicon.png" />
