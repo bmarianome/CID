@@ -69,7 +69,7 @@ export const serviciosList = [
   {
     statisticsLabel: "Click en: Cardiologia", 
     text: "Cardiología", 
-    items: ["Electrocardiograma", "Prequirúrgicos", "Ergometrías", "Holter", "Mapa"] 
+    items: ["Eco Stress Cardiaco", "Electrocardiograma", "Prequirúrgicos", "Ergometrías", "Holter", "Mapa"] 
   },
   {
     statisticsLabel: "Click en: Ortopantomografia", 
